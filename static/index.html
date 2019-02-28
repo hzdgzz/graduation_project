@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</head>
+<body>
+    <!-- 整体背景 -->
+    <div id="box">
+        <div id="personbtn">
+            <h3 id="title">河北圣顺环保科技人力资源管理系统</h3>
+            <!-- 身份选择  -->
+            <p>
+                <select name="personbtn" id="chooseperson">
+                    <option value="0">管理员</option>
+                    <option value="1">普通员工</option>
+                </select>
+            </p>
+            <!-- 身份选择提交 -->
+            <p id="sureperson">
+                <input type="submit" name = "submit" value="确定">
+            </p>
+        </div>
+
+        <!-- 普通员工登录表单 -->
+        <div id="formbox1">
+            <!-- 用户登录界面 -->
+            <form>
+                <h1>河北圣顺环保科技人力资源管理系统</h1>
+                <p id="user">
+                    <label>用户名：</label>
+                    <input type="text" name ="user" placeholder="请输入员工账号">
+                </p>
+                <p id="password">
+                    <label>　密码：</label>
+                    <input type="password" name = "password" placeholder="请输入员工密码">
+                </p>
+                <p class="indexbtn">
+                    <input type="submit" name = "submit" value="登录">
+                    <input type="reset" name = "reset" value="注册">
+                </p>
+        </div>
+        
+        <!-- 管理员登录表单 -->
+        <div id="formbox2">
+            <!-- 管理员界面 -->
+            <form>
+                <h1>河北圣顺环保科技人力资源管理系统</h1>
+                <p id="user">
+                    <label>用户名：</label>
+                    <input type="text" name ="user" placeholder="请输入管理员账号">
+                </p>
+                <p id="password">
+                    <label>　密码：</label>
+                    <input type="password" name = "password" placeholder="请输入管理员密码">
+                </p>
+                <p class="indexbtn">
+                    <input type="submit" name = "submit" value="登录">
+                    <input type="reset" name = "reset" value="注册">
+                </p>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
