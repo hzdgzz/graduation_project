@@ -9,32 +9,6 @@
     margin: 0px, auto;
 }
 
-/* 表单设置 */
-#formbox1{
-    position: relative;
-    left:50%;
-    top: 50%;
-    text-align:center;
-    width: 300px;
-    height: 145px;
-    border: 0px;
-    padding: 0px;
-    margin-top: -160px;
-    margin-left: -150px;
-}
-#formbox2{
-    position: relative;
-    left:50%;
-    top: 50%;
-    text-align:center;
-    width: 300px;
-    height: 145px;
-    border: 0px;
-    padding: 0px;
-    margin-top: -160px;
-    margin-left: -150px;
-}
-
 /* 登录人员选项设置 */
 #personbtn{
     position: relative;
@@ -42,7 +16,6 @@
     top: 50%;
     margin-top: -98.6px;
     margin-left: -9.4px;
-    /* text-align: center; */
 }
 
 /* 公司名称格式显示 */
@@ -52,9 +25,36 @@
     top: 50%;
     margin: 0px;
     text-align: center;
+    font-size: 40px;
     /* font-size: 12px; */
     margin-top: -200px;
-    margin-left: -96px;
+    margin-left: -300px;
 }
 
+/* 确定按钮 */
+#surebtn{
+    width: 80px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    margin-left: -60px;
+}
+#surebtn{
+    background: lightblue;
+}
 
+/* 身份选择按钮 */
+#chooseperson{
+    width:130px;
+    height: 40px;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    margin-left: -80px;
+}
+#chooseperson{
+    background: white;
+}

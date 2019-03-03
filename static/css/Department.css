@@ -62,46 +62,6 @@ body{
     font-size:14px; 
 }
 
-/* 设置功能选项 */
-/* .list_con{
-    width:600px;
-    margin:50px auto 0;
-}
-.inputtxt{
-    width:510px;
-    height:30px;
-    border:1px solid #ccc;
-    padding:0px;
-    text-indent:10px;            
-}
-.inputbtn1{
-    width:80px;
-    height:32px;
-    padding:0px;
-    border:1px solid #ccc;
-}
-.list{
-    margin:0;
-    padding:0;
-    list-style:none;
-    margin-top:20px;
-}
-.list li{
-    height:40px;
-    line-height:40px;
-    border-bottom:1px solid #ccc;
-}
-
-.list li span{
-    float:left;
-}
-
-.list li a{
-    float:right;
-    text-decoration:none;
-    margin:0 10px;
-} */
-
 /* 部门列表 */
 .department_list{
     width:1110px;
