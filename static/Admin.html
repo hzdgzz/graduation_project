@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal</title>
+    <link rel="stylesheet" href="./css/Admin.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/Admin.js"></script>
+</head>
+<body>
+    <!-- 表头信息 -->
+    <div class="header_con">
+        <div class="header">
+            <a href="#" class="logo">河北圣顺环保科技人力资源管理系统</a>
+            <ul class="main_menu">
+                <li><a href="Department.html">部门管理</a></li>
+                <li class="active"><a href="Personal.html">员工管理</a></li>
+                <li><a href="Rewards.html">奖惩管理</a></li>
+                <li><a href="Resource.html">招聘管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 功能选项 -->
+    <div class="funcbtn" >
+        <button type="button" id="addbtn" onclick="delAll()">新增</button>
+        <!-- 功能弹窗 -->
+        <div class="pop_main" id="pop" >
+                <div class="pop_con">
+                    <div class="pop_title">
+                        <h3>新增员工</h3>
+                        <a href="#" id="shutoff">×</a>
+                    </div>
+                    <div class="pop_detail">
+                        <!-- 新增员工表单 -->
+                        <div class="pop_text">
+                                <form action="http://www.baidu.com" method="POST">
+                                    <p>
+                                        <label>ID:</label>
+                                        <input type="text" name="userid">
+                                    </p>
+                            
+                                    <p>
+                                        <label>姓名:</label>
+                                        <input type="text" name="username">
+                                    </p>
+                        
+                                    <p>
+                                        <label>年龄:</label>
+                                        <input type="text" name="age">
+                                    </p>
+                                    
+                                    <p>
+                                        <label>性别:</label>
+                                        <input type="radio" name="sex" value="man">男
+                                        <input type="radio" name="sex" value="woman">女
+                                    </p>
+                            
+                                    <p>
+                                        <label>部门:</label>
+                                        <select name="department" id="">
+                                            <option value="yanfa">研发部</option>
+                                            <option value="caiwu">财务部</option>
+                                        </select>
+                                    </p>
+                        
+                                    <p>
+                                        <label>电话:</label>
+                                        <input type="text" name="tel">
+                                    </p>
+                        
+                                    <p>
+                                        <label>邮箱:</label>
+                                        <input type="text" name="email">
+                                    </p>
+                            
+                                    <p class="pop_text_btn">
+                                        <input type="submit" value="保存" id="btn1">
+                                        <input type="reset" value="重置" id="btn2">
+                                    </p>
+                            
+                                </form>
+                        </div>
+                    </div>
+                    <div class="pop_footer">
+        
+                    </div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        
+        <!-- 功能弹窗 -->
+        
+    </div>
+    <!-- 员工管理 -->
+    <table class="personal_list">
+        <tr>
+            <th>员工ID</th>
+            <th>员工姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>所属部门</th>       
+            <th>电话</th>       
+            <th>邮箱</th>       
+            <th>编辑</th>       
+        </tr>
+        <!-- 员工列表数据 -->
+        <tr>
+            <th>001</th>
+            <th>张三</th>
+            <th>18</th>
+            <th>男</th>
+            <th>研发部</th>
+            <th>15516978594</th>
+            <th>6594856726@qq.com</th>
+            <th><button type="button" id="editbtn" onclick="delAll()">编辑</button></th>
+            <!-- 功能弹窗 -->
+            <div class="pop_main1" id="pop" >
+                    <div class="pop_con1">
+                        <div class="pop_title1">
+                            <h3>编辑员工</h3>
+                            <a href="#" id="shutoff1">×</a>
+                        </div>
+                        <div class="pop_detail1">
+                            <!-- 编辑员工表单 -->
+                            <div class="pop_text1">
+                                    <form action="http://www.baidu.com" method="POST">
+                                
+                                        <p>
+                                            <label>姓名:</label>
+                                            <input type="text" name="username">
+                                        </p>
+                            
+                                        <p>
+                                            <label>年龄:</label>
+                                            <input type="text" name="age">
+                                        </p>
+                                        
+                                        <p>
+                                            <label>性别:</label>
+                                            <input type="radio" name="sex" checked value="man">男
+                                            <input type="radio" name="sex" value="woman">女
+                                        </p>
+                                
+                                        <p>
+                                            <label>部门:</label>
+                                            <select name="department" id="">
+                                                <option value="yanfa">研发部</option>
+                                                <option value="caiwu">财务部</option>
+                                            </select>
+                                        </p>
+                            
+                                        <p>
+                                            <label>电话:</label>
+                                            <input type="text" name="tel">
+                                        </p>
+                            
+                                        <p>
+                                            <label>邮箱:</label>
+                                            <input type="text" name="email">
+                                        </p>
+                                
+                                        <p class="pop_text_btn1">
+                                            <input type="submit" value="保存" id="btn3">
+                                            <input type="reset" value="删除" id="btn4">
+                                        </p>
+                                
+                                    </form>
+                            </div>
+                        </div>
+                        <div class="pop_footer1">
+            
+                        </div>
+                    </div>
+                    <div class="mask1"></div>
+                </div>           
+        </tr>
+        <tr>
+            <th>002</th>
+            <th>小花</th>
+            <th>18</th>
+            <th>女</th>
+            <th>财务部</th>       
+            <th>17769269542</th>       
+            <th>6549237591@qq.com</th>       
+            <th><button type="button" id="editbtn" onclick="delAll()">编辑</button></th>        
+        </tr>
+    </table>
+</body>
+</html>
