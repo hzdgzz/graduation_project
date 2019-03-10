@@ -1,19 +1,6 @@
-from datetime import datetime
-from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 
-
-class BaseModel(object):
-    """模型基类，为每个模型补充创建时间与更新时间"""
-    create_time = db.Column(db.DateTime, default=datetime.now)  # 记录的创建时间
-    update_time = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)  # 记录的更新时间
-
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
-
-
-class Department(BaseModel, db.Model):
+class Department(db.Model):
     """部门"""
 
     __tablename__ = "department"
@@ -26,7 +13,7 @@ class Department(BaseModel, db.Model):
 
 
 
-class User(BaseModel, db.Model):
+class User(db.Model):
     """员工"""
 
     __tablename__ = "user"
@@ -50,7 +37,7 @@ class User(BaseModel, db.Model):
         return 'Role:%s' % self.name
 
 
-class Recruiter(BaseModel, db.Model):
+class Recruiter(db.Model):
     """招聘人员"""
 
     __tablename__ = "Recruiter"
@@ -72,7 +59,7 @@ class Recruiter(BaseModel, db.Model):
         return 'Role:%s' % self.name
 
 
-class Admin(BaseModel, db.Model):
+class Admin(db.Model):
     """管理员"""
 
     __tablename__ = "admin"
@@ -85,7 +72,7 @@ class Admin(BaseModel, db.Model):
         return 'Role:%s' % self.name
 
 
-class SuperAdmin(BaseModel, db.Model):
+class SuperAdmin(db.Model):
     """超级管理员"""
 
     __tablename__ = "superadmin"
@@ -98,7 +85,7 @@ class SuperAdmin(BaseModel, db.Model):
         return 'Role:%s' % self.name
 
 
-class RewardsPunishment(BaseModel, db.Model):
+class RewardsPunishment(db.Model):
     """奖惩"""
 
     __tablename__ = "rewardspunishment"
