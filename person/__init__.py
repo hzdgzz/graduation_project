@@ -52,6 +52,25 @@ def create_app(config_name):
         return response
 
     # 导入蓝图对象
+
+    from person.modules.Admin import Admin
+    app.register_blueprint(Admin)
+
+    from person.modules.AdminLogin import AdminLogin
+    app.register_blueprint(AdminLogin)
+
+    from person.modules.Department import Department
+    app.register_blueprint(Department)
+
+    from person.modules.Resource import Resource
+    app.register_blueprint(Resource)
+
+    from person.modules.Rewards import Rewards
+    app.register_blueprint(Rewards)
+
+    from person.modules.SuperadminLogin import SuperadminLogin
+    app.register_blueprint(SuperadminLogin)
+
     from person.modules.Superson import Superson
     app.register_blueprint(Superson)
 

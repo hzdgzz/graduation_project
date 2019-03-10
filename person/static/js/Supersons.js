@@ -68,6 +68,32 @@ $(function(){
     // 事件委托,监控点击登录和注册
     pop_text_btn1.delegate('input','click',function(){
         if($(this).prop('type') == 'submit'){
+            e.preventDefault();//阻止默认的表单提交
+            // 发送ajax请求
+            var params = {
+                "adminaccount": adminaccount,
+                "adminpsw": adminpsw
+            }
+
+            $.ajax({
+                url: "/api/v1.0/orders/comment",
+                type: "post",
+                data: JSON.stringify(params),
+                contentType: "application/json",
+                headers: {
+                    "X-CSRFToken": getCookie('csrf_token')
+                },
+                success: function (resp) {
+                    if (resp) {
+                        alert('success')
+                    }else {
+                        alert('false')
+                    }
+                },
+                error:function(){
+                    alert('服务器超时，请重试！');
+                }
+            })
             // 发送ajax请求
             alert('f')
         }else if($(this).prop('type') == 'reset'){
