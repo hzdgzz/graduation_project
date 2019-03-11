@@ -1,3 +1,9 @@
+// 浏览器写入cookie
+function getCookie(name) {
+    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+    return r ? r[1] : undefined;
+}
+
 $(function(){
      // var superadminloginform = $('#superadminloginform')
     // form表单提交
@@ -19,9 +25,9 @@ $(function(){
             type:'post',
             data:JSON.stringify(params),
             contentType:'application/json',
-            // headers: {
-            //         "X-CSRFToken": getCookie('csrf_token')
-            //     },
+            headers: {
+                    "X-CSRFToken": getCookie('csrf_token')
+                },
             success:function(data){
                 if (data.errno == 0){
                     window.location.href='/Supersons.html'
