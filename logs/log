@@ -1108,3 +1108,269 @@ INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:42:31] "POST /login HTTP/1.1"
 INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:42:32] "GET /Supersons.html HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:42:32] "GET /static/css/Supersons.css HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:42:32] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:49:15] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:49:18] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:49:21] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [11/Mar/2019 18:49:22] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:00] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:01] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:01] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:01] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:01] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:02] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:03] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:04] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:04] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:33:05] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/SuperadminLogin/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:34:34] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:35:28] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/SuperadminLogin/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/SuperadminLogin/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:40:54] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:40:56] "GET /static/css/SuperadminLogin.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:40:56] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:40:56] "GET /static/js/SuperadminLogin.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:41:10] "POST /login HTTP/1.1" 500 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/SuperadminLogin/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:42:17] "POST /login HTTP/1.1" 500 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:42:44] "POST /login HTTP/1.1" 500 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+ERROR views.py:23 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:44:24] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:44:29] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:44:30] "GET /static/css/SuperadminLogin.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:44:30] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:44:30] "GET /static/js/SuperadminLogin.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+ERROR views.py:23 Could not determine join condition between parent/child tables on relationship User.rewardspunishment - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:45:40] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/SuperadminLogin/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:52:04] "POST /login HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:52:07] "POST /login HTTP/1.1" 500 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/SuperadminLogin/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:53:00] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:54:09] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:54:10] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:54:10] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:54:10] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:54:11] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+ERROR views.py:23 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:54:36] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:56:20] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:56:21] "GET /static/css/SuperadminLogin.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:56:21] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:56:21] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+ERROR views.py:23 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 14:56:38] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+ERROR views.py:23 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:04:56] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+ERROR views.py:24 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:06:53] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:21:54] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:21:56] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:21:58] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:21:58] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:22] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:23] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:23] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:23] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:24] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:25] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:26] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:26] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:32] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:33] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:33] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:22:33] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/models.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/models.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:30] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:31] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:31] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:31] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:32] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:33] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:33] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:33] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:35] "POST /login HTTP/1.1" 500 -
+ERROR views.py:24 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:33:46] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/models.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:06] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:07] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:07] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:07] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:07] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:12] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:13] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:13] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:16] "POST /login HTTP/1.1" 500 -
+ERROR views.py:24 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:43] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+ERROR views.py:24 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:36:59] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/models.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+ERROR views.py:24 When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:38:49] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:38:54] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:38:55] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:38:55] "GET /static/js/SuperadminLogin.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:38:55] "GET /static/css/SuperadminLogin.css HTTP/1.1" 304 -
+ERROR views.py:24 One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper|Department|department'. Original exception was: When initializing mapper Mapper|Department|department, expression 'Uesr' failed to locate a name ("name 'Uesr' is not defined"). If this is a class name, consider adding this relationship() to the <class 'person.models.Department'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:39:00] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:43:44] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:43:45] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:43:48] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 15:43:48] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/models.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:35] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:37] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:37] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:38] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:39] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:40] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:40] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:42] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:48] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:49] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:50] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [12/Mar/2019 16:04:50] "GET /static/js/Supersons.js HTTP/1.1" 200 -

@@ -4,9 +4,9 @@ class Department(db.Model):
     """部门"""
 
     __tablename__ = "department"
-    depart_id = db.Column(db.Integer, unique=True,primary_key=True)  # 部门编号
+    depart_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 部门编号
     depart_name = db.Column(db.String(32), unique=True, nullable=False)  # 部门名称
-    User = db.relationship("Uesr", backref='department', lazy="dynamic")
+    users = db.relationship("User", backref='department')
     # repr()方法显示一个可读字符串
     def __repr__(self):
         return 'Role:%s' % self.name
@@ -17,7 +17,7 @@ class User(db.Model):
     """员工"""
 
     __tablename__ = "user"
-    user_id = db.Column(db.Integer, unique=True,primary_key=True)  # 员工编号
+    user_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 员工编号
     user_name = db.Column(db.String(32), nullable=False)  # 员工姓名
     user_age = db.Column(db.Integer)  # 员工年龄
     user_gender = db.Column(
@@ -41,7 +41,7 @@ class Recruiter(db.Model):
     """招聘人员"""
 
     __tablename__ = "Recruiter"
-    recruiter_id = db.Column(db.Integer, unique=True,primary_key=True)  # 招聘编号
+    recruiter_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 招聘编号
     recruiter_name = db.Column(db.String(32), nullable=False)  # 招聘姓名
     recruiter_age = db.Column(db.Integer)  # 招聘年龄
     recruiter_gender = db.Column(
@@ -63,7 +63,7 @@ class Admin(db.Model):
     """管理员"""
 
     __tablename__ = "admin"
-    admin_id = db.Column(db.Integer, unique=True,primary_key=True)  # 管理员编号
+    admin_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 管理员编号
     admin_psw = db.Column(db.String(32), nullable=False)  # 管理员密码
 
 
@@ -76,7 +76,7 @@ class SuperAdmin(db.Model):
     """超级管理员"""
 
     __tablename__ = "superadmin"
-    superadmin_id = db.Column(db.Integer, unique=True,primary_key=True)  # 超级管理员编号
+    superadmin_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 超级管理员编号
     superadmin_psw = db.Column(db.String(32), nullable=False)  # 超级管理员密码
 
 
@@ -91,8 +91,6 @@ class RewardsPunishment(db.Model):
     __tablename__ = "rewardspunishment"
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'),primary_key=True)  # 员工编号
-    user_name = db.Column(db.Integer, db.ForeignKey('user.user_name'))  # 员工姓名
-    user_mobile = db.Column(db.Integer, db.ForeignKey('user.user_mobile'))  # 员工电话
     reward = db.Column(db.Integer)  # 员工奖励
     punishment = db.Column(db.Integer)  # 员工惩罚
 

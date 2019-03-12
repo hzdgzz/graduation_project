@@ -10,13 +10,13 @@ $(function(){
     $("#superadminloginform").submit(function(e){
 
         e.preventDefault()
-        var mobile = $("#supadminuser").val()
+        var superadmin_id = $("#supadminuser").val()
         var password = $("#supadminpsw").val()
 
 
         // 发起登录请求
         var params = {
-            'mobile':mobile,
+            'superadmin_id':superadmin_id,
             'password':password
         };
         // 发起ajax请求
