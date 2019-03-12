@@ -35,7 +35,7 @@ $(function(){
                 // if (data.errno == '0'){
                 //     location.reload()
                 }else{
-                    alert('error!')
+                    alert('用户名或密码错误!')
                 }
             }
         })

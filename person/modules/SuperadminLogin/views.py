@@ -19,11 +19,18 @@ def login():
     if not all([superadmin_id, password]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     try:
-        user = SuperAdmin.query.filter_by(superadmin_id=superadmin_id).first()
+        superadmin = SuperAdmin.query.filter_by(superadmin_id=superadmin_id).first()
+
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DATAERR, errmsg='账号错误')
-
+        return jsonify(errno=RET.DATAERR, errmsg='查询用户账号失败')
+    try:
+        superadmin_psw = SuperAdmin.query.filter_by(superadmin_psw=password).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DATAERR, errmsg='查询用户密码失败')
+    if not superadmin or not superadmin_psw:
+        return jsonify(errno=RET.PWDERR, errmsg='用户名或密码错误')
     return jsonify(errno=RET.OK, errmsg='用户名或密码错误')
 
 
