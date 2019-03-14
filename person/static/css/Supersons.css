@@ -116,7 +116,7 @@ body{
 .funcbtn{
     width:1110px;
     margin:20px auto;
-    border-top:px solid #e0e0e0;
+    border-top:0px solid #e0e0e0;
     border-collapse:collapse;
 
 }
@@ -135,11 +135,12 @@ body{
 .editbtn{
     width:1110px;
     margin:20px auto;
-    border-top:px solid #e0e0e0;
+    border-top:1px solid #e0e0e0 ;
+
     border-collapse:collapse;
 
 }
-#editbtn{
+.editbtn{
     width: 60px;
     height: 30px;
     color: white;
@@ -147,7 +148,7 @@ body{
     border-radius: 10px;
     outline: none;
 }
-#editbtn{
+.editbtn{
     background:black;
 }
 

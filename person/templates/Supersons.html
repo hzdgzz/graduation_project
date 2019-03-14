@@ -82,7 +82,7 @@
             <th>{{ admin.admin_psw }}</th>
 
             <th>
-                <button type="button" id="editbtn">编辑</button>
+                <button type="button" class="editbtn">编辑</button>
             </th>
         </tr>
 
@@ -101,12 +101,12 @@
                     <form method="POST">
                         <p>
                             <label>账号修改:</label>
-                            <input type="text" name="userid">
+                            <input type="text" name="userid" id="editor_admin_id">
                         </p>
 
                         <p>
                             <label>密码修改:</label>
-                            <input type="text" name="username">
+                            <input type="text" name="username" id="editor_admin_psw">
                         </p>
 
                         <p class="pop_text_btn1">

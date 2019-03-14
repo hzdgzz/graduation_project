@@ -2224,3 +2224,706 @@ INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 12:43:06] "GET /Supersons.html H
 INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 12:43:06] "GET /static/css/Supersons.css HTTP/1.1" 304 -
 INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 12:43:06] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
 INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 12:43:06] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:24] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:25] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:25] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:25] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:41] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:42] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:42] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:42] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:42] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:45] "GET /AdminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:45] "GET /static/css/AdminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:45] "GET /static/js/AdminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:46] "GET /Admin.html?user=&password=&submit=%E7%99%BB%E5%BD%95 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:46] "GET /static/css/Admin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:19:46] "GET /static/js/Admin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:20:55] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:20:55] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:20:55] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:21:01] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:21:02] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:13] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:14] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:14] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:14] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:27] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:28] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:28] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:25:28] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:54:34] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:54:35] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:54:35] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:54:35] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:55:54] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:55:54] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:55:54] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:55:54] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:56:42] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:56:43] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:56:43] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 14:56:43] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:24] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:25] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:25] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:25] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:57] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:57] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:57] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:00:57] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:01:12] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:01:12] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:01:12] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:01:12] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:03:28] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:03:28] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:03:28] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:03:28] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:04:40] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:04:41] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:04:41] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:04:41] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:00] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:00] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:00] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:00] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:29] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:30] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:30] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:07:30] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:03] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:04] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:04] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:04] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:36] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:37] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:08:37] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:11:41] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:11:41] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:11:41] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:11:41] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:20] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:21] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:21] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:21] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:36] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:36] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:36] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:36] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:39] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:39] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:39] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:39] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:51] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:51] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:51] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:13:51] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:15:17] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:15:18] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:15:18] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:15:18] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:07] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:07] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:07] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:07] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:32] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:32] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:32] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:32] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:35] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:35] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:35] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:35] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:47] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:48] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:48] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:48] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:52] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:52] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:52] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:17:52] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:18:26] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:18:27] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:18:27] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:18:27] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:26:52] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:26:53] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:26:53] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:26:53] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:27:50] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:27:51] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:27:51] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:27:51] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:30:35] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:30:35] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:30:35] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:30:35] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:37:49] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:37:50] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:37:50] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:37:50] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:39:05] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:39:05] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:39:05] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:39:05] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:25] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:25] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:25] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:26] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:56] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:56] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:56] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:44:56] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:46:27] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:46:27] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:46:27] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:46:27] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:48:15] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:48:16] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:48:16] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:48:16] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:49:18] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:49:18] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:49:18] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:49:18] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:00] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:01] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:01] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:01] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:35] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:36] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:36] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:50:36] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:22] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:23] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:23] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:23] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:31] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:32] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:32] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:51:32] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:34] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:34] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:34] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:34] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:55] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:55] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:55] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:52:55] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:53:30] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:53:30] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:53:30] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:53:30] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:58:59] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:58:59] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:58:59] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:58:59] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:09] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:10] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:10] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:10] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:45] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:45] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:46] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:46] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:56] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:57] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:57] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 15:59:57] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:23] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:24] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:24] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:24] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:36] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:37] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:37] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:50] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:50] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:51] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:00:51] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:00] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:00] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:00] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:00] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:22] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:23] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:23] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:23] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:39] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:40] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:40] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:41] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:41] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:43] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:43] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:43] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:49] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:01:50] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:02:22] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:02:22] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:02:22] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:02:22] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:26] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:26] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:26] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:26] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:53] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:53] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:53] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:04:53] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:08:43] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:08:44] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:08:44] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:08:44] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:09:56] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:09:56] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:09:56] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:09:56] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:26] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:26] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:26] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:26] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:47] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:48] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:48] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:10:48] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:11:31] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:11:31] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:11:31] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:11:31] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:12:48] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:12:48] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:12:48] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:12:48] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:15] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:15] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:15] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:15] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:44] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:44] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:44] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:13:44] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:07] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:07] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:07] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:07] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:19] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:19] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:19] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:14:19] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:06] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:06] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:06] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:06] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:25] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:25] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:25] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:25] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:37] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:37] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:37] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:59] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:59] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:59] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:15:59] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:32] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:33] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:33] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:33] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:55] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:56] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:56] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:16:56] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:08] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:08] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:08] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:08] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:26] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:26] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:26] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:26] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:50] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:50] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:50] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:50] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:57] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:57] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:57] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:17:57] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:17] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:18] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:18] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:18] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:33] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:33] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:33] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:18:33] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:21:39] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:21:40] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:21:40] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:21:40] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:36] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:37] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:37] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:46] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:46] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:46] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:46] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:50] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:51] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:51] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:22:51] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:03] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:04] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:04] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:04] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:12] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:12] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:13] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:13] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:39] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:39] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:39] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:39] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:51] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:52] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:52] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:23:52] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:01] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:01] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:01] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:01] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:18] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:18] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:18] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:18] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:25] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:25] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:25] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:25] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:42] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:43] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:43] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:43] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:48] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:49] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:49] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:24:49] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:36:07] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:36:08] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:36:08] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:36:08] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:34] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:35] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:35] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:35] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:48] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:48] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:48] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:37:48] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:38:24] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:38:24] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:38:24] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 16:38:24] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:21] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:22] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:22] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:22] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:25] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:25] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:25] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:25] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:47] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:47] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:47] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:47] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:58] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:58] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:58] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:19:58] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:22:58] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:22:59] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:22:59] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:22:59] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:08] "GET /AdminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:09] "GET /static/css/AdminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:09] "GET /static/js/AdminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:10] "GET /Admin.html?user=&password=&submit=%E7%99%BB%E5%BD%95 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:10] "GET /static/css/Admin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:10] "GET /static/js/Admin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:17] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:29] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:23:31] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:25:36] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:25:37] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:25:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:25:37] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:23] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:23] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:23] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:23] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:47] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:48] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:48] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:27:48] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/Superson/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:35:33] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:35:34] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:35:34] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:35:34] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:35:45] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:36:09] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:36:57] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:37:50] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:38:14] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:38:18] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:44:27] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:44:28] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:44:28] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:44:28] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:44:39] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:45:50] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:45:51] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:45:51] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:45:51] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:46:20] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/Superson/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:16] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:17] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:17] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:17] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:40] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:41] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:41] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:41] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:48:41] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:50:04] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:50:04] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:50:05] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:50:05] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:50:05] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:50:21] "POST /editor_admin HTTP/1.1" 500 -
+INFO _internal.py:88  * Detected change in '/home/python/21/flask/graduation_project/person/modules/Superson/views.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:52:00] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:52:00] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:52:00] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:52:00] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:54:10] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:54:11] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:54:11] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:54:11] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:54:20] "POST /editor_admin HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:54:22] "POST /editor_admin HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:06] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:06] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:06] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:06] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:23] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:23] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:23] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:23] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:56:23] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:59:58] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:59:59] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:59:59] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 18:59:59] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:06] "POST /editor_admin HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:13] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:13] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:13] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:13] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:13] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:23] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:23] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:23] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:23] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:23] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:29] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:29] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:29] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:29] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:29] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:31] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:31] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:31] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:31] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:37] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:37] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:37] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:37] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:00:37] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:09] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:09] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:09] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:09] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:15] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:15] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:15] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:15] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:01:15] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:46] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:46] "GET /static/css/Supersons.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:46] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:46] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:55] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:55] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:55] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:55] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:02:55] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:43] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:43] "GET /static/css/index.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:43] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:43] "GET /static/images/5-120601094K8.gif HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:44] "GET /SuperadminLogin.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:45] "GET /static/css/SuperadminLogin.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:45] "GET /static/js/SuperadminLogin.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:51] "POST /login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:03:52] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:11] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:14] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:14] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:14] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:14] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 129-141-252
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:42] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:44] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:45] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:45] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:04:45] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:19] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:19] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:19] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:19] "GET /static/js/Supersons.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:25] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:27] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:27] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:27] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:27] "GET /static/js/Supersons.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:32] "POST /editor_admin HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:33] "GET /Supersons.html HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:33] "GET /static/css/Supersons.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:33] "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [14/Mar/2019 19:05:33] "GET /static/js/Supersons.js HTTP/1.1" 304 -
