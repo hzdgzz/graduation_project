@@ -14,6 +14,7 @@ $(function () {
     var pop_text_btn1 = $('.pop_text_btn1')
     var exit = $('#exit')
     var changepsw = $('#changepsw')
+    // var editbtn=document.querySelectorAll('#editbtn');
 
     // 表单默认隐藏
     addform.hide()
@@ -24,8 +25,15 @@ $(function () {
     })
     // 监控编辑按钮
     editbtn.click(function () {
+        var editbtnlist = document.getElementsByTagName("button");
+        for (var i = 1; i <= editbtnlist.length; i++) {
+            editbtnlist[i].onclick = function () {
+                editform.show()
+            }
+        }
         editform.show()
     })
+
     // 增加弹框操作
     // 监听灰色背景的点击
     $(".pop_main").click(function () {
@@ -94,6 +102,17 @@ $(function () {
         } else if ($(this).prop('type') == 'reset') {
             // 发送ajax请求
             document.getElementById("supersonsform").reset();
+        }
+    })
+    // 监听编辑弹框的按钮
+    // 事件委托,监控保存和删除
+    pop_text_btn1.delegate('input', 'click', function () {
+        if ($(this).prop('type') == 'submit') {
+            // 发送ajax请求
+            alert('f')
+        } else if ($(this).prop('type') == 'reset') {
+            // 发送ajax请求
+            alert('b')
         }
     })
 
