@@ -93,7 +93,7 @@ $(function () {
             })
         } else if ($(this).prop('type') == 'reset') {
             // 发送ajax请求
-            alert('b')
+            document.getElementById("supersonsform").reset();
         }
     })
 
