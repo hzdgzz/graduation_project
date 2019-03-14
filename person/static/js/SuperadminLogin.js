@@ -11,13 +11,13 @@ $(function(){
 
         e.preventDefault()
         var superadmin_id = $("#supadminuser").val()
-        var password = $("#supadminpsw").val()
+        var superadmin_password = $("#supadminpsw").val()
 
 
         // 发起登录请求
         var params = {
             'superadmin_id':superadmin_id,
-            'password':password
+            'superadmin_password':superadmin_password
         };
         // 发起ajax请求
         $.ajax({

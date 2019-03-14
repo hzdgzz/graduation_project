@@ -7,9 +7,7 @@ class Department(db.Model):
     depart_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 部门编号
     depart_name = db.Column(db.String(32), unique=True, nullable=False)  # 部门名称
     users = db.relationship("User", backref='department')
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
+
 
 
 
@@ -32,10 +30,6 @@ class User(db.Model):
     rewardspunishment = db.relationship("RewardsPunishment", backref='user', lazy="dynamic")
 
 
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
-
 
 class Recruiter(db.Model):
     """招聘人员"""
@@ -54,10 +48,6 @@ class Recruiter(db.Model):
     recruiter_email = db.Column(db.String(11), unique=True, nullable=False)  # 招聘邮箱
 
 
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
-
 
 class Admin(db.Model):
     """管理员"""
@@ -67,10 +57,6 @@ class Admin(db.Model):
     admin_psw = db.Column(db.String(32), nullable=False)  # 管理员密码
 
 
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
-
 
 class SuperAdmin(db.Model):
     """超级管理员"""
@@ -79,10 +65,6 @@ class SuperAdmin(db.Model):
     superadmin_id = db.Column(db.Integer, unique=True,primary_key=True,autoincrement=True)  # 超级管理员编号
     superadmin_psw = db.Column(db.String(32), nullable=False)  # 超级管理员密码
 
-
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
 
 
 class RewardsPunishment(db.Model):
@@ -94,9 +76,5 @@ class RewardsPunishment(db.Model):
     reward = db.Column(db.Integer)  # 员工奖励
     punishment = db.Column(db.Integer)  # 员工惩罚
 
-
-    # repr()方法显示一个可读字符串
-    def __repr__(self):
-        return 'Role:%s' % self.name
 
 

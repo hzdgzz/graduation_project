@@ -36,17 +36,17 @@
                 <a href="#" id="shutoff">×</a>
             </div>
             <div class="pop_detail">
-                <!-- 新增部门表单 -->
+                <!-- 新增管理员表单 -->
                 <div class="pop_text">
-                    <form action="http://www.baidu.com" method="POST">
+                    <form method="POST" id="supersonsform">
                         <p>
                             <label>管理员账号:</label>
-                            <input type="text" name="userid">
+                            <input type="text" name="userid" id="admin_id">
                         </p>
 
                         <p>
                             <label>管理员密码:</label>
-                            <input type="text" name="username">
+                            <input type="text" name="username" id="admin_psw">
                         </p>
 
                         <p class="pop_text_btn">
@@ -91,7 +91,7 @@
                     <div class="pop_detail1">
                         <!-- 编辑管理员表单 -->
                         <div class="pop_text1">
-                            <form
+                            <form>
                             " method="POST">
                             <p>
                                 <label>账号修改:</label>
