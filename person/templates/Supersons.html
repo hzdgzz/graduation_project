@@ -10,76 +10,79 @@
     <script src="../static/js/Supersons.js"></script>
 </head>
 <body>
-    <!-- 表头信息 -->
-    <div class="header_con">
-        <div class="header">
-            <a href="#" class="logo">河北圣顺环保科技人力资源管理系统</a>
-            <ul class="main_menu">                
-                <li id="exit"><a><button type="button" id="exitbtn">退出登录</button></a></li>
-                
-                <li id="changepsw"><a><button type="button" id="changepswbtn">密码修改</button></a></li>
-            </ul>
-        </div>
+<!-- 表头信息 -->
+<div class="header_con">
+    <div class="header">
+        <a href="#" class="logo">河北圣顺环保科技人力资源管理系统</a>
+        <ul class="main_menu">
+            <li id="exit"><a>
+                <button type="button" id="exitbtn">退出登录</button>
+            </a></li>
+
+            <li id="changepsw"><a>
+                <button type="button" id="changepswbtn">密码修改</button>
+            </a></li>
+        </ul>
     </div>
-    <!-- 功能选项 -->
-    <div class="funcbtn">
-        <button type="button" id="addbtn">新增</button>
-        <!-- 功能弹窗 -->
-        <div class="pop_main" id="pop" >
-            <div class="pop_con">
-                <div class="pop_title">
-                    <h3>新增</h3>
-                    <a href="#" id="shutoff">×</a>
-                </div>
-                <div class="pop_detail">
-                    <!-- 新增部门表单 -->
-                    <div class="pop_text">
-                            <form action="http://www.baidu.com" method="POST">
-                                <p>
-                                    <label>管理员账号:</label>
-                                    <input type="text" name="userid">
-                                </p>
+</div>
+<!-- 功能选项 -->
+<div class="funcbtn">
+    <button type="button" id="addbtn">新增</button>
+    <!-- 功能弹窗 -->
+    <div class="pop_main" id="pop">
+        <div class="pop_con">
+            <div class="pop_title">
+                <h3>新增</h3>
+                <a href="#" id="shutoff">×</a>
+            </div>
+            <div class="pop_detail">
+                <!-- 新增部门表单 -->
+                <div class="pop_text">
+                    <form action="http://www.baidu.com" method="POST">
+                        <p>
+                            <label>管理员账号:</label>
+                            <input type="text" name="userid">
+                        </p>
 
-                                <p>
-                                    <label>管理员密码:</label>
-                                    <input type="text" name="username">
-                                </p>
+                        <p>
+                            <label>管理员密码:</label>
+                            <input type="text" name="username">
+                        </p>
 
-                                <p  class="pop_text_btn">
-                                    <input type="submit" value="保存" id="btn1">
-                                    <input type="reset" value="重置" id="btn2">
-                                </p>
-                            </form>
-                    </div>
-                </div>
-                <div class="pop_footer">
-    
+                        <p class="pop_text_btn">
+                            <input type="submit" value="保存" id="btn1">
+                            <input type="reset" value="重置" id="btn2">
+                        </p>
+                    </form>
                 </div>
             </div>
-            <div class="mask"></div>
-        </div> 
+            <div class="pop_footer">
+
+            </div>
+        </div>
+        <div class="mask"></div>
     </div>
-    
-    <!-- 管理员管理 -->
-    <table class="department_list">
-        
-        <tr>
-            <th>管理员账号</th>
-            <th>管理员密码</th>     
-            <th>操作</th>     
-        </tr>
-        <!-- 管理员列表数据 -->
-        <tr>
-            <th>001</th>
-            <th>123</th>     
-            <th><button type="button" id="editbtn" onclick="delAll()">编辑</button></th>     
-        </tr>
-        <tr>
-            <th>002</th>
-            <th>456</th>     
-            <th><button type="button" id="editbtn" onclick="delAll()">编辑</button></th>
+</div>
+
+<!-- 管理员管理 -->
+<table class="department_list">
+
+    <tr>
+        <th>管理员账号</th>
+        <th>管理员密码</th>
+        <th>操作</th>
+    </tr>
+
+    <!-- 管理员列表数据 -->
+    <tr>
+        {% for admin in data.admins %}
+            <th>{{ admin.admin_id }}</th>
+            <th>{{ admin.admin_psw }}</th>
+            <th>
+                <button type="button" id="editbtn" onclick="delAll()">编辑</button>
+            </th>
             <!-- 功能弹窗 -->
-            <div class="pop_main1" id="pop" >
+            <div class="pop_main1" id="pop">
                 <div class="pop_con1">
                     <div class="pop_title1">
                         <h3>编辑管理员信息</h3>
@@ -88,33 +91,36 @@
                     <div class="pop_detail1">
                         <!-- 编辑管理员表单 -->
                         <div class="pop_text1">
-                                <form " method="POST">
-                                    <p>
-                                        <label>账号修改:</label>
-                                        <input type="text" name="userid">
-                                    </p>
-    
-                                    <p>
-                                        <label>密码修改:</label>
-                                        <input type="text" name="username">
-                                    </p>
-    
-                                    <p  class="pop_text_btn1">
-                                        <input type="submit" value="保存" id="btn3">
-                                        <input type="reset" value="删除" id="btn4">
-                                    </p>
-                                </form>
+                            <form
+                            " method="POST">
+                            <p>
+                                <label>账号修改:</label>
+                                <input type="text" name="userid">
+                            </p>
+
+                            <p>
+                                <label>密码修改:</label>
+                                <input type="text" name="username">
+                            </p>
+
+                            <p class="pop_text_btn1">
+                                <input type="submit" value="保存" id="btn3">
+                                <input type="reset" value="删除" id="btn4">
+                            </p>
+                            </form>
                         </div>
                     </div>
                     <div class="pop_footer1">
-        
+
                     </div>
                 </div>
                 <div class="mask1"></div>
-            </div>     
-        </tr>
-    </table>
-   
+            </div>
+            </tr>
+        {% endfor %}
+
+</table>
+
 
 </body>
 </html>
