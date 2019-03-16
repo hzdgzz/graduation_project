@@ -32,8 +32,6 @@ $(function(){
                 if (data.errno == 0){
                     window.location.href='/Supersons.html'
                     alert('success')
-                // if (data.errno == '0'){
-                //     location.reload()
                 }else{
                     alert('用户名或密码错误!')
                 }

@@ -3,6 +3,7 @@ import re
 from flask import current_app
 from flask import render_template, jsonify
 from flask import request
+from flask import session
 
 from person.models import SuperAdmin
 from person.utils.response_code import RET
@@ -31,7 +32,10 @@ def login():
         return jsonify(errno=RET.DATAERR, errmsg='查询用户密码失败')
     if not superadmin or not superadmin_psw:
         return jsonify(errno=RET.PWDERR, errmsg='用户名或密码错误')
-    return jsonify(errno=RET.OK, errmsg='用户名或密码错误')
+    # 实现状态保持
+    session['superadmin_id'] = superadmin.superadmin_id
+    session['superadmin_psw'] = superadmin.superadmin_psw
+    return jsonify(errno=RET.OK, errmsg='OK')
 
 
 # 超级管理员登录界面

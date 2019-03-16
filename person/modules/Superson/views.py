@@ -5,8 +5,8 @@ from flask import request
 from person import db
 from person.utils.response_code import RET
 from . import Superson
-from person.models import Admin
-
+from person.models import Admin,SuperAdmin
+from flask import session
 
 @Superson.route("/")
 def index():
@@ -45,7 +45,7 @@ def add_admin():
 
 
 # 修改管理员数据
-@Superson.route("/editor_admin", methods=['POST'])
+@Superson.route("/editor_admin", methods=['PUT'])
 def editor_admin():
     # 获取参数
     admin_id = request.json.get('admin_id')
@@ -118,6 +118,47 @@ def delete_admin():
         current_app.logger.error(e)
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg='删除数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
+
+# 修改超级管理员密码
+@Superson.route("/editor_superadminpsw", methods=['POST'])
+def editor_superadminpsw():
+    # 获取参数
+    superadminpsw = request.json.get('superadminpsw')
+    editorsuperadminpsw = request.json.get('editorsuperadminpsw')
+    # 检查参数的完整性
+    if not all([superadminpsw, editorsuperadminpsw]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        superadminpsw = int(superadminpsw)
+        editorsuperadminpsw = int(editorsuperadminpsw)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+    # 检查用户输入id和列表id是否一致
+    sessions = session['superadmin_psw']
+    superadmin_psw = int(sessions)
+    if superadmin_psw != superadminpsw:
+        return jsonify(errno=RET.DATAERR, errmsg='请输入超级管理员旧密码')
+    # 构建模型类对象
+    try:
+        superadmin = SuperAdmin.query.filter_by(superadmin_psw=superadminpsw).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询超级管理员错误')
+    # 修改超级管理员密码
+    superadmin.superadmin_psw = editorsuperadminpsw
+    # 存入数据库
+    try:
+        db.session.add(superadmin)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='修改密码失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 

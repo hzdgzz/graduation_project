@@ -22,6 +22,41 @@
             <li id="changepsw"><a>
                 <button type="button" id="changepswbtn">密码修改</button>
             </a></li>
+            <div class="pop_main2" id="pop">
+                <div class="pop_con2">
+                    <div class="pop_title2">
+                        <h3>修改超级管理员密码</h3>
+                        <a href="#" id="shutoff2">×</a>
+                    </div>
+                    <div class="pop_detail2">
+                        <!-- 编辑密码表单 -->
+                        <div class="pop_text2">
+                            <form id="editorsupersonsform">
+                                <p>
+                                    <label>旧密码:</label>
+                                    <input type="text" name="userid" id="superadminpsw" placeholder="请输入超级管理员旧密码">
+                                </p>
+
+                                <p>
+                                    <label>新密码:</label>
+                                    <input type="text" name="username" id="editorsuperadminpsw" placeholder="请输入超级管理员新密码">
+                                </p>
+
+                                <p class="pop_text_btn2">
+
+                                    <input type="hidden" name="admin_id" id="admin_id__" value="">
+                                    <input type="submit" value="确认" id="btn5">
+                                    <input type="submit" value="重置" id="btn6">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="pop_footer1">
+
+                    </div>
+                </div>
+                <div class="mask1"></div>
+            </div>
         </ul>
     </div>
 </div>
@@ -84,7 +119,6 @@
             <th>
                 <button type="button" class="editbtn">编辑</button>
             </th>
-            {#            <input type="hidden" id="admin_id_" value="{{ admin_.admin_id }}">#}
         </tr>
 
     {% endfor %}
@@ -112,9 +146,9 @@
 
                         <p class="pop_text_btn1">
 
-                                <input type="hidden" name="admin_id" id="admin_id_" value="">
-                                <input type="submit" value="保存" id="btn3">
-                                <input type="reset" value="删除" id="btn4">
+                            <input type="hidden" name="admin_id" id="admin_id_" value="">
+                            <input type="submit" value="保存" id="btn3">
+                            <input type="reset" value="删除" id="btn4">
 
                         </p>
                     </form>

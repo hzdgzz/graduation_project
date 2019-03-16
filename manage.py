@@ -3,6 +3,7 @@ from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
 # 从info目录下导入db，app
 from person import create_app,db,models
+from person.models import SuperAdmin
 # from person.models import User
 app = create_app('development')
 
@@ -25,8 +26,23 @@ python manage.py db upgrade
 迁移脚本不成功：在manage.py文件中导入models
 
 """
+# python manage.py create_supperuser -n 用户名 -p 密码
+# python manage.py create_supperuser -n admin -p 123456
+@manage.option('-n', '-superadmin_id', dest='superadmin_id')
+@manage.option('-p', '-superadmin_psw', dest='superadmin_psw')
+def create_supperuser(superadmin_id, superadmin_psw):
+    if not all([superadmin_id, superadmin_psw]):
+        print('参数缺失')
+    superadmin = SuperAdmin()
+    superadmin.superadmin_id = superadmin_id
+    superadmin.superadmin_psw =superadmin_psw
+    try:
+        db.session.add(superadmin)
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        print(e)
+    print('超级管理员创建成功')
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    print(app.url_map)
     manage.run()
