@@ -238,7 +238,24 @@ $(function () {
     })
     // 监控退出登录按钮
     exit.click(function () {
-        // 发送ajax请求
-        alert('exit')
+        // 发起ajax请求
+        $.ajax({
+            url: '/exit_superadminpsw',
+            type: 'post',
+            contentType: 'application/json',
+            headers: {
+                "X-CSRFToken": getCookie('csrf_token')
+            },
+            success: function (data) {
+                if (data.errno == 0) {
+                    //刷新当前页面
+                    window.location.href='/'
+                    alert('退出登录成功!')
+
+                } else {
+                    alert('退出登录失败!')
+                }
+            }
+        })
     })
 })

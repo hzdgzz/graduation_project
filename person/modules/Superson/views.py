@@ -162,9 +162,31 @@ def editor_superadminpsw():
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
+# 退出超级管理员登录
+@Superson.route("/exit_superadminpsw", methods=['POST'])
+def exit_superadminpsw():
+    session['superadmin_id'] = ''
+    session['superadmin_psw'] = ''
+    print(session)
+    return jsonify(errno='0', errmsg='OK')
+
 # 显示管理员列表数据
 @Superson.route("/Supersons.html")
 def Supersons():
+    superadmin_id = session['superadmin_id']
+    superadmin_psw = session['superadmin_psw']
+    # 检查参数的完整性
+    if not all([superadmin_id, superadmin_psw]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        superadmin_id = int(superadmin_id)
+        superadmin_psw = int(superadmin_psw)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    if not superadmin_id and not superadmin_psw:
+        return jsonify(errno=RET.PARAMERR, errmsg='无状态保持')
     # 从数据库获取数据
     try:
         admins = Admin.query.all()
