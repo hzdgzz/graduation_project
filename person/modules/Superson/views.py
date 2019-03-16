@@ -12,6 +12,7 @@ from person.models import Admin
 def index():
     return render_template('index.html')
 
+
 # 添加管理员数据
 @Superson.route("/add_admin", methods=['POST'])
 def add_admin():
@@ -42,28 +43,36 @@ def add_admin():
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
+
 # 修改管理员数据
 @Superson.route("/editor_admin", methods=['POST'])
 def editor_admin():
     # 获取参数
+    admin_id = request.json.get('admin_id')
     editor_admin_id = request.json.get('editor_admin_id')
     editor_admin_psw = request.json.get('editor_admin_psw')
     # 检查参数的完整性
-    if not all([editor_admin_id, editor_admin_psw]):
+    if not all([admin_id, editor_admin_id, editor_admin_psw]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
-        admin_id = int(editor_admin_id)
+        editor_admin_id = int(editor_admin_id)
+        admin_id = int(admin_id)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
-    # 构建模型类对象
+
+    # 检查用户输入id和列表id是否一致
+    if admin_id != editor_admin_id:
+        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要修改的管理员id错误')
+
+        # 构建模型类对象
     try:
-        admin = Admin.query.filter_by(admin_id=admin_id).first()
+        admin = Admin.query.filter_by(admin_id=editor_admin_id).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询管理员错误')
-    admin.admin_psw= editor_admin_psw
+    admin.admin_psw = editor_admin_psw
     # 存入数据库
     try:
         db.session.add(admin)
@@ -74,6 +83,7 @@ def editor_admin():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
+
 
 # 显示管理员列表数据
 @Superson.route("/Supersons.html")

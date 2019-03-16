@@ -26,6 +26,7 @@ $(function () {
     // 监控编辑按钮
     editbtn.click(function () {
         editform.show()
+        $('.pop_main1 #admin_id_').val($(this).parent().prev().prev().text());
     })
 
 
@@ -104,9 +105,11 @@ $(function () {
         if ($(this).prop('type') == 'submit') {
             var editor_admin_id = $("#editor_admin_id").val()
             var editor_admin_psw = $("#editor_admin_psw").val()
+            var admin_id = $("#admin_id_").val()
 
-            // 发起新增请求
+            // 发起编辑请求
             var params = {
+                'admin_id': admin_id,
                 'editor_admin_id': editor_admin_id,
                 'editor_admin_psw': editor_admin_psw
             };
@@ -126,7 +129,7 @@ $(function () {
                         alert('修改管理员数据成功!')
 
                     } else {
-                        alert('修改管理员数据失败!')
+                        alert('请检查账号密码是否都填写或管理员账号错误!')
                     }
                 }
             })

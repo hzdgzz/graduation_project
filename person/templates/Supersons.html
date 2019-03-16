@@ -84,6 +84,7 @@
             <th>
                 <button type="button" class="editbtn">编辑</button>
             </th>
+            {#            <input type="hidden" id="admin_id_" value="{{ admin_.admin_id }}">#}
         </tr>
 
     {% endfor %}
@@ -101,7 +102,7 @@
                     <form method="POST">
                         <p>
                             <label>账号修改:</label>
-                            <input type="text" name="userid" id="editor_admin_id">
+                            <input type="text" name="userid" id="editor_admin_id" placeholder="请输入要修改的管理员账号">
                         </p>
 
                         <p>
@@ -110,8 +111,11 @@
                         </p>
 
                         <p class="pop_text_btn1">
-                            <input type="submit" value="保存" id="btn3">
-                            <input type="reset" value="删除" id="btn4">
+
+                                <input type="hidden" name="admin_id" id="admin_id_" value="">
+                                <input type="submit" value="保存" id="btn3">
+                                <input type="reset" value="删除" id="btn4">
+
                         </p>
                     </form>
                 </div>
