@@ -65,8 +65,7 @@ def editor_admin():
     # 检查用户输入id和列表id是否一致
     if admin_id != editor_admin_id:
         return jsonify(errno=RET.DATAERR, errmsg='请输入正确要修改的管理员id错误')
-
-        # 构建模型类对象
+    # 构建模型类对象
     try:
         admin = Admin.query.filter_by(admin_id=editor_admin_id).first()
     except Exception as e:
@@ -84,6 +83,43 @@ def editor_admin():
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
+# 删除管理员数据
+@Superson.route("/delete_admin", methods=['DELETE'])
+def delete_admin():
+    # 获取参数
+    admin_id = request.json.get('admin_id')
+    editor_admin_id = request.json.get('editor_admin_id')
+    # 检查参数的完整性
+    if not all([admin_id, editor_admin_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        editor_admin_id = int(editor_admin_id)
+        admin_id = int(admin_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+    # 检查用户输入id和列表id是否一致
+    if admin_id != editor_admin_id:
+        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的管理员id错误')
+    # 构建模型类对象
+    try:
+        admin = Admin.query.filter_by(admin_id=editor_admin_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询管理员错误')
+
+    # 存入数据库
+    try:
+        db.session.delete(admin)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='删除数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
 
 # 显示管理员列表数据
 @Superson.route("/Supersons.html")

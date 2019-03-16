@@ -34,6 +34,7 @@ $(function () {
     // 监听灰色背景的点击
     $(".pop_main").click(function () {
         $(".pop_main").hide();// 隐藏页面
+        document.getElementById("supersonsform").reset();
     })
 
     // 阻止白色内容展示部分事件冒泡
@@ -44,12 +45,15 @@ $(function () {
     // 监听白色右上角,x按钮的点击
     $("#shutoff").click(function () {
         $(".pop_main").hide();// 隐藏页面
+        document.getElementById("supersonsform").reset();
     })
 
     // 编辑弹框操作
     // 监听灰色背景的点击
     $(".pop_main1").click(function () {
         $(".pop_main1").hide();// 隐藏页面
+        document.getElementById("editorsupersonsform").reset();
+
     })
 
     // 阻止白色内容展示部分事件冒泡
@@ -60,6 +64,7 @@ $(function () {
     // 监听白色右上角,x按钮的点击
     $("#shutoff1").click(function () {
         $(".pop_main1").hide();// 隐藏页面
+        document.getElementById("editorsupersonsform").reset();
     })
 
     // 监听增加弹框的按钮
@@ -135,7 +140,36 @@ $(function () {
             })
         } else if ($(this).prop('type') == 'reset') {
             // 发送ajax请求
-            document.getElementById("supersonsform").reset();
+
+            var editor_admin_id = $("#editor_admin_id").val()
+            var admin_id = $("#admin_id_").val()
+
+            // 发起编辑请求
+            var params = {
+                'admin_id': admin_id,
+                'editor_admin_id': editor_admin_id,
+            };
+            // 发起ajax请求
+            $.ajax({
+                url: '/delete_admin',
+                type: 'delete',
+                data: JSON.stringify(params),
+                contentType: 'application/json',
+                headers: {
+                    "X-CSRFToken": getCookie('csrf_token')
+                },
+                success: function (data) {
+                    if (data.errno == 0) {
+                        //刷新当前页面
+                        window.location.reload()
+                        alert('删除管理员数据成功!')
+
+                    } else {
+                        alert('删除管理员数据失败,请检查管理员账号填写是否正确!')
+                    }
+                }
+            })
+
         }
     })
 
