@@ -1,10 +1,44 @@
 from flask import current_app
 from flask import redirect
 from flask import render_template, jsonify
+from flask import request
 from flask import session
+
+from person import db
 from person.models import Department
 from person.utils.response_code import RET
 from . import Departments
+
+# 添加部门数据
+@Departments.route("/add_department", methods=['POST'])
+def add_department():
+    # 获取参数
+    department_id = request.json.get('department_id')
+    department_name = request.json.get('department_name')
+    # 检查参数的完整性
+    if not all([department_id, department_name]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        admin_id = int(department_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    # 构建模型类对象
+    department = Department()
+    department.depart_id = department_id
+    department.depart_name = department_name
+    # 存入数据库
+    try:
+        db.session.add(department)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
+
 # 退出登录
 @Departments.route("/exit_department", methods=['POST'])
 def exit_department():
