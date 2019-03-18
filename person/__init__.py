@@ -59,8 +59,8 @@ def create_app(config_name):
     from person.modules.AdminLogin import AdminLogin
     app.register_blueprint(AdminLogin)
 
-    from person.modules.Department import Department
-    app.register_blueprint(Department)
+    from person.modules.Department import Departments
+    app.register_blueprint(Departments)
 
     from person.modules.Resource import Resource
     app.register_blueprint(Resource)

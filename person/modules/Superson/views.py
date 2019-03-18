@@ -183,7 +183,6 @@ def Supersons():
         superadmin_psw = session['superadmin_psw']
     except Exception as e:
         current_app.logger.error(e)
-        print(session)
         return render_template('index.html')
 
     # 从数据库获取数据
