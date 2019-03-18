@@ -19,6 +19,10 @@
                 <li><a href="Admin.html">员工管理</a></li>
                 <li><a href="Rewards.html">奖惩管理</a></li>
                 <li class="active"><a href="Resource.html">招聘管理</a></li>
+                <li id="exit"><a>
+                <button type="button" id="exitbtn">退出登录</button>
+            </a></li>
+
             </ul>
         </div>
     </div>
@@ -40,50 +44,50 @@
                                         <label>编号:</label>
                                         <input type="text" name="userid">
                                     </p>
-                            
+
                                     <p>
                                         <label>姓名:</label>
                                         <input type="text" name="username">
                                     </p>
-                        
+
                                     <p>
                                         <label>年龄:</label>
                                         <input type="text" name="age">
                                     </p>
-                                    
+
                                     <p>
                                         <label>性别:</label>
                                         <input type="radio" name="sex" value="man">男
                                         <input type="radio" name="sex" value="woman">女
-                                    </p>                       
-                        
+                                    </p>
+
                                     <p>
                                         <label>电话:</label>
                                         <input type="text" name="tel">
                                     </p>
-                        
+
                                     <p>
                                         <label>邮箱:</label>
                                         <input type="text" name="email">
                                     </p>
-                            
+
                                     <p class="pop_text_btn">
                                         <input type="submit" value="保存" id="btn1">
                                         <input type="reset" value="重置" id="btn2">
                                     </p>
-                            
+
                                 </form>
                         </div>
                     </div>
                     <div class="pop_footer">
-        
+
                     </div>
                 </div>
                 <div class="mask"></div>
             </div>
-        
+
         <!-- 功能弹窗 -->
-        
+
     </div>
     <!-- 招聘管理 -->
     <table class="personal_list">
@@ -91,10 +95,10 @@
             <th>编号</th>
             <th>姓名</th>
             <th>年龄</th>
-            <th>性别</th>      
-            <th>电话</th>       
-            <th>邮箱</th>       
-            <th>编辑</th>       
+            <th>性别</th>
+            <th>电话</th>
+            <th>邮箱</th>
+            <th>编辑</th>
         </tr>
         <!-- 招聘列表数据 -->
         <tr>
@@ -120,56 +124,56 @@
                                             <label>编号:</label>
                                             <input type="text" name="userid">
                                         </p>
-                                
+
                                         <p>
                                             <label>姓名:</label>
                                             <input type="text" name="username">
                                         </p>
-                            
+
                                         <p>
                                             <label>年龄:</label>
                                             <input type="text" name="age">
                                         </p>
-                                        
+
                                         <p>
                                             <label>性别:</label>
                                             <input type="radio" name="sex" value="man">男
                                             <input type="radio" name="sex" value="woman">女
                                         </p>
-                            
+
                                         <p>
                                             <label>电话:</label>
                                             <input type="text" name="tel">
                                         </p>
-                            
+
                                         <p>
                                             <label>邮箱:</label>
                                             <input type="text" name="email">
                                         </p>
-                                
+
                                         <p class="pop_text_btn1">
                                             <input type="submit" value="保存" id="btn3">
                                             <input type="reset" value="删除" id="btn4">
                                         </p>
-                                
+
                                     </form>
                             </div>
                         </div>
                         <div class="pop_footer1">
-            
+
                         </div>
                     </div>
                     <div class="mask1"></div>
-                </div>           
+                </div>
         </tr>
         <tr>
             <th>002</th>
             <th>小花</th>
             <th>18</th>
-            <th>女</th>      
-            <th>17769269542</th>       
-            <th>6549237591@qq.com</th>       
-            <th><button type="button" id="editbtn" onclick="delAll()">编辑</button></th>        
+            <th>女</th>
+            <th>17769269542</th>
+            <th>6549237591@qq.com</th>
+            <th><button type="button" id="editbtn" onclick="delAll()">编辑</button></th>
         </tr>
     </table>
 </body>

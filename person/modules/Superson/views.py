@@ -181,10 +181,6 @@ def Supersons():
         # 获取用户状态保持信息
         superadmin_id = session['superadmin_id']
         superadmin_psw = session['superadmin_psw']
-        # # 检查参数的完整性
-        # if not all([superadmin_id, superadmin_psw]):
-        #     return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
-
     except Exception as e:
         current_app.logger.error(e)
         print(session)

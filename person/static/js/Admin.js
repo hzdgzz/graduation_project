@@ -1,3 +1,8 @@
+// 浏览器写入cookie
+function getCookie(name) {
+    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+    return r ? r[1] : undefined;
+}
 $(function(){
     // 获取元素登录或注册
     var addbtn = $('#addbtn')
@@ -6,7 +11,7 @@ $(function(){
     var editform = $('.pop_main1')
     var pop_text_btn = $('.pop_text_btn')
     var pop_text_btn1 = $('.pop_text_btn1')
-
+    var exit = $('#exit')
     // 表单默认隐藏
     addform.hide()
     editform.hide()
@@ -72,5 +77,27 @@ $(function(){
             // 发送ajax请求
             alert('b')
         }
+    })
+    // 监控退出登录按钮
+    exit.click(function () {
+        // 发起ajax请求
+        $.ajax({
+            url: '/exit_admin',
+            type: 'post',
+            contentType: 'application/json',
+            headers: {
+                "X-CSRFToken": getCookie('csrf_token')
+            },
+            success: function (data) {
+                if (data.errno == 0) {
+                    //刷新当前页面
+                    window.location.href='/'
+                    alert('退出登录成功!')
+
+                } else {
+                    alert('退出登录失败!')
+                }
+            }
+        })
     })
 })

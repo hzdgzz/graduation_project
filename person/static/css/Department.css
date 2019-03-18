@@ -40,7 +40,7 @@ body{
 }
 
 .main_menu li{
-    width:185px;
+    width:150px;
     height:50px;
     float: left;
     text-align: center;    
@@ -384,4 +384,17 @@ body{
 }
 #btn4{
     background: lightgreen;
+}
+/* 退出登录按钮 */
+#exitbtn{
+    width: 80px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    outline: none;
+}
+
+#exitbtn {
+    background: lightcoral;
 }
