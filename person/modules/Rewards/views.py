@@ -2,7 +2,8 @@ from flask import current_app
 from flask import redirect
 from flask import render_template, jsonify
 from flask import session
-
+from person.models import RewardsPunishment, User
+from person.utils.response_code import RET
 from . import Rewards
 
 # 退出登录
@@ -22,4 +23,25 @@ def Rewards():
     except Exception as e:
         current_app.logger.error(e)
         return redirect('/')
-    return render_template('Rewards.html')
+    # 从数据库获取数据
+    try:
+        rewardspunishments = RewardsPunishment.query.all()
+
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询管理员数据失败')
+    try:
+        users = User.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询管理员数据失败')
+
+    # 判断查询结果
+    if not rewardspunishments:
+        return jsonify(errno=RET.NODATA, errmsg='无管理员数据')
+    # 定义列表，存储数据
+    data = {
+        'rewardspunishments':rewardspunishments,
+        'users':users
+    }
+    return render_template('Rewards.html',data = data)
