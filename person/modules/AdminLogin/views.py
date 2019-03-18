@@ -2,15 +2,15 @@ from . import AdminLogin
 from flask import current_app
 from flask import render_template, jsonify
 from flask import request
-from flask import session, redirect, url_for
+from flask import session, redirect
 
-from person.models import SuperAdmin, Admin
+from person.models import Admin
 from person.utils.response_code import RET
 
 
 # 超级管理员登录界面
 
-@AdminLogin.route("/login", methods=['POST'])
+@AdminLogin.route("/adminlogin", methods=['POST'])
 def login():
     # 获取参数
     admin_id = request.json.get('admin_id')
@@ -21,10 +21,11 @@ def login():
         current_app.logger.error(e)
         return jsonify(errno=RET.DATAERR, errmsg='查询用户账号失败')
     try:
-        admin_psw = Admin.query.filter_by(admin_psw=admin_psw).first()
+        admin_psw = Admin.query.filter_by(admin_psw=admin_psw).first().admin_psw
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DATAERR, errmsg='查询用户密码失败')
+
     if admin.admin_psw != admin_psw:
         return jsonify(errno=RET.PWDERR, errmsg='用户名和密码不匹配')
     if not admin or not admin_psw:

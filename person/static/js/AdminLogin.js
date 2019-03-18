@@ -21,7 +21,7 @@ $(function(){
         };
         // 发起ajax请求
         $.ajax({
-            url:'/login',
+            url:'/adminlogin',
             type:'post',
             data:JSON.stringify(params),
             contentType:'application/json',

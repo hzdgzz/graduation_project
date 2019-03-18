@@ -11,7 +11,7 @@ from . import SuperadminLogin
 from person.modules.Superson.views import Supersons
 
 
-@SuperadminLogin.route("/login", methods=['POST'])
+@SuperadminLogin.route("/superadminlogin", methods=['POST'])
 def login():
     # 获取参数
     superadmin_id = request.json.get('superadmin_id')
@@ -22,10 +22,11 @@ def login():
         current_app.logger.error(e)
         return jsonify(errno=RET.DATAERR, errmsg='查询用户账号失败')
     try:
-        superadmin_psw = SuperAdmin.query.filter_by(superadmin_psw=superadmin_password).first()
+        superadmin_psw = SuperAdmin.query.filter_by(superadmin_psw=superadmin_password).first().superadmin_psw
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DATAERR, errmsg='查询用户密码失败')
+    print(superadmin_psw)
     if superadmin.superadmin_psw != superadmin_psw:
         return jsonify(errno=RET.PWDERR, errmsg='用户名和密码不匹配')
     if not superadmin or not superadmin_psw:
