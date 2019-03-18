@@ -3,16 +3,16 @@ import re
 from flask import current_app
 from flask import render_template, jsonify
 from flask import request
-from flask import session,redirect,url_for
+from flask import session, redirect, url_for
 
 from person.models import SuperAdmin
 from person.utils.response_code import RET
 from . import SuperadminLogin
 from person.modules.Superson.views import Supersons
 
+
 @SuperadminLogin.route("/login", methods=['POST'])
 def login():
-
     # 获取参数
     superadmin_id = request.json.get('superadmin_id')
     superadmin_password = request.json.get('superadmin_password')
@@ -26,6 +26,8 @@ def login():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DATAERR, errmsg='查询用户密码失败')
+    if superadmin.superadmin_psw != superadmin_psw:
+        return jsonify(errno=RET.PWDERR, errmsg='用户名和密码不匹配')
     if not superadmin or not superadmin_psw:
         return jsonify(errno=RET.PWDERR, errmsg='用户名或密码错误')
     # 实现状态保持
@@ -49,7 +51,3 @@ def SuperadminLogin():
         current_app.logger.error(e)
         return render_template('SuperadminLogin.html')
     return redirect('/Supersons.html')
-
-
-
-

@@ -10,24 +10,25 @@
     <script src="../static/js/AdminLogin.js"></script>
 </head>
 <body>
-    <div id="box">
-        <!-- 管理员登录表单 -->
-        <div id="formbox1">
+<div id="box">
+    <!-- 管理员登录表单 -->
+    <div id="formbox1">
         <!-- 管理员登录界面 -->
         <form action="Admin.html" id="adminloginform">
             <h1>河北圣顺环保科技人力资源管理系统</h1>
-            <p id="adminuser">
-                <label  >用户名：</label>
-                <input type="text" name ="user" placeholder="请输入管理员账号">
+            <p class="adminuser">
+                <label>用户名：</label>
+                <input type="text" id="adminuser" name="user" placeholder="请输入管理员账号">
             </p>
-            <p id="adminpsw">
+            <p class="adminpsw">
                 <label>　密码：</label>
-                <input type="password" name = "password" placeholder="请输入管理员密码">
+                <input type="password" id="adminpsw" name="password" placeholder="请输入管理员密码">
             </p>
             <p class="adminbtn">
-                <input type="submit" name = "submit" value="登录" id="adminloginbtn" >
+                <input type="submit" name="submit" value="登录" id="adminloginbtn">
             </p>
-        </div>
-    </div>    
+        </form>
+    </div>
+</div>
 </body>
 </html>
