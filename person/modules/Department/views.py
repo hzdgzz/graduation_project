@@ -39,6 +39,82 @@ def add_department():
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
+# 编辑部门数据
+@Departments.route("/editor_department", methods=['PUT'])
+def editor_department():
+    # 获取参数
+    admin_id = request.json.get('admin_id')
+    editor_department_id = request.json.get('editor_department_id')
+    editor_department_name = request.json.get('editor_department_name')
+    # 检查参数的完整性
+    if not all([admin_id, editor_department_id, editor_department_name]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        editor_department_id = int(editor_department_id)
+        admin_id = int(admin_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+    # 检查用户输入id和列表id是否一致
+    if admin_id != editor_department_id:
+        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要修改的管理员id错误')
+    # 构建模型类对象
+    try:
+        department = Department.query.filter_by(depart_id=editor_department_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询管理员错误')
+    department.depart_name = editor_department_name
+    # 存入数据库
+    try:
+        db.session.add(department)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
+
+# 删除部门数据
+@Departments.route("/delete_department", methods=['DELETE'])
+def delete_department():
+    # 获取参数
+    admin_id = request.json.get('admin_id')
+    editor_department_id = request.json.get('editor_department_id')
+    # 检查参数的完整性
+    if not all([admin_id, editor_department_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        editor_department_id = int(editor_department_id)
+        admin_id = int(admin_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+    # 检查用户输入id和列表id是否一致
+    if admin_id != editor_department_id:
+        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的部门id')
+    # 构建模型类对象
+    try:
+        department = Department.query.filter_by(depart_id=editor_department_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询部门数据错误')
+
+    # 存入数据库
+    try:
+        db.session.delete(department)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='删除部门数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
 # 退出登录
 @Departments.route("/exit_department", methods=['POST'])
 def exit_department():

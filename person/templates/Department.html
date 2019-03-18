@@ -38,7 +38,7 @@
             <div class="pop_detail">
                 <!-- 新增部门表单 -->
                 <div class="pop_text">
-                    <form action="http://www.baidu.com" method="POST">
+                    <form  method="POST" id="adddepartmentform">
                         <p>
                             <label>部门ID:</label>
                             <input type="text" name="userid" id="department_id">
@@ -80,7 +80,7 @@
             <th>{{ department.depart_name }}</th>
 
             <th>
-                <button type="button" id="editbtn">编辑</button>
+                <button type="button" class="editbtn">编辑</button>
             </th>
         </tr>
 
@@ -97,16 +97,17 @@
                 <div class="pop_text1">
                     <form action="http://www.baidu.com" method="POST">
                         <p>
-                            <label>ID:</label>
-                            <input type="text" name="userid">
+                            <label>部门ID:</label>
+                            <input type="text" name="userid" id="editor_department_id">
                         </p>
 
                         <p>
                             <label>部门名称:</label>
-                            <input type="text" name="username">
+                            <input type="text" name="username" id="editor_department_name">
                         </p>
 
                         <p class="pop_text_btn1">
+                            <input type="hidden" name="admin_id" id="admin_id__" value="">
                             <input type="submit" value="保存" id="btn3">
                             <input type="reset" value="删除部门" id="btn4">
                         </p>
