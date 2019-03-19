@@ -30,18 +30,12 @@ def Rewards():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询管理员数据失败')
-    try:
-        users = User.query.all()
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='查询管理员数据失败')
 
     # 判断查询结果
     if not rewardspunishments:
         return jsonify(errno=RET.NODATA, errmsg='无管理员数据')
     # 定义列表，存储数据
-    data = {
-        'rewardspunishments':rewardspunishments,
-        'users':users
-    }
+    data = []
+    for rewardspunishment in rewardspunishments:
+        data.append(rewardspunishment.to_dict())
     return render_template('Rewards.html',data = data)

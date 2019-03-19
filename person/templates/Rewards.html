@@ -93,22 +93,18 @@
         <th>编辑</th>
     </tr>
     <!-- 奖励列表数据 -->
-    {% for user in data.users %}
-        <tr>
-            <th>{{ user.user_id }}</th>
-            <th>{{ user.user_name }}</th>
-            <th>{{ user.user_mobile }}</th>
-        </tr>
-    {% endfor %}
-    {% for rewardspunishment in data.rewardspunishments %}
-        <tr>
-            <th>{{ rewardspunishment.reward }}</th>
-            <th>{{ rewardspunishment.punishment }}</th>
-            <th>
-                <button type="button" id="editbtn">编辑</button>
-            </th>
-        </tr>
-    {% endfor %}
+        {% for rewardspunishment in data %}
+            <tr>
+                <th>{{ rewardspunishment.user_id }}</th>
+                <th>{{ rewardspunishment.user_name }}</th>
+                <th>{{ rewardspunishment.user_mobile }}</th>
+                <th>{{ rewardspunishment.reward }}</th>
+                <th>{{ rewardspunishment.punishment }}</th>
+                <th>
+                    <button type="button" id="editbtn">编辑</button>
+                </th>
+            </tr>
+        {% endfor %}
     <!-- 功能弹窗 -->
     <div class="pop_main1" id="pop">
         <div class="pop_con1">

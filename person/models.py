@@ -75,6 +75,16 @@ class RewardsPunishment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'),primary_key=True)  # 员工编号
     reward = db.Column(db.Integer)  # 员工奖励
     punishment = db.Column(db.Integer)  # 员工惩罚
+    # 将奖惩信息转化为字典数据
+    def to_dict(self):
+        rewardspunishment_dict = {
+            'user_id':self.user_id,
+            'user_name':self.user.user_name,
+            'user_mobile':self.user.user_mobile,
+            'reward':self.reward,
+            'punishment':self.punishment
+        }
+        return rewardspunishment_dict
 
 
 

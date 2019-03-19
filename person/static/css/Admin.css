@@ -43,7 +43,7 @@ body{
     width:150px;
     height:50px;
     float: left;
-    text-align: center;    
+    text-align: center;
 }
 
 .main_menu .active{
@@ -59,7 +59,7 @@ body{
     line-height:50px;
     color:#979695;
     text-decoration: none;
-    font-size:14px; 
+    font-size:14px;
 }
 
 /* 员工列表 */
@@ -116,8 +116,8 @@ body{
     width:1110px;
     margin:20px auto;
     border-top:px solid #e0e0e0;
-    border-collapse:collapse;  
-    
+    border-collapse:collapse;
+
 }
 #addbtn{
     width: 80px;
@@ -135,7 +135,7 @@ body{
 .editbtn{
     width:1110px;
     margin:20px auto;
-    border-top:px solid #e0e0e0;
+    border-top:0px solid #e0e0e0;
     border-collapse:collapse;
 
 }
