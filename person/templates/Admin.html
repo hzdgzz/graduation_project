@@ -41,17 +41,17 @@
                     <form method="POST">
                         <p>
                             <label>ID:</label>
-                            <input type="text" name="userid">
+                            <input type="text" name="userid" id="admin_id">
                         </p>
 
                         <p>
                             <label>姓名:</label>
-                            <input type="text" name="username">
+                            <input type="text" name="username" id="admin_name">
                         </p>
 
                         <p>
                             <label>年龄:</label>
-                            <input type="text" name="age">
+                            <input type="text" name="age" id="admin_age">
                         </p>
 
                         <p>
@@ -63,19 +63,22 @@
                         <p>
                             <label>部门:</label>
                             <select name="department" id="">
-                                <option value="yanfa">研发部</option>
-                                <option value="caiwu">财务部</option>
+                                {% for department in data.departments %}
+                                    <option>
+                                        {{ department.depart_name }}
+                                    </option>
+                                {% endfor %}
                             </select>
                         </p>
 
                         <p>
                             <label>电话:</label>
-                            <input type="text" name="tel">
+                            <input type="text" name="tel" id="admin_tel">
                         </p>
 
                         <p>
                             <label>邮箱:</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" id="admin_email">
                         </p>
 
                         <p class="pop_text_btn">
@@ -116,7 +119,7 @@
             <th>{{ user.user_name }}</th>
             <th>{{ user.user_age }}</th>
             <th>{{ user.user_gender }}</th>
-            <th>{{ user.depart_id }}</th>
+            <th>{{ user.depart_name }}</th>
             <th>{{ user.user_mobile }}</th>
             <th>{{ user.user_email }}</th>
             <th>

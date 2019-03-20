@@ -29,6 +29,19 @@ class User(db.Model):
     user_email = db.Column(db.String(11), unique=True, nullable=False)  # 员工邮箱
     rewardspunishment = db.relationship("RewardsPunishment", backref='user', lazy="dynamic")
 
+    # 将员工信息转化为字典数据
+    def to_dict(self):
+        user_dict = {
+            'user_id': self.user_id,
+            'user_name': self.user_name,
+            'user_age': self.user_age,
+            'user_gender':self.user_gender,
+            'depart_id': self.department.depart_id,
+            'user_mobile': self.user_mobile,
+            'user_email': self.user_email,
+            'depart_name':self.department.depart_name
+        }
+        return user_dict
 
 
 class Recruiter(db.Model):
