@@ -49,7 +49,7 @@ $(function () {
 
     // 阻止白色内容展示部分事件冒泡
     $(".pop_con").click(function (event) {
-        return false;
+        event.stopPropagation();
     })
 
     // 监听白色右上角,x按钮的点击
@@ -68,7 +68,7 @@ $(function () {
 
     // 阻止白色内容展示部分事件冒泡
     $(".pop_con1").click(function (event) {
-        return false;
+        return stopPropagation();
     })
 
     // 监听白色右上角,x按钮的点击
@@ -87,7 +87,7 @@ $(function () {
 
     // 阻止白色内容展示部分事件冒泡
     $(".pop_con2").click(function (event) {
-        return false;
+        event.stopPropagation();
     })
 
     // 监听白色右上角,x按钮的点击

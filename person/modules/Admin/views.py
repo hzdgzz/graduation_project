@@ -1,13 +1,68 @@
+import re
+
 from flask import current_app, jsonify
 from flask import redirect
 from flask import render_template
+from flask import request
 from flask import session
+
+from person import db
 from person.models import User,Department
 
 from person.utils.response_code import RET
 from . import Admin
 
-
+# 添加员工数据
+@Admin.route("/add_admindepartment", methods=['POST'])
+def add_admindepartment():
+    # 获取参数
+    auser_id = request.json.get('auser_id')
+    auser_name = request.json.get('auser_name')
+    auser_age = request.json.get('auser_age')
+    auser_gender = request.json.get('auser_gender')
+    auser_department = request.json.get('auser_department')
+    auser_tel = request.json.get('auser_tel')
+    auser_email = request.json.get('auser_email')
+    # 检查参数的完整性
+    if not all([ auser_id,auser_name,auser_age,auser_gender,auser_department,auser_tel,auser_email]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        auser_id = int(auser_id)
+        auser_age = int(auser_age)
+        auser_department = int(auser_department)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    # 检查性别
+    if auser_gender not in ['MAN', 'WOMAN']:
+        return jsonify(errno=RET.PARAMERR, errmsg='性别参数错误')
+    # 检查手机号
+    if not re.match(r'1[3456789]\d{9}$', auser_tel):
+        return jsonify(errno=RET.PARAMERR, errmsg='手机号格式错误')
+    # 检查邮箱格式
+    if not re.match(r'[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$', auser_email):
+        return jsonify(errno=RET.PARAMERR, errmsg='邮箱格式错误')
+    # 构建模型类对象
+    user = User()
+    user.user_id = auser_id
+    user.user_name = auser_name
+    user.user_age = auser_age
+    user.user_gender = auser_gender
+    user.user_mobile = auser_tel
+    user.user_email = auser_email
+    user.depart_id = auser_department
+    # 存入数据库
+    try:
+        db.session.add(user)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
+# 管理员退出
 @Admin.route("/exit_admin", methods=['POST'])
 def exit_admin():
     session.pop('admin_id', None)
@@ -16,7 +71,7 @@ def exit_admin():
     return jsonify(errno='0', errmsg='OK')
 
 
-# 超级管理员登录界面
+# 管理员界面
 @Admin.route("/Admin.html")
 def Admin():
     try:

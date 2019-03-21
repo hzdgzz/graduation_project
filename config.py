@@ -4,7 +4,7 @@ from redis import StrictRedis
 class Config:
     DEBUG = None
     # 基本数据库的配置
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:mysql@localhost/test_project'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:mysql@localhost/test_project1'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # 抽取redis的主机和端口号
