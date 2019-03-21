@@ -50,6 +50,7 @@ $(function () {
     // 阻止白色内容展示部分事件冒泡
     $(".pop_con").click(function (event) {
         event.stopPropagation();
+        // return false
     })
 
     // 监听白色右上角,x按钮的点击
@@ -68,7 +69,8 @@ $(function () {
 
     // 阻止白色内容展示部分事件冒泡
     $(".pop_con1").click(function (event) {
-        return stopPropagation();
+        event.stopPropagation();
+        // return false
     })
 
     // 监听白色右上角,x按钮的点击
@@ -88,6 +90,7 @@ $(function () {
     // 阻止白色内容展示部分事件冒泡
     $(".pop_con2").click(function (event) {
         event.stopPropagation();
+        // return false
     })
 
     // 监听白色右上角,x按钮的点击
@@ -128,10 +131,12 @@ $(function () {
                     }
                 }
             })
+            return false
         } else if ($(this).prop('type') == 'reset') {
             // 发送ajax请求
             document.getElementById("supersonsform").reset();
         }
+        return false
     })
     // 监听编辑弹框的按钮
     // 事件委托,监控保存和删除
@@ -167,6 +172,7 @@ $(function () {
                     }
                 }
             })
+            return false
         } else if ($(this).prop('type') == 'reset') {
             // 发送ajax请求
 
@@ -200,6 +206,7 @@ $(function () {
             })
 
         }
+        return false
     })
 
     // 监控修改密码按钮
@@ -234,6 +241,7 @@ $(function () {
                 }
             }
         })
+        return false
 
     })
     // 监控退出登录按钮
@@ -257,5 +265,6 @@ $(function () {
                 }
             }
         })
+        return false
     })
 })

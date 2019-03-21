@@ -33,6 +33,7 @@ $(function () {
         // 阻止白色内容展示部分事件冒泡
         $(".pop_con").click(function (event) {
             event.stopPropagation();
+            // return false
         })
 
         // 监听白色右上角,x按钮的点击
@@ -49,7 +50,9 @@ $(function () {
         // 阻止白色内容展示部分事件冒泡
         $(".pop_con1").click(function (event) {
             event.stopPropagation();
+            // return false
         })
+
 
         // 监听白色右上角,x按钮的点击
         $("#shutoff1").click(function () {
@@ -95,6 +98,7 @@ $(function () {
                     success: function (data) {
                         if (data.errno == '0') {
                             //刷新当前页面
+
                             window.location.reload()
                         } else {
                             alert('新增员工数据失败!')
@@ -108,8 +112,9 @@ $(function () {
 
         // 监听编辑弹框的按钮
         // 事件委托,监控点击登录和注册
-        pop_text_btn1.delegate('input', 'click', function () {
+        pop_text_btn1.delegate('input', 'click', function (e) {
             if ($(this).prop('type') == 'submit') {
+
                 var admin_id___ = $("#admin_id___").val()
                 var euser_name = $("#euser_name").val()
                 var euser_age = $("#euser_age").val()
@@ -128,11 +133,13 @@ $(function () {
                     'euser_tel': euser_tel,
                     'euser_email': euser_email
                 };
+
                 // 发起ajax请求
                 $.ajax({
                     url: '/editor_admindepartment',
                     type: 'put',
                     data: JSON.stringify(params),
+                    async: false,
                     contentType: 'application/json',
                     headers: {
                         "X-CSRFToken": getCookie('csrf_token')
@@ -141,14 +148,17 @@ $(function () {
                         if (data.errno == 0) {
                             //刷新当前页面
                             window.location.reload()
+
                             alert('修改员工数据成功!')
+
 
                         } else {
                             alert('请检查填写是否错误!')
 
                         }
-                    }
+                    },
                 })
+                return false
             } else if ($(this).prop('type') == 'reset') {
                 // 发送ajax请求
                 alert('b')

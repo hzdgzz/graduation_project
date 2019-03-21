@@ -162,6 +162,8 @@ def editor_superadminpsw():
         current_app.logger.error(e)
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg='修改密码失败')
+    session.pop('superadmin_id', None)
+    session.pop('superadmin_psw', None)
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
