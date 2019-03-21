@@ -86,6 +86,7 @@ $(function () {
                         window.location.reload()
                     } else {
                         alert('新增部门数据失败!')
+                        window.location.reload()
                     }
                 }
             })
@@ -126,6 +127,7 @@ $(function () {
 
                     } else {
                         alert('请检查ID或名称是否都填写或部门ID错误!')
+
                     }
                 }
             })
@@ -157,6 +159,7 @@ $(function () {
 
                     } else {
                         alert('删除部门数据失败,请检查部门账号填写是否正确!')
+                        window.location.reload()
                     }
                 }
             })

@@ -62,6 +62,50 @@ def add_admindepartment():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
+# 编辑部门数据
+@Admin.route("/editor_admindepartment", methods=['PUT'])
+def editor_admindepartment():
+    # 获取参数
+    admin_id___ = request.json.get('admin_id___')
+    euser_name = request.json.get('euser_name')
+    euser_age = request.json.get('euser_age')
+    euser_gender = request.json.get('euser_gender')
+    euser_department = request.json.get('euser_department')
+    euser_tel = request.json.get('euser_tel')
+    euser_email = request.json.get('euser_email')
+    # 检查参数的完整性
+    if not all([admin_id___, euser_name, euser_age,euser_gender,euser_department,euser_tel,euser_email]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        admin_id___ = int(admin_id___)
+        euser_age = int(euser_age)
+        euser_department = int(euser_department)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    # 构建模型类对象
+    try:
+        user = User.query.filter_by(user_mobile=admin_id___).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询员工错误')
+    user.user_name = euser_name
+    user.user_age = euser_age
+    user.user_gender = euser_gender
+    user.user_mobile = euser_tel
+    user.user_email = euser_email
+    user.depart_id = euser_department
+    # 存入数据库
+    try:
+        db.session.add(user)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+        # 返回前端数据
+    return jsonify(errno=RET.OK, errmsg='OK')
 # 管理员退出
 @Admin.route("/exit_admin", methods=['POST'])
 def exit_admin():

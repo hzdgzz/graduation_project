@@ -6,7 +6,7 @@ function getCookie(name) {
 $(function () {
         // 获取元素登录或注册
         var addbtn = $('#addbtn')
-        var editbtn = $('#editbtn')
+        var editbtn = $('.editbtn')
         var addform = $('.pop_main')
         var editform = $('.pop_main1')
         var pop_text_btn = $('.pop_text_btn')
@@ -22,6 +22,7 @@ $(function () {
         // 监控编辑按钮
         editbtn.click(function () {
             editform.show()
+            $('.pop_main1 #admin_id___').val($(this).parent().prev().prev().text());
         })
         // 增加弹框操作
         // 监听灰色背景的点击
@@ -64,7 +65,7 @@ $(function () {
                 // 发送ajax请求
                 // e.preventDefault();//阻止默认的表单提交
 
-                var auser_id = $("#auser_id").val()
+                var admin_id = $("#admin_id").val()
                 var auser_name = $("#auser_name").val()
                 var auser_age = $("#auser_age").val()
                 var auser_gender = $("#auser_gender input:checked").val()
@@ -74,7 +75,7 @@ $(function () {
 
                 // 发起新增请求
                 var params = {
-                    'auser_id': auser_id,
+                    'admin_id': admin_id,
                     'auser_name': auser_name,
                     'auser_age': auser_age,
                     'auser_gender': auser_gender,
@@ -109,8 +110,45 @@ $(function () {
         // 事件委托,监控点击登录和注册
         pop_text_btn1.delegate('input', 'click', function () {
             if ($(this).prop('type') == 'submit') {
-                // 发送ajax请求
-                alert('f')
+                var admin_id___ = $("#admin_id___").val()
+                var euser_name = $("#euser_name").val()
+                var euser_age = $("#euser_age").val()
+                var euser_gender = $("#euser_gender input:checked").val()
+                var euser_department = $("#euser_department").val()
+                var euser_tel = $("#euser_tel").val()
+                var euser_email = $("#euser_email").val()
+
+                // 发起编辑请求
+                var params = {
+                    'admin_id___': admin_id___,
+                    'euser_name': euser_name,
+                    'euser_age': euser_age,
+                    'euser_gender': euser_gender,
+                    'euser_department': euser_department,
+                    'euser_tel': euser_tel,
+                    'euser_email': euser_email
+                };
+                // 发起ajax请求
+                $.ajax({
+                    url: '/editor_admindepartment',
+                    type: 'put',
+                    data: JSON.stringify(params),
+                    contentType: 'application/json',
+                    headers: {
+                        "X-CSRFToken": getCookie('csrf_token')
+                    },
+                    success: function (data) {
+                        if (data.errno == 0) {
+                            //刷新当前页面
+                            window.location.reload()
+                            alert('修改员工数据成功!')
+
+                        } else {
+                            alert('请检查填写是否错误!')
+
+                        }
+                    }
+                })
             } else if ($(this).prop('type') == 'reset') {
                 // 发送ajax请求
                 alert('b')

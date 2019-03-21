@@ -123,7 +123,7 @@
             <th>{{ user.user_mobile }}</th>
             <th>{{ user.user_email }}</th>
             <th>
-                <button type="button" id="editbtn">编辑</button>
+                <button type="button" class="editbtn">编辑</button>
             </th>
         </tr>
 
@@ -138,19 +138,19 @@
             <div class="pop_detail1">
                 <!-- 编辑员工表单 -->
                 <div class="pop_text1">
-                    <form action="http://www.baidu.com" method="POST">
+                    <form method="POST">
 
                         <p>
                             <label>姓名:</label>
-                            <input type="text" name="username">
+                            <input type="text" name="username" id="euser_name">
                         </p>
 
                         <p>
                             <label>年龄:</label>
-                            <input type="text" name="age">
+                            <input type="text" name="age" id="euser_age">
                         </p>
 
-                        <p>
+                        <p id="euser_gender">
                             <label>性别:</label>
                             <input type="radio" name="sex" checked value="man">男
                             <input type="radio" name="sex" value="woman">女
@@ -158,23 +158,27 @@
 
                         <p>
                             <label>部门:</label>
-                            <select name="department" id="">
-                                <option value="yanfa">研发部</option>
-                                <option value="caiwu">财务部</option>
+                            <select name="department">
+                                {% for department in data.departments %}
+                                    <option id="euser_department" value="{{ department.depart_id }}">
+                                        {{ department.depart_name }}
+                                    </option>
+                                {% endfor %}
                             </select>
                         </p>
 
                         <p>
                             <label>电话:</label>
-                            <input type="text" name="tel">
+                            <input type="text" name="tel" id="euser_tel">
                         </p>
 
                         <p>
                             <label>邮箱:</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" id="euser_email">
                         </p>
 
                         <p class="pop_text_btn1">
+                            <input type="hidden" name="admin_id___" id="admin_id___" value="">
                             <input type="submit" value="保存" id="btn3">
                             <input type="reset" value="删除" id="btn4">
                         </p>

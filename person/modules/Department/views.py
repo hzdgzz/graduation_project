@@ -76,7 +76,7 @@ def editor_department():
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
-    return jsonify(errno='0', errmsg='OK')
+    return jsonify(errno=RET.OK, errmsg='OK')
 
 # 删除部门数据
 @Departments.route("/delete_department", methods=['DELETE'])
