@@ -29,6 +29,7 @@ $(function () {
         // 监听灰色背景的点击
         $(".pop_main").click(function () {
             $(".pop_main").hide();// 隐藏页面
+            document.getElementById("add_usersfrom").reset();
         })
 
         // 阻止白色内容展示部分事件冒泡
@@ -40,12 +41,14 @@ $(function () {
         // 监听白色右上角,x按钮的点击
         $("#shutoff").click(function () {
             $(".pop_main").hide();// 隐藏页面
+            document.getElementById("add_usersfrom").reset();
         })
 
         // 编辑弹框操作
         // 监听灰色背景的点击
         $(".pop_main1").click(function () {
             $(".pop_main1").hide();// 隐藏页面
+            document.getElementById("edi_usersfrom").reset();
         })
 
         // 阻止白色内容展示部分事件冒泡
@@ -58,6 +61,7 @@ $(function () {
         // 监听白色右上角,x按钮的点击
         $("#shutoff1").click(function () {
             $(".pop_main1").hide();// 隐藏页面
+            document.getElementById("edi_usersfrom").reset();
         })
 
         // 监听增加弹框的按钮
@@ -124,14 +128,14 @@ $(function () {
                 var euser_name = $("#euser_name").val()
                 var euser_age = $("#euser_age").val()
                 var euser_gender = $("#euser_gender input:checked").val()
-                var euser_department = $("#euser_department").val()
+                var euser_department = $("#euser_department option:selected").val()
                 var euser_tel = $("#euser_tel").val()
                 var euser_email = $("#euser_email").val()
 
                 // 发起编辑请求
                 var params = {
-                    'admin_id___': userId,
-                    'euser_id':euser_id,
+                    'userId': userId,
+                    'euser_id': euser_id,
                     'euser_name': euser_name,
                     'euser_age': euser_age,
                     'euser_gender': euser_gender,
@@ -167,7 +171,36 @@ $(function () {
                 return false
             } else if ($(this).prop('type') == 'reset') {
                 // 发送ajax请求
-                alert('b')
+
+                var euser_id = $("#euser_id").val()
+
+                // 发起编辑请求
+                var params = {
+                    'userId': userId,
+                    'euser_id': euser_id,
+                };
+                // 发起ajax请求
+                $.ajax({
+                    url: '/delete_user',
+                    type: 'delete',
+                    data: JSON.stringify(params),
+                    contentType: 'application/json',
+                    headers: {
+                        "X-CSRFToken": getCookie('csrf_token')
+                    },
+                    success: function (data) {
+                        if (data.errno == 0) {
+                            //刷新当前页面
+                            window.location.reload()
+                            alert('删除员工数据成功!')
+
+                        } else {
+                            alert('删除员工数据失败!')
+                            window.location.reload()
+                        }
+                    }
+                })
+                return false
             }
         })
         // 监控退出登录按钮

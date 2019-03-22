@@ -66,7 +66,7 @@ def add_admindepartment():
 @Admin.route("/editor_admindepartment", methods=['PUT'])
 def editor_admindepartment():
     # 获取参数
-    admin_id___ = request.json.get('admin_id___')
+    userId = request.json.get('userId')
     euser_id = request.json.get('euser_id')
     euser_name = request.json.get('euser_name')
     euser_age = request.json.get('euser_age')
@@ -75,23 +75,32 @@ def editor_admindepartment():
     euser_tel = request.json.get('euser_tel')
     euser_email = request.json.get('euser_email')
     # 检查参数的完整性
-    if not all([admin_id___, euser_id,euser_name, euser_age,euser_gender,euser_department,euser_tel,euser_email]):
+    if not all([userId, euser_id,euser_name, euser_age,euser_gender,euser_department,euser_tel,euser_email]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
-        admin_id___ = int(admin_id___)
+        userId = int(userId)
         euser_id = int(euser_id)
         euser_age = int(euser_age)
         euser_department = int(euser_department)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    # 检查性别
+    if euser_gender not in ['MAN', 'WOMAN']:
+        return jsonify(errno=RET.PARAMERR, errmsg='性别参数错误')
+    # 检查手机号
+    if not re.match(r'1[3456789]\d{9}$', euser_tel):
+        return jsonify(errno=RET.PARAMERR, errmsg='手机号格式错误')
+    # 检查邮箱格式
+    if not re.match(r'[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$', euser_email):
+        return jsonify(errno=RET.PARAMERR, errmsg='邮箱格式错误')
     # 检查要删除的对象和输入的是否一致
-    if admin_id___!=euser_id:
+    if userId!=euser_id:
         return jsonify(errno=RET.DATAERR, errmsg='要删除的员工和输入的不一致错误')
     # 构建模型类对象
     try:
-        user = User.query.filter_by(user_id=admin_id___).first()
+        user = User.query.filter_by(user_id=userId).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询员工错误')
@@ -111,6 +120,42 @@ def editor_admindepartment():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno=RET.OK, errmsg='OK')
+@Admin.route("/delete_user", methods=['DELETE'])
+def delete_user():
+    # 获取参数
+    userId = request.json.get('userId')
+    euser_id = request.json.get('euser_id')
+    # 检查参数的完整性
+    if not all([userId, euser_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        userId = int(userId)
+        euser_id = int(euser_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+    # 检查用户输入id和列表id是否一致
+    if userId != euser_id:
+        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的员工id')
+    # 构建模型类对象
+    try:
+        user = User.query.filter_by(user_id=euser_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询员工数据错误')
+
+    # 存入数据库
+    try:
+        db.session.delete(user)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='删除员工数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
 # 管理员退出
 @Admin.route("/exit_admin", methods=['POST'])
 def exit_admin():

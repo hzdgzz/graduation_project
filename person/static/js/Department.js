@@ -28,6 +28,7 @@ $(function () {
     // 监听灰色背景的点击
     $(".pop_main").click(function () {
         $(".pop_main").hide();// 隐藏页面
+        document.getElementById("adddepartmentform").reset();
     })
 
     // 阻止白色内容展示部分事件冒泡
@@ -38,12 +39,14 @@ $(function () {
     // 监听白色右上角,x按钮的点击
     $("#shutoff").click(function () {
         $(".pop_main").hide();// 隐藏页面
+        document.getElementById("adddepartmentform").reset();
     })
 
     // 编辑弹框操作
     // 监听灰色背景的点击
     $(".pop_main1").click(function () {
         $(".pop_main1").hide();// 隐藏页面
+        document.getElementById("edidepartmentform").reset();
     })
 
     // 阻止白色内容展示部分事件冒泡
@@ -54,6 +57,7 @@ $(function () {
     // 监听白色右上角,x按钮的点击
     $("#shutoff1").click(function () {
         $(".pop_main1").hide();// 隐藏页面
+        document.getElementById("edidepartmentform").reset();
     })
 
     // 监听增加弹框的按钮

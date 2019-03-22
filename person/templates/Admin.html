@@ -63,7 +63,7 @@
                             <label>部门:</label>
                             <select name="department" onchange="func()" id="auser_department">
                                 {% for department in data.departments %}
-                                    <option class="auser_department" value="{{ department.depart_id }}">
+                                    <option value="{{ department.depart_id }}">
                                         {{ department.depart_name }}
                                     </option>
                                 {% endfor %}
@@ -136,7 +136,7 @@
             <div class="pop_detail1">
                 <!-- 编辑员工表单 -->
                 <div class="pop_text1">
-                    <form method="POST">
+                    <form method="POST" id="edi_usersfrom">
                         <p>
                             <label>ID:</label>
                             <input type="text" name="userid" id="euser_id">
@@ -153,15 +153,15 @@
 
                         <p id="euser_gender">
                             <label>性别:</label>
-                            <input type="radio" name="sex" checked value="man">男
-                            <input type="radio" name="sex" value="woman">女
+                            <input type="radio" name="sex" checked value="MAN">男
+                            <input type="radio" name="sex" value="WOMAN">女
                         </p>
 
                         <p>
                             <label>部门:</label>
-                            <select name="department">
+                            <select name="department" onchange="func()" id="euser_department">
                                 {% for department in data.departments %}
-                                    <option id="euser_department">
+                                    <option value="{{ department.depart_id }}">
                                         {{ department.depart_name }}
                                     </option>
                                 {% endfor %}
