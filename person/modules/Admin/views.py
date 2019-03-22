@@ -95,7 +95,7 @@ def editor_admindepartment():
     # 检查邮箱格式
     if not re.match(r'[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$', euser_email):
         return jsonify(errno=RET.PARAMERR, errmsg='邮箱格式错误')
-    # 检查要删除的对象和输入的是否一致
+    # 检查要编辑的对象和输入的是否一致
     if userId!=euser_id:
         return jsonify(errno=RET.DATAERR, errmsg='要删除的员工和输入的不一致错误')
     # 构建模型类对象

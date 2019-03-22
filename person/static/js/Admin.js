@@ -197,7 +197,7 @@ $(function () {
 
                         } else {
                             alert('删除员工数据失败!')
-                            // window.location.reload()
+                            window.location.reload()
                         }
                     }
                 })
