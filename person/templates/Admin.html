@@ -56,21 +56,19 @@
 
                         <p id="auser_gender">
                             <label>性别:</label>
-                            <input type="radio" name="sex" value="MAN"  checked>男
+                            <input type="radio" name="sex" value="MAN" checked>男
                             <input type="radio" name="sex" value="WOMAN">女
                         </p>
-
                         <p>
                             <label>部门:</label>
-                            <select name="department">
+                            <select name="department" onchange="func()" id="auser_department">
                                 {% for department in data.departments %}
-                                    <option id="auser_department" value="{{ department.depart_id }}">
+                                    <option class="auser_department" value="{{ department.depart_id }}">
                                         {{ department.depart_name }}
                                     </option>
                                 {% endfor %}
                             </select>
                         </p>
-
                         <p>
                             <label>电话:</label>
                             <input type="text" name="tel" id="auser_tel">
@@ -139,7 +137,10 @@
                 <!-- 编辑员工表单 -->
                 <div class="pop_text1">
                     <form method="POST">
-
+                        <p>
+                            <label>ID:</label>
+                            <input type="text" name="userid" id="euser_id">
+                        </p>
                         <p>
                             <label>姓名:</label>
                             <input type="text" name="username" id="euser_name">
@@ -160,7 +161,7 @@
                             <label>部门:</label>
                             <select name="department">
                                 {% for department in data.departments %}
-                                    <option id="euser_department" value="{{ department.depart_id }}">
+                                    <option id="euser_department">
                                         {{ department.depart_name }}
                                     </option>
                                 {% endfor %}

@@ -69,17 +69,20 @@ $(function () {
                 // 发送ajax请求
                 // e.preventDefault();//阻止默认的表单提交
 
-                var admin_id = $("#admin_id").val()
+                var auser_id = $("#auser_id").val()
                 var auser_name = $("#auser_name").val()
                 var auser_age = $("#auser_age").val()
                 var auser_gender = $("#auser_gender input:checked").val()
-                var auser_department = $("#auser_department").val()
+
+                var auser_department = $("#auser_department option:selected").val()
+
+                // var auser_department = $(".auser_department").val()
                 var auser_tel = $("#auser_tel").val()
                 var auser_email = $("#auser_email").val()
 
                 // 发起新增请求
                 var params = {
-                    'admin_id': admin_id,
+                    'auser_id': auser_id,
                     'auser_name': auser_name,
                     'auser_age': auser_age,
                     'auser_gender': auser_gender,
@@ -106,6 +109,7 @@ $(function () {
                         }
                     }
                 })
+                return false
             } else if ($(this).prop('type') == 'reset') {
                 document.getElementById("add_usersfrom").reset();
             }
@@ -116,6 +120,7 @@ $(function () {
         pop_text_btn1.delegate('input', 'click', function (e) {
             if ($(this).prop('type') == 'submit') {
 
+                var euser_id = $("#euser_id").val()
                 var euser_name = $("#euser_name").val()
                 var euser_age = $("#euser_age").val()
                 var euser_gender = $("#euser_gender input:checked").val()
@@ -126,6 +131,7 @@ $(function () {
                 // 发起编辑请求
                 var params = {
                     'admin_id___': userId,
+                    'euser_id':euser_id,
                     'euser_name': euser_name,
                     'euser_age': euser_age,
                     'euser_gender': euser_gender,
@@ -153,7 +159,7 @@ $(function () {
 
 
                         } else {
-                            alert('请检查填写是否错误!')
+                            alert('请检查要修改单位员工编号是否错误!')
 
                         }
                     },

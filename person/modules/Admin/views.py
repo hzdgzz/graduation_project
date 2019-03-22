@@ -67,6 +67,7 @@ def add_admindepartment():
 def editor_admindepartment():
     # 获取参数
     admin_id___ = request.json.get('admin_id___')
+    euser_id = request.json.get('euser_id')
     euser_name = request.json.get('euser_name')
     euser_age = request.json.get('euser_age')
     euser_gender = request.json.get('euser_gender')
@@ -74,16 +75,20 @@ def editor_admindepartment():
     euser_tel = request.json.get('euser_tel')
     euser_email = request.json.get('euser_email')
     # 检查参数的完整性
-    if not all([admin_id___, euser_name, euser_age,euser_gender,euser_department,euser_tel,euser_email]):
+    if not all([admin_id___, euser_id,euser_name, euser_age,euser_gender,euser_department,euser_tel,euser_email]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
         admin_id___ = int(admin_id___)
+        euser_id = int(euser_id)
         euser_age = int(euser_age)
         euser_department = int(euser_department)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    # 检查要删除的对象和输入的是否一致
+    if admin_id___!=euser_id:
+        return jsonify(errno=RET.DATAERR, errmsg='要删除的员工和输入的不一致错误')
     # 构建模型类对象
     try:
         user = User.query.filter_by(user_id=admin_id___).first()
