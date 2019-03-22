@@ -62,7 +62,7 @@ def add_admindepartment():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
-# 编辑部门数据
+# 编辑员工数据
 @Admin.route("/editor_admindepartment", methods=['PUT'])
 def editor_admindepartment():
     # 获取参数
@@ -86,7 +86,7 @@ def editor_admindepartment():
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
     # 构建模型类对象
     try:
-        user = User.query.filter_by(user_mobile=admin_id___).first()
+        user = User.query.filter_by(user_id=admin_id___).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询员工错误')

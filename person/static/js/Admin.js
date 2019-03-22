@@ -12,6 +12,7 @@ $(function () {
         var pop_text_btn = $('.pop_text_btn')
         var pop_text_btn1 = $('.pop_text_btn1')
         var exit = $('#exit')
+        var userId;
         // 表单默认隐藏
         addform.hide()
         editform.hide()
@@ -22,7 +23,7 @@ $(function () {
         // 监控编辑按钮
         editbtn.click(function () {
             editform.show()
-            $('.pop_main1 #admin_id___').val($(this).parent().prev().prev().text());
+            userId = $(this).parent().parent().children().eq(0).text();
         })
         // 增加弹框操作
         // 监听灰色背景的点击
@@ -115,7 +116,6 @@ $(function () {
         pop_text_btn1.delegate('input', 'click', function (e) {
             if ($(this).prop('type') == 'submit') {
 
-                var admin_id___ = $("#admin_id___").val()
                 var euser_name = $("#euser_name").val()
                 var euser_age = $("#euser_age").val()
                 var euser_gender = $("#euser_gender input:checked").val()
@@ -125,7 +125,7 @@ $(function () {
 
                 // 发起编辑请求
                 var params = {
-                    'admin_id___': admin_id___,
+                    'admin_id___': userId,
                     'euser_name': euser_name,
                     'euser_age': euser_age,
                     'euser_gender': euser_gender,
