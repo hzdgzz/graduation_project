@@ -106,10 +106,11 @@ $(function () {
                     success: function (data) {
                         if (data.errno == '0') {
                             //刷新当前页面
-
+                            alert('新增员工数据成功!')
                             window.location.reload()
                         } else {
                             alert('新增员工数据失败!')
+                            window.location.reload()
                         }
                     }
                 })
