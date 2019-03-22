@@ -135,6 +135,7 @@ $(function () {
                     }
                 }
             })
+            return false
         } else if ($(this).prop('type') == 'reset') {
             // 发送ajax请求
 

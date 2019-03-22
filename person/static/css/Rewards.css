@@ -139,7 +139,7 @@ body{
     border-collapse:collapse;
 
 }
-#editbtn{
+.editbtn{
     width: 60px;
     height: 30px;
     color: white;
@@ -147,7 +147,7 @@ body{
     border-radius: 10px;
     outline: none;
 }
-#editbtn{
+.editbtn{
     background:black;
 }
 

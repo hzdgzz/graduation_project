@@ -120,6 +120,7 @@ def editor_admindepartment():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno=RET.OK, errmsg='OK')
+# 删除员工
 @Admin.route("/delete_user", methods=['DELETE'])
 def delete_user():
     # 获取参数

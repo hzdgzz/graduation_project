@@ -38,7 +38,7 @@
             <div class="pop_detail">
                 <!-- 新增奖惩表单 -->
                 <div class="pop_text">
-                    <form  method="POST" id="addrewardsfrom">
+                    <form method="POST" id="addrewardsfrom">
                         <p>
                             <label>ID:</label>
                             <input type="text" name="userid" id="auser_id">
@@ -93,18 +93,18 @@
         <th>编辑</th>
     </tr>
     <!-- 奖励列表数据 -->
-        {% for rewardspunishment in data %}
-            <tr>
-                <th>{{ rewardspunishment.user_id }}</th>
-                <th>{{ rewardspunishment.user_name }}</th>
-                <th>{{ rewardspunishment.user_mobile }}</th>
-                <th>{{ rewardspunishment.reward }}</th>
-                <th>{{ rewardspunishment.punishment }}</th>
-                <th>
-                    <button type="button" id="editbtn">编辑</button>
-                </th>
-            </tr>
-        {% endfor %}
+    {% for rewardspunishment in data %}
+        <tr>
+            <th>{{ rewardspunishment.user_id }}</th>
+            <th>{{ rewardspunishment.user_name }}</th>
+            <th>{{ rewardspunishment.user_mobile }}</th>
+            <th>{{ rewardspunishment.reward }}</th>
+            <th>{{ rewardspunishment.punishment }}</th>
+            <th>
+                <button type="button" class="editbtn">编辑</button>
+            </th>
+        </tr>
+    {% endfor %}
     <!-- 功能弹窗 -->
     <div class="pop_main1" id="pop">
         <div class="pop_con1">
@@ -117,13 +117,17 @@
                 <div class="pop_text1">
                     <form method="POST" id="edirewardsfrom">
                         <p>
+                            <label>ID:</label>
+                            <input type="text" name="userid" id="euser_id" placeholder="请确认用户ID">
+                        </p>
+                        <p>
                             <label>奖励:</label>
-                            <input type="text" name="age">
+                            <input type="text" name="age" id="euser_reward">
                         </p>
 
                         <p>
                             <label>惩罚:</label>
-                            <input type="text" name="age">
+                            <input type="text" name="age" id="euser_punish">
                         </p>
 
                         <p class="pop_text_btn1">

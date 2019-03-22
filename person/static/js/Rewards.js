@@ -6,7 +6,7 @@ function getCookie(name) {
 $(function () {
     // 获取元素登录或注册
     var addbtn = $('#addbtn')
-    var editbtn = $('#editbtn')
+    var editbtn = $('.editbtn')
     var addform = $('.pop_main')
     var editform = $('.pop_main1')
     var pop_text_btn = $('.pop_text_btn')
@@ -104,8 +104,7 @@ $(function () {
             })
             return false
         } else if ($(this).prop('type') == 'reset') {
-            // 发送ajax请求
-            alert('b')
+            document.getElementById("addrewardsfrom").reset();
         }
     })
 
@@ -113,48 +112,72 @@ $(function () {
     // 事件委托,监控点击登录和注册
     pop_text_btn1.delegate('input', 'click', function () {
         if ($(this).prop('type') == 'submit') {
-            // 发送ajax请求
-            // e.preventDefault();//阻止默认的表单提交
-
-            var auser_id = $("#auser_id").val()
-            var auser_name = $("#auser_name").val()
-
-            var auser_tel = $("#auser_tel").val()
-            var auser_email = $("#auser_email").val()
-
-            // 发起新增请求
+            var euser_id = $("#euser_id").val()
+            var euser_reward = $("#euser_reward").val()
+            var euser_punish = $("#euser_punish").val()
+            // 发起编辑请求
             var params = {
-                'auser_id': auser_id,
-                'auser_name': auser_name,
-                'auser_age': auser_age,
-                'auser_gender': auser_gender,
-                'auser_department': auser_department,
-                'auser_tel': auser_tel,
-                'auser_email': auser_email
+                'userId': userId,
+                'euser_id': euser_id,
+                'euser_reward': euser_reward,
+                'euser_punish': euser_punish
+            };
+
+            // 发起ajax请求
+            $.ajax({
+                url: '/editor_userreward',
+                type: 'put',
+                data: JSON.stringify(params),
+                async: false,
+                contentType: 'application/json',
+                headers: {
+                    "X-CSRFToken": getCookie('csrf_token')
+                },
+                success: function (data) {
+                    if (data.errno == 0) {
+                        //刷新当前页面
+                        window.location.reload()
+                        alert('修改员工奖惩数据成功!')
+                    } else {
+                        alert('请检查要修改员工编号是否正确!')
+                        window.location.reload()
+
+                    }
+                },
+            })
+            return false
+        } else if ($(this).prop('type') == 'reset') {
+            // 发送ajax请求
+
+            var euser_id = $("#euser_id").val()
+
+            // 发起编辑请求
+            var params = {
+                'userId': userId,
+                'euser_id': euser_id,
             };
             // 发起ajax请求
             $.ajax({
-                url: '/add_admindepartment',
-                type: 'post',
+                url: '/delete_userreward',
+                type: 'delete',
                 data: JSON.stringify(params),
                 contentType: 'application/json',
                 headers: {
                     "X-CSRFToken": getCookie('csrf_token')
                 },
                 success: function (data) {
-                    if (data.errno == '0') {
+                    if (data.errno == 0) {
                         //刷新当前页面
-
                         window.location.reload()
+                        alert('删除员工奖惩数据成功!')
+
                     } else {
-                        alert('新增员工数据失败!')
+                        alert('删除员工奖惩数据失败!')
+                        window.location.reload()
                     }
                 }
             })
             return false
-        } else if ($(this).prop('type') == 'reset') {
-            // 发送ajax请求
-            alert('b')
         }
     })
     // 监控退出登录按钮

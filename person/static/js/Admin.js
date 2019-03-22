@@ -165,7 +165,7 @@ $(function () {
 
                         } else {
                             alert('请检查要修改单位员工编号是否错误!')
-
+                            window.location.reload()
                         }
                     },
                 })
@@ -197,7 +197,7 @@ $(function () {
 
                         } else {
                             alert('删除员工数据失败!')
-                            window.location.reload()
+                            // window.location.reload()
                         }
                     }
                 })
