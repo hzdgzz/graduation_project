@@ -127,14 +127,14 @@ def delete_userreward():
         return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的员工id')
     # 构建模型类对象
     try:
-        user = User.query.filter_by(user_id=euser_id).first()
+        rewards = RewardsPunishment.query.filter_by(user_id=euser_id).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询员工数据错误')
-
+    rewards.is_deleted = 1
     # 存入数据库
     try:
-        db.session.delete(user)
+        db.session.add(rewards)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)

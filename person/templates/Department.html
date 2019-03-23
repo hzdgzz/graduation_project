@@ -38,7 +38,7 @@
             <div class="pop_detail">
                 <!-- 新增部门表单 -->
                 <div class="pop_text">
-                    <form  method="POST" id="adddepartmentform">
+                    <form method="POST" id="adddepartmentform">
                         <p>
                             <label>部门ID:</label>
                             <input type="text" name="userid" id="department_id">
@@ -74,15 +74,16 @@
     </tr>
     <!-- 部门列表数据 -->
     {% for department in data.departments %}
+        {% if department.is_deleted == 0 %}
+            <tr>
+                <th>{{ department.depart_id }}</th>
+                <th>{{ department.depart_name }}</th>
 
-        <tr>
-            <th>{{ department.depart_id }}</th>
-            <th>{{ department.depart_name }}</th>
-
-            <th>
-                <button type="button" class="editbtn">编辑</button>
-            </th>
-        </tr>
+                <th>
+                    <button type="button" class="editbtn">编辑</button>
+                </th>
+            </tr>
+        {% endif %}
 
     {% endfor %}
     <!-- 功能弹窗 -->

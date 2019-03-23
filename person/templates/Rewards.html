@@ -94,16 +94,18 @@
     </tr>
     <!-- 奖励列表数据 -->
     {% for rewardspunishment in data %}
-        <tr>
-            <th>{{ rewardspunishment.user_id }}</th>
-            <th>{{ rewardspunishment.user_name }}</th>
-            <th>{{ rewardspunishment.user_mobile }}</th>
-            <th>{{ rewardspunishment.reward }}</th>
-            <th>{{ rewardspunishment.punishment }}</th>
-            <th>
-                <button type="button" class="editbtn">编辑</button>
-            </th>
-        </tr>
+        {% if rewardspunishment.is_user_deleted == 0 and rewardspunishment.is_deleted ==0%}
+            <tr>
+                <th>{{ rewardspunishment.user_id }}</th>
+                <th>{{ rewardspunishment.user_name }}</th>
+                <th>{{ rewardspunishment.user_mobile }}</th>
+                <th>{{ rewardspunishment.reward }}</th>
+                <th>{{ rewardspunishment.punishment }}</th>
+                <th>
+                    <button type="button" class="editbtn">编辑</button>
+                </th>
+            </tr>
+        {% endif %}
     {% endfor %}
     <!-- 功能弹窗 -->
     <div class="pop_main1" id="pop">

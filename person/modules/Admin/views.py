@@ -146,10 +146,10 @@ def delete_user():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询员工数据错误')
-
+    user.is_deleted = 1
     # 存入数据库
     try:
-        db.session.delete(user)
+        db.session.add(user)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)

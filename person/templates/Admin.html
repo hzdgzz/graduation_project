@@ -63,9 +63,11 @@
                             <label>部门:</label>
                             <select name="department" onchange="func()" id="auser_department">
                                 {% for department in data.departments %}
-                                    <option value="{{ department.depart_id }}">
-                                        {{ department.depart_name }}
-                                    </option>
+                                    {% if department.is_deleted == 0 %}
+                                        <option value="{{ department.depart_id }}">
+                                            {{ department.depart_name }}
+                                        </option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </p>
@@ -111,19 +113,26 @@
     </tr>
     <!-- 员工列表数据 -->
     {% for user in data.users %}
+        {% if user.is_deleted == 0 %}
+            <tr>
+                <th>{{ user.user_id }}</th>
+                <th>{{ user.user_name }}</th>
+                <th>{{ user.user_age }}</th>
+                <th>{{ user.user_gender }}</th>
 
-        <tr>
-            <th>{{ user.user_id }}</th>
-            <th>{{ user.user_name }}</th>
-            <th>{{ user.user_age }}</th>
-            <th>{{ user.user_gender }}</th>
-            <th>{{ user.depart_name }}</th>
-            <th>{{ user.user_mobile }}</th>
-            <th>{{ user.user_email }}</th>
-            <th>
-                <button type="button" class="editbtn">编辑</button>
-            </th>
-        </tr>
+                {% if user.is_depart_delete == 0 %}
+                    <th>{{ user.depart_name }}</th>
+                {% else %}
+                    <th>{{ '部门已被删除' }}</th>
+                {% endif %}
+
+                <th>{{ user.user_mobile }}</th>
+                <th>{{ user.user_email }}</th>
+                <th>
+                    <button type="button" class="editbtn">编辑</button>
+                </th>
+            </tr>
+        {% endif %}
 
     {% endfor %}
     <!-- 功能弹窗 -->
@@ -161,9 +170,11 @@
                             <label>部门:</label>
                             <select name="department" onchange="func()" id="euser_department">
                                 {% for department in data.departments %}
-                                    <option value="{{ department.depart_id }}">
-                                        {{ department.depart_name }}
-                                    </option>
+                                    {% if department.is_deleted == 0 %}
+                                        <option value="{{ department.depart_id }}">
+                                            {{ department.depart_name }}
+                                        </option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </p>

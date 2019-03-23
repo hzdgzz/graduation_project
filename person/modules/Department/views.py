@@ -104,10 +104,10 @@ def delete_department():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询部门数据错误')
-
+    department.is_deleted = 1
     # 存入数据库
     try:
-        db.session.delete(department)
+        db.session.add(department)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)
