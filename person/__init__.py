@@ -41,7 +41,7 @@ def create_app(config_name):
     # 实例化Session对象
     Session(app)
     # 开启csrf保护
-    # CSRFProtect(app)
+    CSRFProtect(app)
 
     # 生成csrf_token口令，返回给客户端浏览器的cookie中
     # 使用请求勾子(中间件)，在每次请求后，把csrf_token写入客户端的cookie中
