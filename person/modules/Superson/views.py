@@ -173,7 +173,6 @@ def editor_superadminpsw():
 def exit_superadminpsw():
     session.pop('superadmin_id', None)
     session.pop('superadmin_psw', None)
-    print(session)
     return jsonify(errno='0', errmsg='OK')
 
 # 显示管理员列表数据

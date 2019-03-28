@@ -43,15 +43,28 @@ def add_admindepartment():
     # 检查邮箱格式
     if not re.match(r'[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$', auser_email):
         return jsonify(errno=RET.PARAMERR, errmsg='邮箱格式错误')
-    # 构建模型类对象
-    user = User()
-    user.user_id = auser_id
-    user.user_name = auser_name
-    user.user_age = auser_age
-    user.user_gender = auser_gender
-    user.user_mobile = auser_tel
-    user.user_email = auser_email
-    user.depart_id = auser_department
+    # 从数据库获取数据
+    try:
+        user = User.query.filter_by(user_id=auser_id).first()
+        if user.is_deleted == 1:
+            user.is_deleted = 0
+            user.user_id = auser_id
+            user.user_name = auser_name
+            user.user_age = auser_age
+            user.user_gender = auser_gender
+            user.user_mobile = auser_tel
+            user.user_email = auser_email
+            user.depart_id = auser_department
+    except Exception as e:
+        # 构建模型类对象
+        user = User()
+        user.user_id = auser_id
+        user.user_name = auser_name
+        user.user_age = auser_age
+        user.user_gender = auser_gender
+        user.user_mobile = auser_tel
+        user.user_email = auser_email
+        user.depart_id = auser_department
     # 存入数据库
     try:
         db.session.add(user)
@@ -160,6 +173,7 @@ def delete_user():
 # 管理员退出
 @Admin.route("/exit_admin", methods=['POST'])
 def exit_admin():
+    print(session)
     session.pop('admin_id', None)
     session.pop('admin_psw', None)
     print(session)

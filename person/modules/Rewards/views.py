@@ -47,11 +47,20 @@ def add_admindepartment():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DATAERR, errmsg='要新增的用户姓名或手机号错误')
-    # 构建模型类对象
-    rewardspunishment = RewardsPunishment()
-    rewardspunishment.user_id = auser_id
-    rewardspunishment.reward = auser_reward
-    rewardspunishment.punishment = auser_punish
+    # 从数据库获取数据
+    try:
+        rewardspunishment = RewardsPunishment.query.filter_by(user_id=auser_id).first()
+        if rewardspunishment.is_deleted == 1:
+            rewardspunishment.is_deleted = 0
+            rewardspunishment.user_id = auser_id
+            rewardspunishment.reward = auser_reward
+            rewardspunishment.punishment = auser_punish
+    except Exception as e:
+        # 构建模型类对象
+        rewardspunishment = RewardsPunishment()
+        rewardspunishment.user_id = auser_id
+        rewardspunishment.reward = auser_reward
+        rewardspunishment.punishment = auser_punish
     # 存入数据库
     try:
         db.session.add(rewardspunishment)
@@ -62,6 +71,8 @@ def add_admindepartment():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
+
+
 # 编辑员工数据
 @Rewards.route("/editor_userreward", methods=['PUT'])
 def editor_userreward():
@@ -71,7 +82,7 @@ def editor_userreward():
     euser_reward = request.json.get('euser_reward')
     euser_punish = request.json.get('euser_punish')
     # 检查参数的完整性
-    if not all([userId, euser_id,euser_reward, euser_punish]):
+    if not all([userId, euser_id, euser_reward, euser_punish]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
@@ -83,7 +94,7 @@ def editor_userreward():
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
     # 检查要删除的对象和输入的是否一致
-    if userId!=euser_id:
+    if userId != euser_id:
         return jsonify(errno=RET.DATAERR, errmsg='要编辑的员工和输入的不一致错误')
     # 构建模型类对象
     try:
@@ -104,6 +115,7 @@ def editor_userreward():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno=RET.OK, errmsg='OK')
+
 
 # 删除员工奖励
 @Rewards.route("/delete_userreward", methods=['DELETE'])
@@ -142,6 +154,7 @@ def delete_userreward():
         return jsonify(errno=RET.DBERR, errmsg='删除员工数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
+
 
 # 退出登录
 @Rewards.route("/exit_rewards", methods=['POST'])

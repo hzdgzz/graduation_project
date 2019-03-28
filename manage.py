@@ -5,6 +5,7 @@ from flask_migrate import Migrate,MigrateCommand
 from person import create_app,db,models
 from person.models import SuperAdmin
 # from person.models import User
+# 调用工厂函数创建应用实例再启动
 app = create_app('development')
 
 # 实例化管理对象
@@ -27,7 +28,7 @@ python manage.py db upgrade
 
 """
 # python manage.py create_supperuser -n 用户名 -p 密码
-# python manage.py create_supperuser -n admin -p 123456
+# python manage.py create_supperuser -n 1 -p 123456
 @manage.option('-n', '-superadmin_id', dest='superadmin_id')
 @manage.option('-p', '-superadmin_psw', dest='superadmin_psw')
 def create_supperuser(superadmin_id, superadmin_psw):

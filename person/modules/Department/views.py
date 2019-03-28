@@ -9,6 +9,7 @@ from person.models import Department
 from person.utils.response_code import RET
 from . import Departments
 
+
 # 添加部门数据
 @Departments.route("/add_department", methods=['POST'])
 def add_department():
@@ -24,10 +25,33 @@ def add_department():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
-    # 构建模型类对象
-    department = Department()
-    department.depart_id = department_id
-    department.depart_name = department_name
+    # 判断新增的部门id是否已经存在
+    # depart_id_list = []
+    # depart_is_delete_list = []
+    # departs = Department.query.all()
+    # print(departs)
+    # for depart in departs:
+    #     depart_id = depart.depart_id
+    #     depart_id_list.append(depart_id)
+    #     depart_is_delete = depart.is_deleted
+    #     depart_is_delete_list.append(depart_is_delete)
+    # try:
+    #     department = Department.query.filter_by(depart_id=department_id).first()
+    #
+    #     if department_id in depart_id_list and department.is_deleted == 0:
+    #         return jsonify(errno=RET.DATAEXIST, errmsg='部门id已存在')
+    # except Exception as e:
+    # 从数据库获取数据
+    try:
+        department = Department.query.filter_by(depart_id=department_id).first()
+        if department.is_deleted == 1:
+            department.is_deleted = 0
+            department.depart_name = department_name
+    except Exception as e:
+        # 构建模型类对象
+        department = Department()
+        department.depart_id = department_id
+        department.depart_name = department_name
     # 存入数据库
     try:
         db.session.add(department)
@@ -38,6 +62,7 @@ def add_department():
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
+
 
 # 编辑部门数据
 @Departments.route("/editor_department", methods=['PUT'])
@@ -78,6 +103,7 @@ def editor_department():
         # 返回前端数据
     return jsonify(errno=RET.OK, errmsg='OK')
 
+
 # 删除部门数据
 @Departments.route("/delete_department", methods=['DELETE'])
 def delete_department():
@@ -115,6 +141,8 @@ def delete_department():
         return jsonify(errno=RET.DBERR, errmsg='删除部门数据失败')
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
+
+
 # 退出登录
 @Departments.route("/exit_department", methods=['POST'])
 def exit_department():
@@ -122,6 +150,8 @@ def exit_department():
     session.pop('admin_psw', None)
     print(session)
     return jsonify(errno='0', errmsg='OK')
+
+
 # 部门界面
 @Departments.route("/Department.html")
 def Departments():
@@ -146,4 +176,4 @@ def Departments():
     data = {
         'departments': departments
     }
-    return render_template('Department.html',data = data)
+    return render_template('Department.html', data=data)

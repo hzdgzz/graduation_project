@@ -94,11 +94,14 @@ $(function () {
                     }
                 }
             })
+            return false
         } else if ($(this).prop('type') == 'reset') {
 
             document.getElementById("adddepartmentform").reset();
         }
+        return false
     })
+
 
     // 监听编辑弹框的按钮
     // 事件委托,监控点击登录和注册
@@ -168,6 +171,7 @@ $(function () {
                     }
                 }
             })
+            return false
         }
     })
     // 监控退出登录按钮
@@ -191,5 +195,6 @@ $(function () {
                 }
             }
         })
+        return false
     })
 })
