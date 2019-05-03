@@ -49,4 +49,4 @@ def AdminLogin():
     except Exception as e:
         current_app.logger.error(e)
         return render_template('AdminLogin.html')
-    return redirect('/Department.html')
+    return redirect('/AdminChoose.html')

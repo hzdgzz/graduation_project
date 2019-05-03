@@ -74,4 +74,7 @@ def create_app(config_name):
     from person.modules.Superson import Superson
     app.register_blueprint(Superson)
 
+    from person.modules.AdminChoose import AdminChoose
+    app.register_blueprint(AdminChoose)
+
     return app

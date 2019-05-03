@@ -30,7 +30,7 @@ $(function(){
                 },
             success:function(data){
                 if (data.errno == 0){
-                    window.location.href='/Department.html'
+                    window.location.href='/AdminChoose.html'
                     alert('success')
                 }else{
                     alert('用户名或密码错误!')
