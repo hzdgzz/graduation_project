@@ -1,129 +1,111 @@
-<!DOCTYPE html>
-<html lang="zh">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Department</title>
-    <link rel="stylesheet" href="../static/css/Department.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/js/Department.js"></script>
+    <meta charset="utf-8"/>
+    <title>部门管理</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+    <script src="../static/js/jquery-1.10.2.js"></script>
+    <script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootbox.min.js"></script>
 </head>
 <body>
-<!-- 表头信息 -->
-<div class="header_con">
-    <div class="header">
-        <a href="#" class="logo">河北圣顺环保科技人力资源管理系统</a>
-        <ul class="main_menu">
-            <li class="active"><a href="Department.html">部门管理</a></li>
-            <li><a href="Admin.html">员工管理</a></li>
-            <li><a href="Rewards.html">奖惩管理</a></li>
-            <li><a href="Resource.html">招聘管理</a></li>
-            <li id="exit"><a>
-                <button type="button" id="exitbtn">退出登录</button>
-            </a></li>
-        </ul>
-    </div>
-</div>
-<!-- 功能选项 -->
-<div class="funcbtn">
-    <button type="button" id="addbtn">新增</button>
-    <!-- 功能弹窗 -->
-    <div class="pop_main" id="pop">
-        <div class="pop_con">
-            <div class="pop_title">
-                <h3>新增部门</h3>
-                <a href="#" id="shutoff">×</a>
-            </div>
-            <div class="pop_detail">
-                <!-- 新增部门表单 -->
-                <div class="pop_text">
-                    <form method="POST" id="adddepartmentform">
-                        <p>
-                            <label>部门ID:</label>
-                            <input type="text" name="userid" id="department_id">
-                        </p>
+<div class="box">
+    <div class="title">河北圣顺环保科技人力资源管理系统---部门管理</div>
+    <div class="content">
 
-                        <p>
-                            <label>部门名称:</label>
-                            <input type="text" name="username" id="department_name">
-                        </p>
-
-                        <p class="pop_text_btn">
-                            <input type="submit" value="保存" id="btn1">
-                            <input type="reset" value="重置" id="btn2">
-                        </p>
-                    </form>
+        <div class="container content_width">
+            <div class="person_search">
+                <div class="search_input">
+                    <div class="input-group mb-3">
+                        <span>部门管理：</span>
+                        <input id="Ktext" type="text" class="form-control" placeholder="请输入部门名称">
+                    </div>
+                </div>
+                <div class="search_input">
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn">查询</button>
+                    <button class="btn btn-primary search_btn" type="button" id="back_btn">重置</button>
                 </div>
             </div>
-            <div class="pop_footer">
+            <div class="line"></div>
+        </div>
 
+        <div class="export">
+            <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                    data-target="#renyuan">
+                <img src="../static/images/add_two.png"/>
+                <span>添加</span>
+            </button>
+            <div class="modal fade" id="renyuan">
+                <div class="modal-dialog modal-lg modal_position">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">添加</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="xztb" class="table">
+
+                                <tbody>
+                                <tr>
+                                    <td class="tb_bg">
+                                        <label for=""><font style="font-size: 14px; color: red;">*</font>部门ID</label>
+                                    </td>
+                                    <td><input class="userName" type="text" placeholder="请输入部门ID"/></td>
+                                    <td class="tb_bg">
+                                        <label for=""><font style="font-size: 14px; color: red;">*</font>部门名称</label>
+                                    </td>
+                                    <td><input class="jobNum" type="text" placeholder="请输入部门名称"/></td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button id="add_btn" type="button" class="btn btn-secondary">确定</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="mask"></div>
-    </div>
-</div>
 
-<!-- 部门管理 -->
-<table class="department_list">
-
-    <tr>
-        <th>部门ID</th>
-        <th>部门名称</th>
-        <th>操作</th>
-    </tr>
-    <!-- 部门列表数据 -->
-    {% for department in data.departments %}
-        {% if department.is_deleted == 0 %}
+        <table id="tb" class="table">
+            <thead>
             <tr>
-                <th>{{ department.depart_id }}</th>
-                <th>{{ department.depart_name }}</th>
-
-                <th>
-                    <button type="button" class="editbtn">编辑</button>
-                </th>
+                <th>部门ID</th>
+                <th>部门名称</th>
+                <th>操作</th>
             </tr>
-        {% endif %}
+            </thead>
+            <tbody id="show_tbody">
+            <!-- 部门列表数据 -->
+            {% for department in data.departments %}
+                {% if department.is_deleted == 0 %}
+                    <tr>
+                        <td>{{ department.depart_id }}</td>
+                        <td>{{ department.depart_name }}</td>
 
-    {% endfor %}
-    <!-- 功能弹窗 -->
-    <div class="pop_main1" id="pop">
-        <div class="pop_con1">
-            <div class="pop_title1">
-                <h3>编辑部门</h3>
-                <a href="#" id="shutoff1">×</a>
-            </div>
-            <div class="pop_detail1">
-                <!-- 编辑部门表单 -->
-                <div class="pop_text1">
-                    <form method="POST" id="edidepartmentform">
-                        <p>
-                            <label>部门ID:</label>
-                            <input type="text" name="userid" id="editor_department_id">
-                        </p>
+                        <td>
+                            <a href="#" class="edit">编辑</a>
+                            <a href="#" class="del">删除</a>
+                        </td>
+                    </tr>
+                {% endif %}
 
-                        <p>
-                            <label>部门名称:</label>
-                            <input type="text" name="username" id="editor_department_name">
-                        </p>
-
-                        <p class="pop_text_btn1">
-                            <input type="hidden" name="admin_id" id="admin_id__" value="">
-                            <input type="submit" value="保存" id="btn3">
-                            <input type="reset" value="删除部门" id="btn4">
-                        </p>
-                    </form>
-                </div>
-            </div>
-            <div class="pop_footer1">
-
-            </div>
-        </div>
-        <div class="mask1"></div>
+            {% endfor %}
+            {#            <tr>#}
+            {#                <td>001</td>#}
+            {#                <td>事业部</td>#}
+            {#                <td>#}
+            {#                    <a href="#" class="edit">编辑</a>#}
+            {#                    <a href="#" class="del">删除</a>#}
+            {#                </td>#}
+            {#            </tr>#}
+            </tbody>
+        </table>
     </div>
-
-</table>
-
-
+</div>
+<script src="../static/js/mejs.js"></script>
 </body>
 </html>
