@@ -46,6 +46,7 @@ def add_admindepartment():
     # 从数据库获取数据
     try:
         user = User.query.filter_by(user_id=auser_id).first()
+
         if user.is_deleted == 1:
             user.is_deleted = 0
             user.user_id = auser_id
@@ -55,6 +56,8 @@ def add_admindepartment():
             user.user_mobile = auser_tel
             user.user_email = auser_email
             user.depart_id = auser_department
+        else:
+            return jsonify(errno=RET.DATAERR, errmsg='用户已存在')
     except Exception as e:
         # 构建模型类对象
         user = User()
@@ -117,12 +120,15 @@ def editor_admindepartment():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询员工错误')
-    user.user_name = euser_name
-    user.user_age = euser_age
-    user.user_gender = euser_gender
-    user.user_mobile = euser_tel
-    user.user_email = euser_email
-    user.depart_id = euser_department
+    if user.is_deleted == 0:
+        user.user_name = euser_name
+        user.user_age = euser_age
+        user.user_gender = euser_gender
+        user.user_mobile = euser_tel
+        user.user_email = euser_email
+        user.depart_id = euser_department
+    else:
+        return jsonify(errno=RET.DBERR, errmsg='员工被逻辑删除')
     # 存入数据库
     try:
         db.session.add(user)
@@ -138,24 +144,19 @@ def editor_admindepartment():
 def delete_user():
     # 获取参数
     userId = request.json.get('userId')
-    euser_id = request.json.get('euser_id')
     # 检查参数的完整性
-    if not all([userId, euser_id]):
+    if not all([userId]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
         userId = int(userId)
-        euser_id = int(euser_id)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
 
-    # 检查用户输入id和列表id是否一致
-    if userId != euser_id:
-        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的员工id')
     # 构建模型类对象
     try:
-        user = User.query.filter_by(user_id=euser_id).first()
+        user = User.query.filter_by(user_id=userId).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询员工数据错误')
