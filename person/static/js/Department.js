@@ -4,77 +4,53 @@ function getCookie(name) {
     return r ? r[1] : undefined;
 }
 $(function () {
-    // 获取元素登录或注册
-    var addbtn = $('#addbtn')
-    var editbtn = $('.editbtn')
-    var addform = $('.pop_main')
-    var editform = $('.pop_main1')
-    var pop_text_btn = $('.pop_text_btn')
-    var pop_text_btn1 = $('.pop_text_btn1')
-    var exit = $('#exit')
-    // 表单默认隐藏
-    addform.hide()
-    editform.hide()
-    // 监控增加按钮
-    addbtn.click(function () {
-        addform.show()
+    var index_=-1
+    $('.edit').click(function(){
+        index_ = $('.edit').index($(this))
+        var department_id_=$(this).parent().parent().children('td').eq(0).text()
+        window.department_id_=department_id_
     })
-    // 监控编辑按钮
-    editbtn.click(function () {
-        editform.show()
-        $('.pop_main1 #admin_id__').val($(this).parent().prev().prev().text());
-    })
-    // 增加弹框操作
-    // 监听灰色背景的点击
-    $(".pop_main").click(function () {
-        $(".pop_main").hide();// 隐藏页面
-        document.getElementById("adddepartmentform").reset();
-    })
+    $('#add_btn').click(function () {
+        var department_id = $(".userName").val()
+        var department_name = $(".jobNum").val()
 
-    // 阻止白色内容展示部分事件冒泡
-    $(".pop_con").click(function (event) {
-        event.stopPropagation();
-    })
+        if(index_!=-1){
+            if($('#show_tbody').children('tr').eq(index_).attr('class')=='has_case'){
+                // 发起编辑请求
+                var params = {
+                    'department_id': department_id,
+                    'department_name': department_name,
+                    'department_id_': department_id_,
+                }
+                // 发起ajax请求
+                $.ajax({
+                    url: '/edit_department',
+                    type: 'put',
+                    data: JSON.stringify(params),
+                    contentType: 'application/json',
+                    headers: {
+                        "X-CSRFToken": getCookie('csrf_token')
+                    },
+                    success: function (data) {
+                        if (data.errno == 0) {
+                            //刷新当前页面
+                            window.location.reload()
+                            alert('修改管理员数据成功!')
 
-    // 监听白色右上角,x按钮的点击
-    $("#shutoff").click(function () {
-        $(".pop_main").hide();// 隐藏页面
-        document.getElementById("adddepartmentform").reset();
-    })
+                        } else {
+                            alert('修改管理员数据失败!')
 
-    // 编辑弹框操作
-    // 监听灰色背景的点击
-    $(".pop_main1").click(function () {
-        $(".pop_main1").hide();// 隐藏页面
-        document.getElementById("edidepartmentform").reset();
-    })
+                        }
+                    }
+                })
+                index_=-1
+            }
+        }else{
 
-    // 阻止白色内容展示部分事件冒泡
-    $(".pop_con1").click(function (event) {
-        event.stopPropagation();
-    })
-
-    // 监听白色右上角,x按钮的点击
-    $("#shutoff1").click(function () {
-        $(".pop_main1").hide();// 隐藏页面
-        document.getElementById("edidepartmentform").reset();
-    })
-
-    // 监听增加弹框的按钮
-    // 事件委托,监控点击登录和注册
-    pop_text_btn.delegate('input', 'click', function () {
-        if ($(this).prop('type') == 'submit') {
-            // 发送ajax请求
-            // e.preventDefault();//阻止默认的表单提交
-
-            var department_id = $("#department_id").val()
-            var department_name = $("#department_name").val()
-
-            // 发起新增请求
             var params = {
                 'department_id': department_id,
-                'department_name': department_name
-            };
+                'department_name': department_name,
+            }
             // 发起ajax请求
             $.ajax({
                 url: '/add_department',
@@ -87,6 +63,7 @@ $(function () {
                 success: function (data) {
                     if (data.errno == 0) {
                         //刷新当前页面
+                        alert('新增部门数据成功!')
                         window.location.reload()
                     } else {
                         alert('新增部门数据失败!')
@@ -94,92 +71,43 @@ $(function () {
                     }
                 }
             })
-            return false
-        } else if ($(this).prop('type') == 'reset') {
-
-            document.getElementById("adddepartmentform").reset();
-        }
-        return false
-    })
-
-
-    // 监听编辑弹框的按钮
-    // 事件委托,监控点击登录和注册
-    pop_text_btn1.delegate('input', 'click', function () {
-        if ($(this).prop('type') == 'submit') {
-            var editor_department_id = $("#editor_department_id").val()
-            var editor_department_name = $("#editor_department_name").val()
-            var admin_id = $("#admin_id__").val()
-
-            // 发起编辑请求
-            var params = {
-                'admin_id': admin_id,
-                'editor_department_id': editor_department_id,
-                'editor_department_name': editor_department_name
-            };
-            // 发起ajax请求
-            $.ajax({
-                url: '/editor_department',
-                type: 'put',
-                data: JSON.stringify(params),
-                contentType: 'application/json',
-                headers: {
-                    "X-CSRFToken": getCookie('csrf_token')
-                },
-                success: function (data) {
-                    if (data.errno == 0) {
-                        //刷新当前页面
-                        window.location.reload()
-                        alert('修改部门数据成功!')
-
-                    } else {
-                        alert('请检查ID或名称是否都填写或部门ID错误!')
-
-                    }
-                }
-            })
-            return false
-        } else if ($(this).prop('type') == 'reset') {
-            // 发送ajax请求
-
-            var editor_department_id = $("#editor_department_id").val()
-            var admin_id = $("#admin_id__").val()
-
-            // 发起编辑请求
-            var params = {
-                'admin_id': admin_id,
-                'editor_department_id': editor_department_id,
-            };
-            // 发起ajax请求
-            $.ajax({
-                url: '/delete_department',
-                type: 'delete',
-                data: JSON.stringify(params),
-                contentType: 'application/json',
-                headers: {
-                    "X-CSRFToken": getCookie('csrf_token')
-                },
-                success: function (data) {
-                    if (data.errno == 0) {
-                        //刷新当前页面
-                        window.location.reload()
-                        alert('删除部门数据成功!')
-
-                    } else {
-                        alert('删除部门数据失败,请检查部门账号填写是否正确!')
-                        window.location.reload()
-                    }
-                }
-            })
-            return false
+            index_=-1
         }
     })
-    // 监控退出登录按钮
-    exit.click(function () {
+
+    $('#show_tbody').on('click', '.edit', function () {
+        trIndex = $('.edit', '#show_tbody').index($(this));
+        addEnter = false;
+        $(this).parents('tr').addClass('has_case');
+        methods.editHandle(trIndex);
+
+    })
+    $('#search_btn').click(function () {
+        methods.seachName();
+    })
+    $('#back_btn').click(function () {
+        $('#Ktext').val(' ');
+        methods.resectList();
+    })
+
+    $('.del').click(function () {
+        $(this).parents('tr').remove();
+        alert('hello')
+        // 发送ajax请求
+
+        var department_id = $(this).parents('tr').children().eq(0).text()
+        var department_name = $(this).parents('tr').children().eq(1).text()
+
+        // 发起新增请求
+        var params = {
+            'department_id': department_id,
+            'department_name': department_name
+        }
         // 发起ajax请求
         $.ajax({
-            url: '/exit_department',
-            type: 'post',
+            url: '/delete_department',
+            type: 'delete',
+            data: JSON.stringify(params),
             contentType: 'application/json',
             headers: {
                 "X-CSRFToken": getCookie('csrf_token')
@@ -187,14 +115,156 @@ $(function () {
             success: function (data) {
                 if (data.errno == 0) {
                     //刷新当前页面
-                    window.location.href = '/'
-                    alert('退出登录成功!')
+                    window.location.reload()
+                    alert('删除部门数据成功!')
 
                 } else {
-                    alert('退出登录失败!')
+                    alert('删除部门数据失败,请检查部门账号填写是否正确!')
+                    window.location.reload()
                 }
             }
         })
-        return false
     })
+    $('#renyuan').on('hide.bs.modal', function () {
+        addEnter = true;
+        $('#show_tbody tr').removeClass('has_case');
+        $('#xztb input').val(' ');
+        $('#xztb select').find('option:first').prop('selected', true)
+    });
 })
+var addEnter = true,
+    noRepeat = true,
+    jobArr = [],
+    phoneArr = [],
+    tdStr = '',
+    trIndex, hasNullMes = false,
+    tarInp = $('#xztb input'),
+    tarSel = $('#xztb select');
+var methods = {
+    addHandle: function (the_index) {
+        hasNullMes = false;
+        methods.checkMustMes();
+        if (hasNullMes) {
+            return;
+        }
+        if (addEnter) {
+            methods.checkRepeat();
+            if (noRepeat) {
+                methods.setStr();
+                $('#show_tbody').append('<tr>' + tdStr + '</tr>');
+                $('#renyuan').modal('hide');
+            }
+        } else {
+            methods.setStr();
+            $('#show_tbody tr').eq(trIndex).empty().append(tdStr);
+            $('#renyuan').modal('hide');
+        }
+    }, editHandle: function (the_index) {
+        var tar = $('#show_tbody tr').eq(the_index);
+        var nowConArr = [];
+        for (var i = 0; i < tar.find('td').length - 1; i++) {
+            var a = tar.children('td').eq(i).html();
+            nowConArr.push(a);
+        }
+        $('#renyuan').modal('show');
+        for (var j = 0; j < tarInp.length; j++) {
+            tarInp.eq(j).val(nowConArr[j])
+        }
+        for (var p = 0; p < tarSel.length; p++) {
+            var the_p = p + tarInp.length;
+            tarSel.eq(p).val(nowConArr[the_p]);
+        }
+    }, setStr: function () {
+        tdStr = '';
+        for (var a = 0; a < tarInp.length; a++) {
+            tdStr += '<td>' + tarInp.eq(a).val() + '</td>'
+        }
+        for (var b = 0; b < tarSel.length; b++) {
+            tdStr += '<td>' + tarSel.eq(b).val() + '</td>'
+        }
+        tdStr += '<td><a href="#" class="edit">编辑</a> <a href="#" class="del">删除</a></td>';
+    }, seachName: function () {
+        var a = $('#show_tbody tr');
+        var nameVal = $('#Ktext').val().trim();
+        var nameStr = '',
+            nameArr = [];
+        if (nameVal === '') {
+            bootbox.alert({
+                title: "来自火星的提示",
+                message: "搜索内容不能为空",
+                closeButton: false
+            })
+            return;
+        }
+        for (var c = 0; c < a.length; c++) {
+            var txt = $('td:first', a.eq(c)).html().trim();
+            nameArr.push(txt);
+        }
+        a.hide();
+        for (var i = 0; i < nameArr.length; i++) {
+            if (nameArr[i].indexOf(nameVal) > -1) {
+                a.eq(i).show();
+            }
+        }
+    }, resectList: function () {
+        $('#show_tbody tr').show();
+    }, checkMustMes: function () {
+        if ($('.userName').val().trim() === '') {
+            bootbox.alert({
+                title: "来自火星的提示",
+                message: "姓名为必选项，请填写",
+                closeButton: false
+            })
+            hasNullMes = true;
+            return
+        }
+        if ($('.jobNum').val().trim() === '') {
+            bootbox.alert({
+                title: "来自火星的提示",
+                message: "工号为必选项，请填写",
+                closeButton: false
+            })
+            hasNullMes = true;
+            return
+        }
+        if ($('.phoneNum').val().trim() === '') {
+            bootbox.alert({
+                title: "来自火星的提示",
+                message: "手机号为必选项，请填写",
+                closeButton: false
+            })
+            hasNullMes = true;
+            return
+        }
+    }, checkRepeat: function () {
+        jobArr = [], phoneArr = [];
+        for (var i = 0; i < $('#show_tbody tr:not(".has_case")').length; i++) {
+            var par = '#show_tbody tr:not(".has_case"):eq(' + i + ')';
+            var a = $('td:eq(1)', par).html().trim(),
+                b = $('td:eq(2)', par).html().trim();
+            jobArr.push(a);
+            phoneArr.push(b);
+        }
+        var jobNum = $('.jobNum').val().trim(),
+            phoneNum = $('.phoneNum').val().trim();
+        if (jobArr.indexOf(jobNum) > -1) {
+            noRepeat = false;
+            bootbox.alert({
+                title: "来自火星的提示",
+                message: "工号重复了，请重新输入",
+                closeButton: false
+            })
+            return;
+        }
+        if (phoneArr.indexOf(phoneNum) > -1) {
+            noRepeat = false;
+            bootbox.alert({
+                title: "来自火星的提示",
+                message: "手机号码重复了，请重新输入",
+                closeButton: false
+            })
+            return;
+        }
+        noRepeat = true;
+    }
+}

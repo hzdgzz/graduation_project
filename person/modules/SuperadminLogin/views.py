@@ -51,4 +51,4 @@ def SuperadminLogin():
     except Exception as e:
         current_app.logger.error(e)
         return render_template('SuperadminLogin.html')
-    return redirect('/Supersons.html')
+    return redirect('/Superson.html')

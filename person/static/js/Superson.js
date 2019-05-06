@@ -4,67 +4,81 @@ function getCookie(name) {
     return r ? r[1] : undefined;
 }
 $(function () {
-    $('#add_btn').click(function () {
-
-        var department_id = $(".userName").val()
-        var department_name = $(".jobNum").val()
-
-        // 发起新增请求
-        var params = {
-            'department_id': department_id,
-            'department_name': department_name
-        }
-        // 发送ajax请求
-        // e.preventDefault();//阻止默认的表单提交
-        // 发起ajax请求
-        $.ajax({
-            url: '/add_department',
-            type: 'post',
-            data: JSON.stringify(params),
-            contentType: 'application/json',
-            headers: {
-                "X-CSRFToken": getCookie('csrf_token')
-            },
-            success: function (data) {
-                if (data.errno == 0) {
-                    //刷新当前页面
-                    window.location.reload()
-                } else {
-                    alert('新增部门数据失败!')
-                    window.location.reload()
-                }
-            }
-        })
-        // 发起ajax请求
-        $.ajax({
-            url: '/add_department',
-            type: 'put',
-            data: JSON.stringify(params),
-            contentType: 'application/json',
-            headers: {
-                "X-CSRFToken": getCookie('csrf_token')
-            },
-            success: function (data) {
-                if (data.errno == 0) {
-                    //刷新当前页面
-                    window.location.reload()
-                    alert('修改部门数据成功!')
-
-                } else {
-                    alert('请检查ID或名称是否都填写或部门ID错误!')
-
-                }
-            }
-        })
-
-        // methods.addHandle()
+    var index_=-1
+    $('.edit').click(function(){
+        index_ = $('.edit').index($(this))
+        var admin_id_=$(this).parent().parent().children('td').eq(0).text()
+        window.admin_id_=admin_id_
     })
+    $('#add_btn').click(function () {
+        var admin_id = $(".userName").val()
+        var admin_psw = $(".jobNum").val()
+
+        if(index_!=-1){
+            if($('#show_tbody').children('tr').eq(index_).attr('class')=='has_case'){
+                // 发起编辑请求
+               var params = {
+                'admin_id_': admin_id_,
+                'editor_admin_id': admin_id,
+                'editor_admin_psw': admin_psw
+            }
+                // 发起ajax请求
+                $.ajax({
+                    url: '/editor_admin',
+                    type: 'put',
+                    data: JSON.stringify(params),
+                    contentType: 'application/json',
+                    headers: {
+                        "X-CSRFToken": getCookie('csrf_token')
+                    },
+                    success: function (data) {
+                        if (data.errno == 0) {
+                            //刷新当前页面
+                            window.location.reload()
+                            alert('修改管理员数据成功!')
+
+                        } else {
+                            alert('修改管理员数据失败!')
+
+                        }
+                    }
+                })
+                index_=-1
+            }
+        }else{
+            var params = {
+                'admin_id': admin_id,
+                'admin_psw': admin_psw
+            }
+            // 发起ajax请求
+            $.ajax({
+                url: '/add_admin',
+                type: 'post',
+                data: JSON.stringify(params),
+                contentType: 'application/json',
+                headers: {
+                    "X-CSRFToken": getCookie('csrf_token')
+                },
+                success: function (data) {
+                    if (data.errno == 0) {
+                        //刷新当前页面
+                        window.location.reload()
+                    } else {
+                        alert('新增管理员数据失败!')
+                        window.location.reload()
+                    }
+                }
+            })
+            index_=-1
+        }
+    })
+
+
     $('#show_tbody').on('click', '.edit', function () {
         trIndex = $('.edit', '#show_tbody').index($(this));
         addEnter = false;
         $(this).parents('tr').addClass('has_case');
         methods.editHandle(trIndex);
-
     })
     $('#search_btn').click(function () {
         methods.seachName();
@@ -73,23 +87,22 @@ $(function () {
         $('#Ktext').val(' ');
         methods.resectList();
     })
-
     $('.del').click(function () {
         $(this).parents('tr').remove();
-        alert('hello')
+
         // 发送ajax请求
 
-        var department_id = $(this).parents('tr').children().eq(0).text()
-        var department_name = $(this).parents('tr').children().eq(1).text()
+        var admin_id = $(this).parents('tr').children().eq(0).text()
+        var admin_psw = $(this).parents('tr').children().eq(1).text()
 
         // 发起新增请求
         var params = {
-            'department_id': department_id,
-            'department_name': department_name
+            'admin_id': admin_id,
+            'admin_psw': admin_psw
         }
         // 发起ajax请求
         $.ajax({
-            url: '/delete_department',
+            url: '/delete_admin',
             type: 'delete',
             data: JSON.stringify(params),
             contentType: 'application/json',
@@ -100,10 +113,10 @@ $(function () {
                 if (data.errno == 0) {
                     //刷新当前页面
                     window.location.reload()
-                    alert('删除部门数据成功!')
+                    alert('删除管理员数据成功!')
 
                 } else {
-                    alert('删除部门数据失败,请检查部门账号填写是否正确!')
+                    alert('删除管理员数据失败！')
                     window.location.reload()
                 }
             }

@@ -29,6 +29,8 @@ def add_admin():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+
     # 构建模型类对象
     admin = Admin()
     admin.admin_id = admin_id
@@ -44,27 +46,26 @@ def add_admin():
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
-
 # 修改管理员数据
 @Superson.route("/editor_admin", methods=['PUT'])
 def editor_admin():
     # 获取参数
-    admin_id = request.json.get('admin_id')
+    admin_id_ = request.json.get('admin_id_')
     editor_admin_id = request.json.get('editor_admin_id')
     editor_admin_psw = request.json.get('editor_admin_psw')
     # 检查参数的完整性
-    if not all([admin_id, editor_admin_id, editor_admin_psw]):
+    if not all([admin_id_, editor_admin_id, editor_admin_psw]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
         editor_admin_id = int(editor_admin_id)
-        admin_id = int(admin_id)
+        admin_id_ = int(admin_id_)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
 
     # 检查用户输入id和列表id是否一致
-    if admin_id != editor_admin_id:
+    if admin_id_ != editor_admin_id:
         return jsonify(errno=RET.DATAERR, errmsg='请输入正确要修改的管理员id错误')
     # 构建模型类对象
     try:
@@ -84,30 +85,25 @@ def editor_admin():
         # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
-
 # 删除管理员数据
 @Superson.route("/delete_admin", methods=['DELETE'])
 def delete_admin():
     # 获取参数
     admin_id = request.json.get('admin_id')
-    editor_admin_id = request.json.get('editor_admin_id')
+    admin_psw = request.json.get('admin_psw')
     # 检查参数的完整性
-    if not all([admin_id, editor_admin_id]):
+    if not all([admin_id, admin_psw]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
-        editor_admin_id = int(editor_admin_id)
         admin_id = int(admin_id)
+        admin_psw = int(admin_psw)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
-
-    # 检查用户输入id和列表id是否一致
-    if admin_id != editor_admin_id:
-        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的管理员id错误')
     # 构建模型类对象
     try:
-        admin = Admin.query.filter_by(admin_id=editor_admin_id).first()
+        admin = Admin.query.filter_by(admin_id=admin_id).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询管理员错误')
@@ -176,7 +172,7 @@ def exit_superadminpsw():
     return jsonify(errno='0', errmsg='OK')
 
 # 显示管理员列表数据
-@Superson.route("/Supersons.html")
+@Superson.route("/Superson.html")
 def Supersons():
     try:
         # 获取用户状态保持信息
@@ -199,4 +195,4 @@ def Supersons():
     data = {
         'admins': admins
     }
-    return render_template('Supersons.html', data=data)
+    return render_template('Superson.html', data=data)

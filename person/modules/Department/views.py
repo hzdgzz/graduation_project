@@ -11,9 +11,8 @@ from . import Departments
 
 
 # 添加部门数据
-@Departments.route("/add_department", methods=['POST','PUT'])
+@Departments.route("/add_department", methods=['POST'])
 def add_department():
-
     # 获取参数
     department_id = request.json.get('department_id')
     department_name = request.json.get('department_name')
@@ -26,46 +25,70 @@ def add_department():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
-    if request.method == 'POST':
-        # 从数据库获取数据
-        try:
-            department = Department.query.filter_by(depart_id=department_id).first()
-            if department.is_deleted == 1:
-                department.is_deleted = 0
-                department.depart_name = department_name
-        except Exception as e:
-            # 构建模型类对象
-            department = Department()
-            department.depart_id = department_id
-            department.depart_name = department_name
-        # 存入数据库
-        try:
-            db.session.add(department)
-            db.session.commit()
-        except Exception as e:
-            current_app.logger.error(e)
-            db.session.rollback()
-            return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
-            # 返回前端数据
-        return jsonify(errno='0', errmsg='OK')
-    if request.method == 'PUT':
+
+    # 新增
+    # 从数据库获取数据
+    try:
+        departments = Department.query.filter_by(depart_id=department_id).first()
+        if departments.is_deleted == 1:
+            departments.is_deleted = 0
+            departments.depart_name = department_name
+        else:
+            return jsonify(errno=RET.DATAERR, errmsg='已存在')
+    except Exception as e:
         # 构建模型类对象
-        try:
-            department = Department.query.filter_by(depart_id=department_id).first()
-        except Exception as e:
-            current_app.logger.error(e)
-            return jsonify(errno=RET.DBERR, errmsg='查询管理员错误')
-        department.depart_name = department_name
-        # 存入数据库
-        try:
-            db.session.add(department)
-            db.session.commit()
-        except Exception as e:
-            current_app.logger.error(e)
-            db.session.rollback()
-            return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
-            # 返回前端数据
-        return jsonify(errno=RET.OK, errmsg='OK')
+        departments = Department()
+        departments.depart_id = department_id
+        departments.depart_name = department_name
+    # 存入数据库
+    try:
+        db.session.add(departments)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
+
+# 添加和编辑部门数据
+@Departments.route("/edit_department", methods=['PUT'])
+def edit_department():
+    # 获取参数
+    department_id_ = request.json.get('department_id_')
+    department_id = request.json.get('department_id')
+    department_name = request.json.get('department_name')
+    # 检查参数的完整性
+    if not all([department_id, department_name,department_id_]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+    # 校验是否int类型
+    try:
+        department_id = int(department_id)
+        department_id_ = int(department_id_)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+
+    if department_id!=department_id_:
+        return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
+    # 新增
+    # 从数据库获取数据
+    try:
+        department = Department.query.filter_by(depart_id=department_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询部门数据错误')
+    department .depart_id = department_id
+    department.depart_name = department_name
+    # 存入数据库
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+        # 返回前端数据
+    return jsonify(errno='0', errmsg='OK')
 
 # 删除部门数据
 @Departments.route("/delete_department", methods=['DELETE'])

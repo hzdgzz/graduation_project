@@ -1,6 +1,7 @@
 # coding:utf-8
 
 class RET:
+    OK1                 = "1"
     OK                  = "0"
     DBERR               = "4001"
     NODATA              = "4002"
@@ -20,6 +21,7 @@ class RET:
     UNKOWNERR           = "4501"
 
 error_map = {
+    RET.OK1                    : u"成功1",
     RET.OK                    : u"成功",
     RET.DBERR                 : u"数据库查询错误",
     RET.NODATA                : u"无数据",
