@@ -22,7 +22,7 @@ def add_admindepartment():
     auser_reward = request.json.get('auser_reward')
     auser_punish = request.json.get('auser_punish')
     # 检查参数的完整性
-    if not all([auser_id, auser_name, auser_tel, auser_reward, auser_punish]):
+    if not all([auser_id,auser_reward, auser_punish,auser_name,auser_tel]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
@@ -41,48 +41,48 @@ def add_admindepartment():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='此用户不存在错误')
-    try:
-        user.user_name = auser_name
-        user.user_mobile = auser_tel
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.DATAERR, errmsg='要新增的用户姓名或手机号错误')
-    # 从数据库获取数据
-    try:
-        rewardspunishment = RewardsPunishment.query.filter_by(user_id=auser_id).first()
-        if rewardspunishment.is_deleted == 1:
-            rewardspunishment.is_deleted = 0
+    # if user.user_name == auser_name and user.user_mobile == auser_tel:
+    if user ==None:
+        return jsonify(errno=RET.DATAERR, errmsg='要新增的用户不存在')
+    else:
+        # 从数据库获取数据
+        try:
+            rewardspunishment = RewardsPunishment.query.filter_by(user_id=auser_id).first()
+            if rewardspunishment.is_deleted == 1:
+                rewardspunishment.is_deleted = 0
+                rewardspunishment.user_id = auser_id
+                rewardspunishment.reward = auser_reward
+                rewardspunishment.punishment = auser_punish
+        except Exception as e:
+            # 构建模型类对象
+            rewardspunishment = RewardsPunishment()
             rewardspunishment.user_id = auser_id
             rewardspunishment.reward = auser_reward
             rewardspunishment.punishment = auser_punish
-    except Exception as e:
-        # 构建模型类对象
-        rewardspunishment = RewardsPunishment()
-        rewardspunishment.user_id = auser_id
-        rewardspunishment.reward = auser_reward
-        rewardspunishment.punishment = auser_punish
-    # 存入数据库
-    try:
-        db.session.add(rewardspunishment)
-        db.session.commit()
-    except Exception as e:
-        current_app.logger.error(e)
-        db.session.rollback()
-        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
-        # 返回前端数据
-    return jsonify(errno='0', errmsg='OK')
+        # 存入数据库
+        try:
+            db.session.add(rewardspunishment)
+            db.session.commit()
+        except Exception as e:
+            current_app.logger.error(e)
+            db.session.rollback()
+            return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+            # 返回前端数据
+        return jsonify(errno='0', errmsg='OK')
 
 
-# 编辑员工数据
+# 编辑奖惩数据
 @Rewards.route("/editor_userreward", methods=['PUT'])
 def editor_userreward():
     # 获取参数
     userId = request.json.get('userId')
     euser_id = request.json.get('euser_id')
+    euser_name = request.json.get('euser_name')
+    euser_tel = request.json.get('euser_tel')
     euser_reward = request.json.get('euser_reward')
     euser_punish = request.json.get('euser_punish')
     # 检查参数的完整性
-    if not all([userId, euser_id, euser_reward, euser_punish]):
+    if not all([userId, euser_id, euser_reward, euser_punish,euser_name,euser_tel]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
@@ -93,8 +93,14 @@ def editor_userreward():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
-    # 检查要删除的对象和输入的是否一致
-    if userId != euser_id:
+    # 根据id查询用户
+    try:
+        user = User.query.filter_by(user_id=euser_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='此用户不存在错误')
+    # 检查要编辑的对象和输入的是否一致
+    if userId != euser_id or user.user_name!=euser_name or user.user_mobile!=euser_tel:
         return jsonify(errno=RET.DATAERR, errmsg='要编辑的员工和输入的不一致错误')
     # 构建模型类对象
     try:
@@ -102,7 +108,6 @@ def editor_userreward():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询奖惩员工错误')
-    rewardspunishment.user_id = euser_id
     rewardspunishment.reward = euser_reward
     rewardspunishment.punishment = euser_punish
     # 存入数据库

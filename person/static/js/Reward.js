@@ -7,26 +7,33 @@ $(function () {
     var index_=-1
     $('.edit').click(function(){
         index_ = $('.edit').index($(this))
-        var department_id_=$(this).parent().parent().children('td').eq(0).text()
-        window.department_id_=department_id_
+        var userId=$(this).parent().parent().children('td').eq(0).text()
+        window.usersId=userId
     })
     $('#add_btn').click(function () {
-        var department_id = $(".userName").val()
-        var department_name = $(".jobNum").val()
+        var user_id = $(".userID").val()
+        var user_name = $(".userName").val()
+        var user_tel = $(".phoneNum").val()
+        var user_reward = $(".rewardNum").val()
+        var user_punish = $(".punishNum").val()
 
         if(index_!=-1){
             if($('#show_tbody').children('tr').eq(index_).attr('class')=='has_case'){
                 // 发起编辑请求
                 var params = {
-                    'department_id': department_id,
-                    'department_name': department_name,
-                    'department_id_': department_id_,
+                    'euser_id': user_id,
+                    'euser_name': user_name,
+                    'euser_tel': user_tel,
+                    'euser_reward': user_reward,
+                    'euser_punish': user_punish,
+                    'userId':usersId
                 }
-                // 发起ajax请求
+                // 发起编辑ajax请求
                 $.ajax({
-                    url: '/edit_department',
+                    url: '/editor_userreward',
                     type: 'put',
                     data: JSON.stringify(params),
+                    async: false,
                     contentType: 'application/json',
                     headers: {
                         "X-CSRFToken": getCookie('csrf_token')
@@ -35,25 +42,28 @@ $(function () {
                         if (data.errno == 0) {
                             //刷新当前页面
                             window.location.reload()
-                            alert('修改管理员数据成功!')
-
+                            alert('修改员工奖惩数据成功!')
                         } else {
-                            alert('修改管理员数据失败!')
+                            alert('请检查要修改员工编号是否正确!')
+                            window.location.reload()
 
                         }
-                    }
+                    },
                 })
                 index_=-1
             }
         }else{
 
             var params = {
-                'department_id': department_id,
-                'department_name': department_name,
+                'auser_id': user_id,
+                'auser_name': user_name,
+                'auser_tel': user_tel,
+                'auser_reward': user_reward,
+                'auser_punish': user_punish
             }
-            // 发起ajax请求
+            // 发起增加ajax请求
             $.ajax({
-                url: '/add_department',
+                url: '/add_userreward',
                 type: 'post',
                 data: JSON.stringify(params),
                 contentType: 'application/json',
@@ -61,12 +71,12 @@ $(function () {
                     "X-CSRFToken": getCookie('csrf_token')
                 },
                 success: function (data) {
-                    if (data.errno == 0) {
+                    if (data.errno == '0') {
                         //刷新当前页面
-                        alert('新增部门数据成功!')
+                        alert('新增员工奖惩数据成功!')
                         window.location.reload()
                     } else {
-                        alert('新增部门数据失败!')
+                        alert('新增员工奖惩数据失败!')
                         window.location.reload()
                     }
                 }
@@ -80,7 +90,6 @@ $(function () {
         addEnter = false;
         $(this).parents('tr').addClass('has_case');
         methods.editHandle(trIndex);
-
     })
     $('#search_btn').click(function () {
         methods.seachName();
@@ -89,20 +98,17 @@ $(function () {
         $('#Ktext').val(' ');
         methods.resectList();
     })
-
     $('.del').click(function () {
-        // 发送ajax请求
-        var department_id = $(this).parents('tr').children().eq(0).text()
-        var department_name = $(this).parents('tr').children().eq(1).text()
-
-        // 发起新增请求
+        var euser_id = $(this).parents('tr').children().eq(0).text()
+        // 发起删除请求
         var params = {
-            'department_id': department_id,
-            'department_name': department_name
-        }
+            'userId':usersId,
+            'euser_id':euser_id
+        };
+
         // 发起ajax请求
         $.ajax({
-            url: '/delete_department',
+            url: '/delete_userreward',
             type: 'delete',
             data: JSON.stringify(params),
             contentType: 'application/json',
@@ -113,14 +119,15 @@ $(function () {
                 if (data.errno == 0) {
                     //刷新当前页面
                     window.location.reload()
-                    alert('删除部门数据成功!')
+                    alert('删除员工奖惩数据成功!')
 
                 } else {
-                    alert('删除部门数据失败,请检查部门账号填写是否正确!')
+                    alert('删除员工奖惩数据失败!')
                     window.location.reload()
                 }
             }
         })
+
     })
     $('#renyuan').on('hide.bs.modal', function () {
         addEnter = true;

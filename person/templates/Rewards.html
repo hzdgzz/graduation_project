@@ -1,161 +1,144 @@
-<!DOCTYPE html>
-<html lang="zh">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rewards</title>
-    <link rel="stylesheet" href="../static/css/Rewards.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/js/Rewards.js"></script>
+    <meta charset="utf-8" />
+    <title>表格制作</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../static/css/Rewards.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+    <script src="../static/js/jquery-1.10.2.js"></script>
+    <script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootbox.min.js"></script>
 </head>
 <body>
-<!-- 表头信息 -->
-<div class="header_con">
-    <div class="header">
-        <a href="#" class="logo">河北圣顺环保科技人力资源管理系统</a>
-        <ul class="main_menu">
-            <li><a href="Departmentss.html">部门管理</a></li>
-            <li><a href="Admin.html">员工管理</a></li>
-            <li class="active"><a href="Rewards.html">奖惩管理</a></li>
-            <li><a href="Resource.html">招聘管理</a></li>
-            <li id="exit"><a>
-                <button type="button" id="exitbtn">退出登录</button>
-            </a></li>
-        </ul>
-    </div>
-</div>
-<!-- 功能选项 -->
-<div class="funcbtn">
-    <button type="button" id="addbtn" onclick="delAll()">新增</button>
-    <!-- 功能弹窗 -->
-    <div class="pop_main" id="pop">
-        <div class="pop_con">
-            <div class="pop_title">
-                <h3>新增奖惩人员</h3>
-                <a href="#" id="shutoff">×</a>
+    <div class="box">
+        <div class="title">河北圣顺环保科技人力资源管理系统---奖惩管理</div>
+        <div class="content">
+
+            <div class="container content_width">
+                <div class="person_search">
+                    <div class="search_input">
+                        <div class="input-group mb-3">
+                            <span>员工ID：</span>
+                            <input id="Ktext" type="text" class="form-control" placeholder="员工ID">
+                        </div>
+                    </div>
+                    <!-- <div class="search_input">
+                        <div class="input-group mb-3" hidden>
+                            <span>工号：</span>
+                            <input id="job_num" type="text" class="form-control" placeholder="请输入工号">
+                        </div>
+                    </div> -->
+                    <div class="search_input">
+                        <button class="btn btn-primary search_btn" type="button" id="search_btn">查询</button>
+                        <button class="btn btn-primary search_btn" type="button" id="back_btn">重置</button>
+                    </div>
+                </div>
+                <div class="line"></div>
             </div>
-            <div class="pop_detail">
-                <!-- 新增奖惩表单 -->
-                <div class="pop_text">
-                    <form method="POST" id="addrewardsfrom">
-                        <p>
-                            <label>ID:</label>
-                            <input type="text" name="userid" id="auser_id">
-                        </p>
 
-                        <p>
-                            <label>姓名:</label>
-                            <input type="text" name="username" id="auser_name">
-                        </p>
+            <div class="export">
+                <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
+                    <img src="../static/images/add_two.png" />
+                    <span>添加</span>
+                </button>
+                <div class="modal fade" id="renyuan">
+                    <div class="modal-dialog modal-lg modal_position">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">添加</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <table id="xztb" class="table">
 
-                        <p>
-                            <label>电话:</label>
-                            <input type="text" name="tel" id="auser_tel">
-                        </p>
-
-                        <p>
-                            <label>奖励:</label>
-                            <input type="text" name="age" id="auser_reward">
-                        </p>
-
-                        <p>
-                            <label>惩罚:</label>
-                            <input type="text" name="age" id="auser_punish">
-                        </p>
-
-                        <p class="pop_text_btn">
-                            <input type="submit" value="保存" id="btn1">
-                            <input type="reset" value="重置" id="btn2">
-                        </p>
-
-                    </form>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tb_bg">
+                                                <label for=""><font style="font-size: 14px; color: red;">*</font>员工ID</label>
+                                            </td>
+                                            <td><input class="userID" type="number" placeholder="请输入员工ID" /></td>
+                                            <td class="tb_bg">
+                                                <label for=""><font style="font-size: 14px; color: red;">*</font>员工姓名</label>
+                                            </td>
+                                            <td><input class="userName" type="text" placeholder="请输入员工姓名" /></td>
+                                            <td class="tb_bg">
+                                                <label for=""><font style="font-size: 14px; color: red;">*</font>手机号</label>
+                                            </td>
+                                            <td><input class="phoneNum" type="number" placeholder="请输入手机号" /></td>
+                                        </tr>
+                                        <tr> 
+                                            <td class="tb_bg"><label for="">奖励</label></td>
+                                            <td><input class="rewardNum" type="text" placeholder="请输入奖励" /></td>
+                                            <td class="tb_bg"><label for="">惩罚</label></td>
+                                            <td><input class="punishNum" type="text" placeholder="请输入惩罚" /></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                <button id="add_btn" type="button" class="btn btn-secondary">确定</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pop_footer">
 
-            </div>
+            <table id="tb" class="table">
+                <thead>
+                    <tr>
+                        <th>员工ID</th>
+                        <th>员工姓名</th>
+                        <th>手机号</th>
+                        <th>奖励</th>
+                        <th>惩罚</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="show_tbody">
+                    {% for rewardspunishment in data %}
+                        {% if rewardspunishment.is_user_deleted == 0 and rewardspunishment.is_deleted ==0%}
+                            <tr>
+                                <td>{{ rewardspunishment.user_id }}</td>
+                                <td>{{ rewardspunishment.user_name }}</td>
+                                <td>{{ rewardspunishment.user_mobile }}</td>
+                                <td>{{ rewardspunishment.reward }}</td>
+                                <td>{{ rewardspunishment.punishment }}</td>
+                                <td>
+                                    <a href="#" class="edit">编辑</a>
+                                    <a href="#" class="del">删除</a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+{#                    <tr>#}
+{#                        <td>01</td>#}
+{#                        <td>小花</td>#}
+{#                        <td>18086667777</td>#}
+{#                        <td>100</td>#}
+{#                        <td>10</td>#}
+{#                        <td>#}
+{#                            <a href="#" class="edit">编辑</a>#}
+{#                            <a href="#" class="del">删除</a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>02</td>#}
+{#                        <td>李磊</td>#}
+{#                        <td>14186668888</td>#}
+{#                        <td>222</td>#}
+{#                        <td>22</td>#}
+{#                        <td>#}
+{#                            <a href="#" class="edit">编辑</a>#}
+{#                            <a href="#" class="del">删除</a>#}
+{#                        </td>#}
+{#                    </tr>#}
+                </tbody>
+            </table>
         </div>
-        <div class="mask"></div>
     </div>
-
-    <!-- 功能弹窗 -->
-
-</div>
-<!-- 奖惩管理 -->
-<table class="personal_list">
-    <tr>
-        <th>ID</th>
-        <th>姓名</th>
-        <th>电话</th>
-        <th>奖励</th>
-        <th>惩罚</th>
-        <th>编辑</th>
-    </tr>
-    <!-- 奖励列表数据 -->
-    {% for rewardspunishment in data %}
-        {% if rewardspunishment.is_user_deleted == 0 and rewardspunishment.is_deleted ==0%}
-            <tr>
-                <th>{{ rewardspunishment.user_id }}</th>
-                <th>{{ rewardspunishment.user_name }}</th>
-                <th>{{ rewardspunishment.user_mobile }}</th>
-                <th>{{ rewardspunishment.reward }}</th>
-                <th>{{ rewardspunishment.punishment }}</th>
-                <th>
-                    <button type="button" class="editbtn">编辑</button>
-                </th>
-            </tr>
-        {% endif %}
-    {% endfor %}
-    <!-- 功能弹窗 -->
-    <div class="pop_main1" id="pop">
-        <div class="pop_con1">
-            <div class="pop_title1">
-                <h3>编辑奖惩</h3>
-                <a href="#" id="shutoff1">×</a>
-            </div>
-            <div class="pop_detail1">
-                <!-- 编辑招聘表单 -->
-                <div class="pop_text1">
-                    <form method="POST" id="edirewardsfrom">
-                        <p>
-                            <label>ID:</label>
-                            <input type="text" name="userid" id="euser_id" placeholder="请确认用户ID">
-                        </p>
-                        <p>
-                            <label>奖励:</label>
-                            <input type="text" name="age" id="euser_reward">
-                        </p>
-
-                        <p>
-                            <label>惩罚:</label>
-                            <input type="text" name="age" id="euser_punish">
-                        </p>
-
-                        <p class="pop_text_btn1">
-                            <input type="submit" value="保存" id="btn3">
-                            <input type="reset" value="删除" id="btn4">
-                        </p>
-
-                    </form>
-                </div>
-            </div>
-            <div class="pop_footer1">
-
-            </div>
-        </div>
-        <div class="mask1"></div>
-    </div>
-    {#    <tr>#}
-    {#        <th>002</th>#}
-    {#        <th>小花</th>#}
-    {#        <th>13294685671</th>#}
-    {#        <th>1000</th>#}
-    {#        <th>10</th>#}
-    {#        <th>#}
-    {#            <button type="button" id="editbtn" onclick="delAll()">编辑</button>#}
-    {#        </th>#}
-    {#    </tr>#}
-</table>
+    <script src="../static/js/Reward.js"></script>
 </body>
 </html>
