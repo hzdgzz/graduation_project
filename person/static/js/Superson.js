@@ -143,6 +143,42 @@ $(function () {
             }
         })
     })
+
+    // 监控修改密码按钮
+    $('.submitBtn').click(function () {
+        // 发送ajax请求
+        var superadminpsw = $("#superadminpsw").val()
+        var editorsuperadminpsw = $("#editorsuperadminpsw").val()
+
+
+        // 请求参数
+        var params = {
+            'superadminpsw': superadminpsw,
+            'editorsuperadminpsw': editorsuperadminpsw
+        };
+        // 发起ajax请求
+        $.ajax({
+            url: '/editor_superadminpsw',
+            type: 'post',
+            data: JSON.stringify(params),
+            contentType: 'application/json',
+            headers: {
+                "X-CSRFToken": getCookie('csrf_token')
+            },
+            success: function (data) {
+                if (data.errno == 0) {
+                    //刷新当前页面
+                    window.location.href='/SuperadminLogin.html'
+                    alert('修改超级管理员密码成功,请重新登录!')
+
+                } else {
+                    alert('修改超级管理员密码失败!')
+                }
+            }
+        })
+        return false
+
+    })
     $('#renyuan').on('hide.bs.modal', function () {
         addEnter = true;
         $('#show_tbody tr').removeClass('has_case');
