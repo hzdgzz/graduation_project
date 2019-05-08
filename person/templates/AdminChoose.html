@@ -105,6 +105,24 @@
 	<script type="text/javascript" src="../static/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript">
 	(function(){
+	    $('#wrap li div p').click(function(){
+            $(this).each(function(){
+                if($(this).text()=="部门管理"){
+                    window.location.href='Department.html'
+                }
+                if($(this).text()=="员工管理"){
+                    window.location.href='./Admin.html'
+                }
+                if($(this).text()=="奖惩管理"){
+                    window.location.href='./Rewards.html'
+                }
+                if($(this).text()=="招聘管理"){
+                    window.location.href='./Resource.html'
+                }
+
+
+            });
+        });
 		$('#wrap li').mouseover(function(){
 			if(!$(this).hasClass('curr')){
 				$('#wrap li').removeClass('curr');
@@ -124,25 +142,6 @@
 				$('#wrap li').not('.curr').stop().animate({
 					width: 100
 				}, 500, 'linear');
-
-				$('#wrap li div p').click(function(){
-  					$(this).each(function(){
-						if($(this).text()=="部门管理"){
-							window.location.href='Department.html'
-						}
-						if($(this).text()=="员工管理"){
-							window.location.href='./Admin.html'
-						}
-						if($(this).text()=="奖惩管理"){
-							window.location.href='./Rewards.html'
-						}
-						if($(this).text()=="招聘管理"){
-							window.location.href='./Resource.html'
-						}
-
-    					
-  					});
-				});
 			}
 		});
 	})()

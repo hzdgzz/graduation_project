@@ -129,6 +129,29 @@ $(function () {
         })
 
     })
+
+    // 监控退出登录按钮
+    $('#exit').click(function () {
+        // 发起ajax请求
+        $.ajax({
+            url: '/exit_rewards',
+            type: 'post',
+            contentType: 'application/json',
+            headers: {
+                "X-CSRFToken": getCookie('csrf_token')
+            },
+            success: function (data) {
+                if (data.errno == 0) {
+                    //刷新当前页面
+                    window.location.href = '/'
+                    alert('退出登录成功!')
+
+                } else {
+                    alert('退出登录失败!')
+                }
+            }
+        })
+    })
     $('#renyuan').on('hide.bs.modal', function () {
         addEnter = true;
         $('#show_tbody tr').removeClass('has_case');
