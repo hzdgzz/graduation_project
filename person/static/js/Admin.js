@@ -51,7 +51,7 @@ $(function () {
 
 
                         } else {
-                            alert('请检查要修改单位员工编号是否错误!')
+                            alert('修改员工数据失败!')
                             window.location.reload()
                         }
                     },

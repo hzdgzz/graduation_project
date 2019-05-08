@@ -49,7 +49,7 @@ $(function () {
 
 
                         } else {
-                            alert('请检查要修改招聘人员编号是否错误!')
+                            alert('修改招聘人员数据失败!')
                             window.location.reload()
                         }
                     },

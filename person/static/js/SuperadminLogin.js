@@ -31,7 +31,6 @@ $(function(){
             success:function(data){
                 if (data.errno == 0){
                     window.location.href='/Superson.html'
-                    alert('success')
                 }else{
                     alert('用户名或密码错误!')
                 }

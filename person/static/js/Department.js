@@ -35,10 +35,10 @@ $(function () {
                         if (data.errno == 0) {
                             //刷新当前页面
                             window.location.reload()
-                            alert('修改管理员数据成功!')
+                            alert('修改部门数据成功!')
 
                         } else {
-                            alert('修改管理员数据失败!')
+                            alert('修改部门数据失败!')
 
                         }
                     }
@@ -116,7 +116,7 @@ $(function () {
                     alert('删除部门数据成功!')
 
                 } else {
-                    alert('删除部门数据失败,请检查部门账号填写是否正确!')
+                    alert('删除部门数据失败!')
                     window.location.reload()
                 }
             }

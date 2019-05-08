@@ -44,7 +44,7 @@ $(function () {
                             window.location.reload()
                             alert('修改员工奖惩数据成功!')
                         } else {
-                            alert('请检查要修改员工编号是否正确!')
+                            alert('修改员工奖惩数据失败!')
                             window.location.reload()
 
                         }
