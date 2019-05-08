@@ -1,76 +1,90 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html">
+<html lang="en" class="no-js">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>登录</title>
-    <link rel="stylesheet" href="../static/css/normalize.css">
-    <link rel="stylesheet" href="../static/css/login.css">
-    <link rel="stylesheet" href="../static/css/sign-up-login.css">
-    <link rel="stylesheet" type="text/css" href="../../../../font-awesome/4.6.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/inputEffect.css">
-    <link rel="stylesheet" href="../static/css/tooltips.css">
-    <link rel="stylesheet" href="../static/css/spop.min.css">
+<head>
+
+    <meta charset="utf-8">
+    <title>Fullscreen Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/supersized.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 
     <script src="../static/js/jquery-1.12.4.min.js"></script>
     <script src="../static/js/SuperadminLogin.js"></script>
     <link rel="stylesheet" href="../static/css/index.css">
 
 </head>
-<body>
-<!-- 整体背景 -->
-<div id="box">
-    <!-- 登录控件 -->
-    <div id="login">
-        <input id="tab-1" type="radio" name="tab" class="sign-in hidden" checked="">
-        <input id="tab-2" type="radio" name="tab" class="sign-up hidden">
-        <input id="tab-3" type="radio" name="tab" class="sign-out hidden">
-        <div class="wrapper">
-            <!-- 登录页面 -->
-            <div class="login sign-in-htm" id="formbox2">
-                <form class="container offset1 loginform" action="Superson.html" id="superadminloginform">
-                    <!-- 猫头鹰控件 -->
-                    <div id="owl-login" class="login-owl">
-                        <div class="hand"></div>
-                        <div class="hand hand-r"></div>
-                        <div class="arms">
-                            <div class="arm"></div>
-                            <div class="arm arm-r"></div>
-                        </div>
-                    </div>
-                    <div class="pad input-container">
-                        <section class="content">
-                                <span class="input input--hideo" >
-                                    <input class="input__field input__field--hideo" type="text" id="supadminuser"
-                                           autocomplete="off" placeholder="请输入用户名" tabindex="1" maxlength="15">
-                                    <label class="input__label input__label--hideo" for="login-username">
-                                        <i class="fa fa-fw fa-user icon icon--hideo"></i>
-                                        <span class="input__label-content input__label-content--hideo"></span>
-                                    </label>
-                                </span>
-                            <span class="input input--hideo" >
-                                    <input class="input__field input__field--hideo" type="password" id="supadminpsw"
-                                           placeholder="请输入密码" tabindex="2" maxlength="15">
-                                    <label class="input__label input__label--hideo" for="login-password">
-                                        <i class="fa fa-fw fa-lock icon icon--hideo"></i>
-                                        <span class="input__label-content input__label-content--hideo"></span>
-                                    </label>
-                                </span>
-                        </section>
-                    </div>
-                    <div class="form-actions">
-                        <p class="superadminbtn">
-                            <input type="submit" name="submit" value="登录" id="superadminloginbtn">
-                        </p>
-                    </div>
-                </form>
-            </div>
 
+<body oncontextmenu="return false">
+
+<div class="page-container">
+    <h1>Login</h1>
+    <form action="" method="post">
+        <div>
+            <input type="text" id="supadminuser" name="username" class="username" placeholder="Username" autocomplete="off"/>
         </div>
+        <div>
+            <input type="password" id="supadminpsw" name="password" class="password" placeholder="Password" oncontextmenu="return false"
+                   onpaste="return false"/>
+        </div>
+        <button id="superadminloginbtn" type="button">登录</button>
+    </form>
+    <div class="connect">
+        <p>If we can only encounter each other rather than stay with each other,then I wish we had never
+            encountered.</p>
+        <p style="margin-top:20px;">如果只是遇见，不能停留，不如不遇见。</p>
     </div>
 </div>
+<div class="alert" style="display:none">
+    <h2>消息</h2>
+    <div class="alert_con">
+        <p id="ts"></p>
+        <p style="line-height:70px"><a class="btn">确定</a></p>
+    </div>
+</div>
+
+<!-- Javascript -->
+<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script src="../static/js/supersized.3.2.7.min.js"></script>
+<script src="../static/js/supersized-init.js"></script>
+<script>
+    $(".btn").click(function () {
+        is_hide();
+    })
+    var u = $("input[name=username]");
+    var p = $("input[name=password]");
+    $("#submit").live('click', function () {
+        if (u.val() == '' || p.val() == '') {
+            $("#ts").html("用户名或密码不能为空~");
+            is_show();
+            return false;
+        }
+        else {
+            var reg = /^[0-9A-Za-z]+$/;
+            if (!reg.exec(u.val())) {
+                $("#ts").html("用户名错误");
+                is_show();
+                return false;
+            }
+        }
+    });
+    window.onload = function () {
+        $(".connect p").eq(0).animate({"left": "0%"}, 600);
+        $(".connect p").eq(1).animate({"left": "0%"}, 400);
+    }
+    function is_hide() {
+        $(".alert").animate({"top": "-40%"}, 300)
+    }
+    function is_show() {
+        $(".alert").show().animate({"top": "45%"}, 300)
+    }
+</script>
 </body>
+
 </html>
+

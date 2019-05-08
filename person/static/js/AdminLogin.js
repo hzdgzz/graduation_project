@@ -7,9 +7,7 @@ function getCookie(name) {
 $(function(){
      // var superadminloginform = $('#superadminloginform')
     // form表单提交
-    $("#adminloginform").submit(function(e){
-
-        e.preventDefault()
+    $("#Adminloginbtn").click(function(){
         var admin_id = $("#adminuser").val()
         var admin_psw = $("#adminpsw").val()
 
