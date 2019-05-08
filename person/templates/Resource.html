@@ -1,182 +1,158 @@
-<!DOCTYPE html>
-<html lang="zh">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Resource</title>
-    <link rel="stylesheet" href="../static/css/Resource.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/js/Resource.js"></script>
+    <meta charset="utf-8" />
+    <title>表格制作</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../static/css/Resource.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+    <script src="../static/js/jquery-1.10.2.js"></script>
+    <script src="../static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootbox.min.js"></script>
 </head>
 <body>
-<!-- 表头信息 -->
-<div class="header_con">
-    <div class="header">
-        <a href="#" class="logo">河北圣顺环保科技人力资源管理系统</a>
-        <ul class="main_menu">
-            <li><a href="Departmentss.html">部门管理</a></li>
-            <li><a href="Admin.html">员工管理</a></li>
-            <li><a href="Rewards.html">奖惩管理</a></li>
-            <li class="active"><a href="Resource.html">招聘管理</a></li>
-            <li id="exit"><a>
-                <button type="button" id="exitbtn">退出登录</button>
-            </a></li>
+    <div class="box">
+        <div class="title">河北圣顺环保科技人力资源管理系统---招聘管理</div>
+        <div class="content">
 
-        </ul>
-    </div>
-</div>
-<!-- 功能选项 -->
-<div class="funcbtn">
-    <button type="button" id="addbtn" onclick="delAll()">新增</button>
-    <!-- 功能弹窗 -->
-    <div class="pop_main" id="pop">
-        <div class="pop_con">
-            <div class="pop_title">
-                <h3>新增招聘人员</h3>
-                <a href="#" id="shutoff">×</a>
+            <div class="container content_width">
+                <div class="person_search">
+                    <div class="search_input">
+                        <div class="input-group mb-3">
+                            <span>编号：</span>
+                            <input id="Ktext" type="text" class="form-control" placeholder="请输入编号">
+                        </div>
+                    </div>
+                    <!-- <div class="search_input">
+                        <div class="input-group mb-3" hidden>
+                            <span>工号：</span>
+                            <input id="job_num" type="text" class="form-control" placeholder="请输入工号">
+                        </div>
+                    </div> -->
+                    <div class="search_input">
+                        <button class="btn btn-primary search_btn" type="button" id="search_btn">查询</button>
+                        <button class="btn btn-primary search_btn" type="button" id="back_btn">重置</button>
+                    </div>
+                </div>
+                <div class="line"></div>
             </div>
-            <div class="pop_detail">
-                <!-- 新增员工表单 -->
-                <div class="pop_text">
-                    <form method="POST" id="add_newusersfrom">
-                        <p>
-                            <label>编号:</label>
-                            <input type="text" name="userid" id="auser_id">
-                        </p>
 
-                        <p>
-                            <label>姓名:</label>
-                            <input type="text" name="username" id="auser_name">
-                        </p>
+            <div class="export">
+                <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
+                    <img src="../static/images/add_two.png" />
+                    <span>添加</span>
+                </button>
+                <div class="modal fade" id="renyuan">
+                    <div class="modal-dialog modal-lg modal_position">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">添加</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <table id="xztb" class="table">
 
-                        <p>
-                            <label>年龄:</label>
-                            <input type="text" name="age" id="auser_age">
-                        </p>
-
-                        <p id="auser_gender">
-                            <label>性别:</label>
-                            <input type="radio" name="sex" value="MAN" checked>男
-                            <input type="radio" name="sex" value="WOMAN">女
-                        </p>
-
-                        <p>
-                            <label>电话:</label>
-                            <input type="text" name="tel" id="auser_tel">
-                        </p>
-
-                        <p>
-                            <label>邮箱:</label>
-                            <input type="text" name="email" id="auser_email">
-                        </p>
-
-                        <p class="pop_text_btn">
-                            <input type="submit" value="保存" id="btn1">
-                            <input type="reset" value="重置" id="btn2">
-                        </p>
-
-                    </form>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tb_bg">
+                                                    <label for=""><font style="font-size: 14px; color: red;">*</font>编号</label>
+                                                </td>
+                                                <td><input class="userID" type="text" placeholder="请输入编号" /></td>
+                                            <td class="tb_bg">
+                                                <label for=""><font style="font-size: 14px; color: red;">*</font>姓名</label>
+                                            </td>
+                                            <td><input class="userName" type="text" placeholder="请输入姓名" /></td>                                            
+                                            <td class="tb_bg">
+                                                <label for=""><font style="font-size: 14px; color: red;">*</font>年龄</label>
+                                            </td>
+                                            <td><input class="userAge" type="number" placeholder="请输入年龄" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tb_bg">
+                                                <label for=""><font style="font-size: 14px; color: red;">*</font>手机号</label>
+                                            </td>
+                                            <td><input class="userTel" type="number" placeholder="请输入手机号" /></td>
+                                            <td class="tb_bg"><label for="">邮箱</label></td>
+                                            <td><input class="userEmail" type="text" placeholder="请输入邮箱" /></td>
+                                            <td class="tb_bg"><label for="">性别</label></td>
+                                            <td>
+                                                <select class="form-control select_down" id="user_gender" onchange="func()" style="font-size: 13px; color: #666;">
+                                                    <option>MAN</option>
+                                                    <option>WOMAN</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                <button id="add_btn" type="button" class="btn btn-secondary">确定</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pop_footer">
 
-            </div>
+            <table id="tb" class="table">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>性别</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="show_tbody">
+                <!-- 招聘列表数据 -->
+                    {% for recruiter in data.Recruiters %}
+
+                        <tr>
+                            <td>{{ recruiter.recruiter_id }}</td>
+                            <td>{{ recruiter.recruiter_name }}</td>
+                            <td>{{ recruiter.recruiter_age }}</td>
+                            <td>{{ recruiter.recruiter_mobile }}</td>
+                            <td>{{ recruiter.recruiter_email }}</td>
+                            <td>{{ recruiter.recruiter_gender }}</td>
+
+                            <td>
+                                <a href="#" class="edit">编辑</a>
+                                <a href="#" class="del">删除</a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+{#                    <tr>#}
+{#                        <td>10</td>#}
+{#                        <td>李磊</td>#}
+{#                        <td>18</td>#}
+{#                        <td>15511066324</td>#}
+{#                        <td>1163256489@qq.com</td>#}
+{#                        <td>MAN</td>#}
+{#                        <td>#}
+{#                            <a href="#" class="edit">编辑</a>#}
+{#                            <a href="#" class="del">删除</a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>11</td>#}
+{#                        <td>11</td>#}
+{#                        <td>11</td>#}
+{#                        <td>15511066324</td>#}
+{#                        <td>1164549585@qq.com</td>#}
+{#                        <td>MAN</td>#}
+{#                        <td>#}
+{#                            <a href="#" class="edit">编辑</a>#}
+{#                            <a href="#" class="del">删除</a>#}
+{#                        </td>#}
+{#                    </tr>#}
+                </tbody>
+            </table>
         </div>
-        <div class="mask"></div>
     </div>
-
-    <!-- 功能弹窗 -->
-
-</div>
-<!-- 招聘管理 -->
-<table class="personal_list">
-    <tr>
-        <th>编号</th>
-        <th>姓名</th>
-        <th>年龄</th>
-        <th>性别</th>
-        <th>电话</th>
-        <th>邮箱</th>
-        <th>编辑</th>
-    </tr>
-    <!-- 招聘列表数据 -->
-    {% for recruiter in data.Recruiters %}
-
-        <tr>
-            <th>{{ recruiter.recruiter_id }}</th>
-            <th>{{ recruiter.recruiter_name }}</th>
-            <th>{{ recruiter.recruiter_age }}</th>
-            <th>{{ recruiter.recruiter_gender }}</th>
-            <th>{{ recruiter.recruiter_mobile }}</th>
-            <th>{{ recruiter.recruiter_email }}</th>
-
-            <th>
-                <button type="button" class="editbtn">编辑</button>
-            </th>
-        </tr>
-
-    {% endfor %}
-    <!-- 功能弹窗 -->
-    <div class="pop_main1" id="pop">
-        <div class="pop_con1">
-            <div class="pop_title1">
-                <h3>编辑招聘</h3>
-                <a href="#" id="shutoff1">×</a>
-            </div>
-            <div class="pop_detail1">
-                <!-- 编辑招聘表单 -->
-                <div class="pop_text1">
-                    <form method="POST" id="edi_newusersfrom">
-                        <p>
-                            <label>ID:</label>
-                            <input type="text" name="userid" id="euser_id" placeholder="请输入要编辑的招聘人员ID">
-                        </p>
-                        <p>
-                            <label>编号:</label>
-                            <input type="text" name="userid" id="euser_id">
-                        </p>
-
-                        <p>
-                            <label>姓名:</label>
-                            <input type="text" name="username" id="euser_name">
-                        </p>
-
-                        <p>
-                            <label>年龄:</label>
-                            <input type="text" name="age" id="euser_age">
-                        </p>
-
-                        <p id="euser_gender">
-                            <label>性别:</label>
-                            <input type="radio" name="sex" checked value="MAN">男
-                            <input type="radio" name="sex" value="WOMAN">女
-                        </p>
-
-                        <p>
-                            <label>电话:</label>
-                            <input type="text" name="tel" id="euser_tel">
-                        </p>
-
-                        <p>
-                            <label>邮箱:</label>
-                            <input type="text" name="email" id="euser_email">
-                        </p>
-
-                        <p class="pop_text_btn1">
-                            <input type="submit" value="保存" id="btn3">
-                            <input type="reset" value="删除" id="btn4">
-                        </p>
-
-                    </form>
-                </div>
-            </div>
-            <div class="pop_footer1">
-
-            </div>
-        </div>
-        <div class="mask1"></div>
-    </div>
-</table>
+    <script src="../static/js/Resource.js"></script>
 </body>
 </html>

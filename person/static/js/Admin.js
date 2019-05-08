@@ -107,33 +107,33 @@ $(function () {
     })
     $('.del').click(function () {
         $(this).parents('tr').remove();
-            var userId = $(this).parents('tr').children().eq(0).text()
+        var userId = $(this).parents('tr').children().eq(0).text()
 
-            // 发起新增请求
-            var params = {
-                'userId': userId
-            }
-            // 发起删除ajax请求
-            $.ajax({
-                url: '/delete_user',
-                type: 'delete',
-                data: JSON.stringify(params),
-                contentType: 'application/json',
-                headers: {
-                    "X-CSRFToken": getCookie('csrf_token')
-                },
-                success: function (data) {
-                    if (data.errno == 0) {
-                        //刷新当前页面
-                        window.location.reload()
-                        alert('删除员工数据成功!')
+        // 发起新增请求
+        var params = {
+            'userId': userId
+        }
+        // 发起删除ajax请求
+        $.ajax({
+            url: '/delete_user',
+            type: 'delete',
+            data: JSON.stringify(params),
+            contentType: 'application/json',
+            headers: {
+                "X-CSRFToken": getCookie('csrf_token')
+            },
+            success: function (data) {
+                if (data.errno == 0) {
+                    //刷新当前页面
+                    window.location.reload()
+                    alert('删除员工数据成功!')
 
-                    } else {
-                        alert('删除员工数据失败!')
-                        window.location.reload()
-                    }
+                } else {
+                    alert('删除员工数据失败!')
+                    window.location.reload()
                 }
-            })
+            }
+        })
     })
     $('#renyuan').on('hide.bs.modal', function () {
         addEnter = true;

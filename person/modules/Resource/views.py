@@ -123,24 +123,19 @@ def edi_newusersfrom():
 def delete_user():
     # 获取参数
     userId = request.json.get('userId')
-    euser_id = request.json.get('euser_id')
     # 检查参数的完整性
-    if not all([userId, euser_id]):
+    if not all([userId]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
         userId = int(userId)
-        euser_id = int(euser_id)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
 
-    # 检查用户输入id和列表id是否一致
-    if userId != euser_id:
-        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的招聘人员id')
     # 构建模型类对象
     try:
-        recruiter = Recruiter.query.filter_by(recruiter_id=euser_id).first()
+        recruiter = Recruiter.query.filter_by(recruiter_id=userId).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询招聘人员数据错误')

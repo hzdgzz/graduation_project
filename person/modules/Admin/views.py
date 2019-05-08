@@ -154,7 +154,7 @@ def delete_user():
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
 
-    # 构建模型类对象
+    # 查询数据
     try:
         user = User.query.filter_by(user_id=userId).first()
     except Exception as e:
