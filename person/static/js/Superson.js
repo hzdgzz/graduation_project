@@ -38,6 +38,7 @@ $(function () {
                             alert('修改管理员数据成功!')
 
                         } else {
+                            window.location.reload()
                             alert('修改管理员数据失败!')
 
                         }

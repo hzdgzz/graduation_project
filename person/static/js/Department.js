@@ -38,6 +38,7 @@ $(function () {
                             alert('修改部门数据成功!')
 
                         } else {
+                            window.location.reload()
                             alert('修改部门数据失败!')
 
                         }
@@ -140,6 +141,7 @@ $(function () {
                     alert('退出登录成功!')
 
                 } else {
+                    window.location.reload()
                     alert('退出登录失败!')
                 }
             }

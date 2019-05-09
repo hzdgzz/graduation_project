@@ -146,6 +146,7 @@ $(function () {
                     alert('退出登录成功!')
 
                 } else {
+                    window.location.reload()
                     alert('退出登录失败!')
                 }
             }

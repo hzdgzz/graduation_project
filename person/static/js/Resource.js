@@ -44,7 +44,6 @@ $(function () {
                         if (data.errno == 0) {
                             //刷新当前页面
                             window.location.reload()
-
                             alert('修改招聘人员数据成功!')
 
 
@@ -150,6 +149,7 @@ $(function () {
                     alert('退出登录成功!')
 
                 } else {
+                    window.location.reload()
                     alert('退出登录失败!')
                 }
             }
