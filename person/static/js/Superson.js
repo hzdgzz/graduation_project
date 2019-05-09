@@ -4,24 +4,24 @@ function getCookie(name) {
     return r ? r[1] : undefined;
 }
 $(function () {
-    var index_=-1
-    $('.edit').click(function(){
+    var index_ = -1
+    $('.edit').click(function () {
         index_ = $('.edit').index($(this))
-        var admin_id_=$(this).parent().parent().children('td').eq(0).text()
-        window.admin_id_=admin_id_
+        var admin_id_ = $(this).parent().parent().children('td').eq(0).text()
+        window.admin_id_ = admin_id_
     })
     $('#add_btn').click(function () {
         var admin_id = $(".userName").val()
         var admin_psw = $(".jobNum").val()
 
-        if(index_!=-1){
-            if($('#show_tbody').children('tr').eq(index_).attr('class')=='has_case'){
+        if (index_ != -1) {
+            if ($('#show_tbody').children('tr').eq(index_).attr('class') == 'has_case') {
                 // 发起编辑请求
-               var params = {
-                'admin_id_': admin_id_,
-                'editor_admin_id': admin_id,
-                'editor_admin_psw': admin_psw
-            }
+                var params = {
+                    'admin_id_': admin_id_,
+                    'editor_admin_id': admin_id,
+                    'editor_admin_psw': admin_psw
+                }
                 // 发起ajax请求
                 $.ajax({
                     url: '/editor_admin',
@@ -43,9 +43,9 @@ $(function () {
                         }
                     }
                 })
-                index_=-1
+                index_ = -1
             }
-        }else{
+        } else {
             var params = {
                 'admin_id': admin_id,
                 'admin_psw': admin_psw
@@ -69,7 +69,7 @@ $(function () {
                     }
                 }
             })
-            index_=-1
+            index_ = -1
         }
     })
 
@@ -85,7 +85,7 @@ $(function () {
             success: function (data) {
                 if (data.errno == 0) {
                     //刷新当前页面
-                    window.location.href='/'
+                    window.location.href = '/'
                     alert('退出登录成功!')
 
                 } else {
@@ -145,7 +145,8 @@ $(function () {
     })
 
     // 监控修改密码按钮
-    $('.submitBtn').click(function () {
+    $('.submitBtn').click(function (e) {
+        e.stopPropagation()
         // 发送ajax请求
         var superadminpsw = $("#superadminpsw").val()
         var editorsuperadminpsw = $("#editorsuperadminpsw").val()
@@ -168,7 +169,7 @@ $(function () {
             success: function (data) {
                 if (data.errno == 0) {
                     //刷新当前页面
-                    window.location.href='/SuperadminLogin.html'
+                    window.location.href = '/SuperadminLogin.html'
                     alert('修改超级管理员密码成功,请重新登录!')
 
                 } else {
@@ -176,7 +177,7 @@ $(function () {
                 }
             }
         })
-        return false
+
 
     })
     $('#renyuan').on('hide.bs.modal', function () {

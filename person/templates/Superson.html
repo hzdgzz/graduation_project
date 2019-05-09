@@ -12,7 +12,7 @@
     <script src="../static/js/bootbox.min.js"></script>
 
     <link rel="stylesheet" href="../static/css/common.css"/>
-    <script src="../static/js/jquery-1.10.2.js"></script>
+
     <script type="text/javascript">
         var w,h,className;
         function getSrceenWH(){
@@ -30,7 +30,7 @@
             getSrceenWH();
 
             //显示弹框
-            $('.box a').click(function(){
+            $('.person_search a').click(function(){
                 className = $(this).attr('class');
                 $('#dialogBg').fadeIn(300);
                 $('#dialog').removeAttr('class').addClass('animated '+className+'').fadeIn();
@@ -149,14 +149,14 @@
                 </tr>
 
             {% endfor %}
-            {#                    <tr>#}
-            {#                        <td>101</td>#}
-            {#                        <td>101</td>#}
-            {#                        <td>#}
-            {#                            <a href="#" class="edit">编辑</a>#}
-            {#                            <a href="#" class="del">删除</a>#}
-            {#                        </td>#}
-            {#                    </tr>#}
+{#                                <tr>#}
+{#                                    <td>101</td>#}
+{#                                    <td>101</td>#}
+{#                                    <td>#}
+{#                                        <a href="#" class="edit">编辑</a>#}
+{#                                        <a href="#" class="del">删除</a>#}
+{#                                    </td>#}
+{#                                </tr>#}
         </table>
     </div>
 </div>
