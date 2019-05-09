@@ -173,7 +173,7 @@ def exit_superadminpsw():
     return jsonify(errno='0', errmsg='OK')
 
 # 显示管理员列表数据
-@Superson.route("/Superson.html",methods=['GET','POST'])
+@Superson.route("/Superson.html")
 def Supersons():
     try:
         # 获取用户状态保持信息
