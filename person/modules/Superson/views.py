@@ -1,4 +1,4 @@
-from flask import current_app, jsonify
+from flask import current_app, jsonify,g
 from flask import render_template
 from flask import request
 
@@ -129,6 +129,7 @@ def editor_superadminpsw():
     # 检查参数的完整性
     if not all([superadminpsw, editorsuperadminpsw]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+
     # 校验是否int类型
     try:
         superadminpsw = int(superadminpsw)
@@ -138,7 +139,7 @@ def editor_superadminpsw():
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
 
     # 检查用户输入id和列表id是否一致
-    sessions = session['superadmin_psw']
+    sessions = session.get('superadmin_psw')
     superadmin_psw = int(sessions)
     if superadmin_psw != superadminpsw:
         return jsonify(errno=RET.DATAERR, errmsg='请输入超级管理员旧密码')
@@ -160,7 +161,7 @@ def editor_superadminpsw():
         return jsonify(errno=RET.DBERR, errmsg='修改密码失败')
     session.pop('superadmin_id', None)
     session.pop('superadmin_psw', None)
-        # 返回前端数据
+    # 返回前端数据
     return jsonify(errno='0', errmsg='OK')
 
 
@@ -172,7 +173,7 @@ def exit_superadminpsw():
     return jsonify(errno='0', errmsg='OK')
 
 # 显示管理员列表数据
-@Superson.route("/Superson.html")
+@Superson.route("/Superson.html",methods=['GET','POST'])
 def Supersons():
     try:
         # 获取用户状态保持信息

@@ -145,8 +145,7 @@ $(function () {
     })
 
     // 监控修改密码按钮
-    $('.submitBtn').click(function (e) {
-        e.stopPropagation()
+    $('.submitBtn').click(function () {
         // 发送ajax请求
         var superadminpsw = $("#superadminpsw").val()
         var editorsuperadminpsw = $("#editorsuperadminpsw").val()
@@ -171,7 +170,6 @@ $(function () {
                     //刷新当前页面
                     window.location.href = '/SuperadminLogin.html'
                     alert('修改超级管理员密码成功,请重新登录!')
-
                 } else {
                     alert('修改超级管理员密码失败!')
                 }
