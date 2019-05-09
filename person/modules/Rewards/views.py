@@ -53,6 +53,8 @@ def add_admindepartment():
                 rewardspunishment.user_id = auser_id
                 rewardspunishment.reward = auser_reward
                 rewardspunishment.punishment = auser_punish
+            else:
+                return jsonify(errno=RET.DATAERR, errmsg='用户已存在')
         except Exception as e:
             # 构建模型类对象
             rewardspunishment = RewardsPunishment()
@@ -126,22 +128,16 @@ def editor_userreward():
 @Rewards.route("/delete_userreward", methods=['DELETE'])
 def delete_userreward():
     # 获取参数
-    userId = request.json.get('userId')
     euser_id = request.json.get('euser_id')
     # 检查参数的完整性
-    if not all([userId, euser_id]):
+    if not all([euser_id]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
     # 校验是否int类型
     try:
-        userId = int(userId)
         euser_id = int(euser_id)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='参数类型错误')
-
-    # 检查用户输入id和列表id是否一致
-    if userId != euser_id:
-        return jsonify(errno=RET.DATAERR, errmsg='请输入正确要删除的员工id')
     # 构建模型类对象
     try:
         rewards = RewardsPunishment.query.filter_by(user_id=euser_id).first()

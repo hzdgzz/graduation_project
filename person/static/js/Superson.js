@@ -63,6 +63,7 @@ $(function () {
                     if (data.errno == 0) {
                         //刷新当前页面
                         window.location.reload()
+                        alert('新增管理员数据成功!')
                     } else {
                         alert('新增管理员数据失败!')
                         window.location.reload()

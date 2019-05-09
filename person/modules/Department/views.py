@@ -33,6 +33,8 @@ def add_department():
         if departments.is_deleted == 1:
             departments.is_deleted = 0
             departments.depart_name = department_name
+        else:
+            return jsonify(errno=RET.DATAERR, errmsg='已存在')
     except Exception as e:
         # 构建模型类对象
         departments = Department()

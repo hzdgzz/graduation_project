@@ -102,7 +102,6 @@ $(function () {
         var euser_id = $(this).parents('tr').children().eq(0).text()
         // 发起删除请求
         var params = {
-            'userId':usersId,
             'euser_id':euser_id
         };
 
