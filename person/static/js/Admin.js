@@ -4,6 +4,9 @@ function getCookie(name) {
     return r ? r[1] : undefined;
 }
 $(function () {
+    $('#ret').click(function () {
+        window.location.href = '/AdminChoose.html'
+    })
     var index_=-1
     $('.edit').click(function(){
         index_ = $('.edit').index($(this))
